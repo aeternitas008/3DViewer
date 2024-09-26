@@ -20,7 +20,9 @@ typedef struct {
 } Model;
 
 void s21_parse_file(const char *filename, Model *model);
-void s21_parse_file_two(const char *filename, Model *model);
+void s21_parse_file_v(Model *model, char *line);
+void s21_parse_file_f(Model *model, char *line);
+
 
 
 
