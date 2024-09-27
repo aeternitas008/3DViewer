@@ -1,6 +1,6 @@
 QT       += core gui
 QT       += openglwidgets
-LIBS     += -LC:\msys64\mingw64\qt5-static\lib\libQt5OpenGL.a -lopengl32
+LIBS   += -lopengl32    # библиотека для windows
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
