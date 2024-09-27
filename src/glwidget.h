@@ -4,6 +4,11 @@
 #include <QOpenGLWidget>
 #include <gl/gl.h>
 
+extern "C" {
+    #include "parcer.h"
+}
+
+
 class GLWidget : public QOpenGLWidget
 {
 
@@ -13,7 +18,10 @@ protected:
     void paintGL() override;
 
 public:
+    Model model;
+
     GLWidget(QWidget* parent = nullptr);
+    ~GLWidget();
 };
 
 #endif // GLWIDGET_H

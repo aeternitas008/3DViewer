@@ -3,6 +3,10 @@
 
 #include <QMainWindow>
 
+extern "C" {
+#include "parcer.h"
+}
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
