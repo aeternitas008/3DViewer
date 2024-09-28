@@ -69,3 +69,26 @@ void s21_get_facet(Model *model, char *line, int id_facet){
         model->facets[id_facet].numbers_of_vertices[x++] = id_vertex;
     }
 }
+
+void s21_cleaner(Model *model) {
+
+    // clean array of polygon's
+    if(model->facets) {
+
+        for(size_t i = 0; i < model->facets_count; i++){
+            free(model->facets[i].numbers_of_vertices);
+        }
+        free(model->facets);
+
+    }
+
+    // clean array of vertice's
+    if(model->vertices) {
+        free(model->vertices);
+    }
+
+    // null all counter's
+    model->vertex_count = 0;
+    model->facets_count = 0;
+
+} // s21_cleaner
