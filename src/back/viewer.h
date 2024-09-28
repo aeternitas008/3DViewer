@@ -7,10 +7,15 @@
 
 // рёбра твои
 typedef struct {
-    double x;
-    double y;
-    double z;
-} Facet;
+    int *numbers_of_vertices;   // массив номеров вершин грани
+    int count_of_vertices;      // количество вершин грани
+} Polygon; 
+
+// typedef struct {
+//     double x;
+//     double y;
+//     double z;
+// } Facet;
 
 // вершины
 typedef struct {
@@ -21,14 +26,14 @@ typedef struct {
 
 typedef struct {
     Vertex *vertices;
-    Facet *facets;
+    Polygon *facets;
     unsigned int vertex_count;  // кол во вершин
     unsigned int facets_count;  // кол во граней
 } Model;
 
 void s21_parse_file(const char *filename, Model *model);
-void s21_parse_file_v(Model *model, char *line);
-void s21_parse_file_f(Model *model, char *line);
+void s21_get_vector(Model *model, char *line);
+void s21_get_facet(Model *model, char *line);
 
 
 
