@@ -27,7 +27,7 @@ void s21_parser(Model *model) {
     model->vertices = (double *)calloc((model->total_vertices + 1) * 3, sizeof(double));
 
     // fill the vertex array
-    for(unsigned i = 3; i < (model->total_vertices + 1) * 3; i++) {
+    for(size_t i = 3; i < (model->total_vertices + 1) * 3; i++) {
         model->vertices[i] = arr_ver[i - 3];
     }
 
@@ -39,17 +39,17 @@ void s21_parser(Model *model) {
     // fill the polygon array
 
     // fill the number of vertices of each polygon
-    for(unsigned i = 0; i < model->total_polygons; i++) {
+    for(size_t i = 0; i < model->total_polygons; i++) {
         model->polygons[i].count_of_vertices = 4;
     }
 
     // allocate memory for vertex arrays in each polygon
-    for(unsigned i = 0; i < model->total_polygons; i++) {
+    for(size_t i = 0; i < model->total_polygons; i++) {
         model->polygons[i].numbers_of_vertices = (int *)malloc(model->polygons[i].count_of_vertices * sizeof(int));
     }
 
     // fill the vertex arrays of each polygon
-    for(unsigned i = 0; i < model->total_polygons; i++) {
+    for(size_t i = 0; i < model->total_polygons; i++) {
         for(int j = 0; j < model->polygons[i].count_of_vertices; j++) {
             model->polygons[i].numbers_of_vertices[j] = f[i][j];
         }
@@ -62,7 +62,7 @@ void s21_cleaner(Model *model) {
     // clean array of polygon's
     if(model->polygons) {
 
-        for(unsigned i = 0; i < model->total_polygons; i++){
+        for(size_t i = 0; i < model->total_polygons; i++){
             free(model->polygons[i].numbers_of_vertices);
         }
         free(model->polygons);
