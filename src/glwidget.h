@@ -18,10 +18,15 @@ protected:
     void paintGL() override;
 
 public:
-    Model model;
+    Model model = {nullptr, nullptr, 0, 0};
 
     GLWidget(QWidget* parent = nullptr);
     ~GLWidget();
+
+public slots:
+    void on_paintButton_clicked();
+    void on_openButton_clicked();
+
 };
 
 #endif // GLWIDGET_H

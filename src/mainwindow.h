@@ -3,10 +3,6 @@
 
 #include <QMainWindow>
 
-extern "C" {
-#include "parcer.h"
-}
-
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -23,6 +19,14 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+signals:
+    void paintButton();
+    void openButton();
+
+private slots:
+    void on_paintButton_clicked();
+    void on_openButton_clicked();
 };
 
 #endif // MAINWINDOW_H
