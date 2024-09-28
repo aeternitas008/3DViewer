@@ -37,19 +37,37 @@
  *
  */
 
+// typedef struct {
+//     int *numbers_of_vertices;   // массив номеров вершин грани
+//     int count_of_vertices;      // количество вершин грани
+// } polygon;                      // грань(полигон)
+
+// typedef struct {
+//     double *vertices;           // массив вершин
+//     Polygon *polygons;          // массив граней
+//     unsigned total_vertices;    // кол-во вершин
+//     unsigned total_polygons;    // кол-во граней
+// } Model;
+
+
 typedef struct {
     int *numbers_of_vertices;   // массив номеров вершин грани
     int count_of_vertices;      // количество вершин грани
-} polygon;                      // грань(полигон)
+} Polygon; 
+
 
 typedef struct {
-    double *vertices;           // массив вершин
-    polygon *polygons;          // массив граней
-    unsigned total_vertices;    // кол-во вершин
-    unsigned total_polygons;    // кол-во граней
+    double *vertices;
+    Polygon *facets;
+    unsigned int vertex_count;  // кол во вершин
+    unsigned int facets_count;  // кол во граней
 } Model;
 
-void s21_parser(Model *model);
+void s21_parser(const char *filename, Model *model);
+void s21_get_vector(Model *model, char *line, int x);
+void s21_get_facet(Model *model, char *line, int x);
+
+// void s21_parser(Model *model);
 void s21_cleaner(Model *model);
 
 #endif // PARCER_H

@@ -109,18 +109,27 @@ void GLWidget::on_paintButton_clicked()
 void GLWidget::on_openButton_clicked()
 {
     QWidget *a = new QWidget;
-        QLineEdit *l = new QLineEdit;
+        QLabel *l = mainWindow->lbl;
+        // QLineEdit *l = new QLineEdit;
         QPushButton *b = new QPushButton("Open");
         QHBoxLayout *la = new QHBoxLayout;
         a->setLayout(la);
         la->addWidget(b);
         la->addWidget(l);
 
-        QString str = QFileDialog::getOpenFileName(a, "Open File", QString(), "*.txt ");
-        l->setText(str);
+        QString strQ = QFileDialog::getOpenFileName(a, "Open File", QString(), "*.obj ");
+        l->setText(strQ);
 
 
-        s21_parser(&model);
+        // // Either this if you use UTF-8 anywhere
+        // std::string utf8_text = qs.toUtf8().constData();
+
+        // // or this if you're on Windows :-)
+        // std::string current_locale_text = qs.toLocal8Bit().constData();
+
+        std::string str = strQ.toStdString();   
+
+        s21_parser(str, &model);
     // qDebug("PAINT_BUTTON");
 }
 

@@ -9,6 +9,10 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(this, &MainWindow::paintButton, ui->glWidget, &GLWidget::on_paintButton_clicked);
     connect(this, &MainWindow::openButton, ui->glWidget, &GLWidget::on_openButton_clicked);
+    
+    // @todo not good!?
+    lbl = ui->pathFile;
+
 }
 
 MainWindow::~MainWindow()
@@ -27,4 +31,3 @@ void MainWindow::on_openButton_clicked()
 {
     emit openButton();
 }
-
