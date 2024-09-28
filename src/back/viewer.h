@@ -5,6 +5,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// рёбра твои
+typedef struct {
+    double x;
+    double y;
+    double z;
+} Facet;
 
 // вершины
 typedef struct {
@@ -12,9 +18,10 @@ typedef struct {
     double y;
     double z;
 } Vertex;
+
 typedef struct {
     Vertex *vertices;
-    float *facets;
+    Facet *facets;
     unsigned int vertex_count;  // кол во вершин
     unsigned int facets_count;  // кол во граней
 } Model;
