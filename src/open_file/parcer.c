@@ -1,6 +1,6 @@
 #include "parcer.h"
 
-void s21_parser(Model *model) {
+// void s21_parser(Model *model) {
 
 
 
@@ -57,7 +57,7 @@ void s21_parser(Model *model) {
     //     }
     // }
 
-} // s21_parser
+ // s21_parser
 
 // void s21_cleaner(Model *model) {
 

@@ -2,7 +2,15 @@
 #define GLWIDGET_H
 
 #include <QOpenGLWidget>
-#include <gl/gl.h>
+
+#if defined(__APPLE__)
+    #include <OpenGL/gl.h>
+    #include <OpenGL/glu.h>
+#else
+    #include <GL/gl.h>
+    #include <GL/glu.h>
+#endif
+
 
 extern "C" {
     #include "parcer.h"
@@ -38,10 +46,6 @@ public:
 
     GLWidget(QWidget* parent = nullptr);
     ~GLWidget();
-
-public slots:
-    void on_paintButton_clicked();
-    void on_openButton_clicked();
 
 };
 

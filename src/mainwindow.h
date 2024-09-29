@@ -20,10 +20,6 @@ public:
 private:
     Ui::MainWindow *ui;
 
-signals:
-    void paintButton();
-    void openButton();
-
 private slots:
     void on_paintButton_clicked();
     void on_openButton_clicked();

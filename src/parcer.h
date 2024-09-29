@@ -1,7 +1,6 @@
 #ifndef PARCER_H
 #define PARCER_H
 
-#include <stdio.h>
 #include <stdlib.h>
 
 /*
