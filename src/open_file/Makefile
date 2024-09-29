@@ -335,7 +335,6 @@ DIST          = /usr/local/Qt-6.6.2/mkspecs/features/spec_pre.prf \
 		/usr/local/Qt-6.6.2/mkspecs/features/qt_config.prf \
 		/usr/local/Qt-6.6.2/mkspecs/macx-clang/qmake.conf \
 		/usr/local/Qt-6.6.2/mkspecs/features/spec_post.prf \
-		../.qmake.stash \
 		/usr/local/Qt-6.6.2/mkspecs/features/exclusive_builds.prf \
 		/usr/local/Qt-6.6.2/mkspecs/features/mac/sdk.prf \
 		/usr/local/Qt-6.6.2/mkspecs/features/toolchain.prf \
@@ -378,7 +377,7 @@ TARGET        = 3D_Viewer.app/Contents/MacOS/3D_Viewer
 EXPORT_QMAKE_MAC_SDK = macosx
 EXPORT_QMAKE_MAC_SDK_VERSION = 13.3
 EXPORT_QMAKE_XCODE_DEVELOPER_PATH = /Applications/Xcode.app/Contents/Developer
-EXPORT__QMAKE_STASH_ = /Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/.qmake.stash
+EXPORT__QMAKE_STASH_ = 
 EXPORT_VALID_ARCHS = x86_64
 EXPORT_DEFAULT_ARCHS = x86_64
 EXPORT_ARCHS = $(filter $(EXPORT_VALID_ARCHS), $(if $(ARCHS), $(ARCHS), $(if $(EXPORT_DEFAULT_ARCHS), $(EXPORT_DEFAULT_ARCHS), $(EXPORT_VALID_ARCHS))))
@@ -668,7 +667,6 @@ Makefile: 3D_Viewer.pro /usr/local/Qt-6.6.2/mkspecs/macx-clang/qmake.conf /usr/l
 		/usr/local/Qt-6.6.2/mkspecs/features/qt_config.prf \
 		/usr/local/Qt-6.6.2/mkspecs/macx-clang/qmake.conf \
 		/usr/local/Qt-6.6.2/mkspecs/features/spec_post.prf \
-		../.qmake.stash \
 		/usr/local/Qt-6.6.2/mkspecs/features/exclusive_builds.prf \
 		/usr/local/Qt-6.6.2/mkspecs/features/mac/sdk.prf \
 		/usr/local/Qt-6.6.2/mkspecs/features/toolchain.prf \
@@ -978,7 +976,6 @@ Makefile: 3D_Viewer.pro /usr/local/Qt-6.6.2/mkspecs/macx-clang/qmake.conf /usr/l
 /usr/local/Qt-6.6.2/mkspecs/features/qt_config.prf:
 /usr/local/Qt-6.6.2/mkspecs/macx-clang/qmake.conf:
 /usr/local/Qt-6.6.2/mkspecs/features/spec_post.prf:
-../.qmake.stash:
 /usr/local/Qt-6.6.2/mkspecs/features/exclusive_builds.prf:
 /usr/local/Qt-6.6.2/mkspecs/features/mac/sdk.prf:
 /usr/local/Qt-6.6.2/mkspecs/features/toolchain.prf:

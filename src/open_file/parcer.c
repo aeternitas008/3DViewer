@@ -38,6 +38,12 @@
     // // allocate memory for the polygon array
     // model->polygons = (polygon *)malloc(model->total_polygons * sizeof(polygon));
 
+
+
+
+
+
+
     // // fill the polygon array
 
     // // fill the number of vertices of each polygon
