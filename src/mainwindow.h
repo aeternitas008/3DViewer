@@ -23,6 +23,26 @@ private:
 private slots:
     void on_paintButton_clicked();
     void on_openButton_clicked();
+
+    // сдвиг модели
+    void on_leftButton_clicked();
+    void on_rightButton_clicked();
+    void on_upButton_clicked();
+    void on_downButton_clicked();
+    void on_closerButton_clicked();
+    void on_furtherButton_clicked();
+
+    // масштабирование модели
+    void on_increaseButton_clicked();
+
+    // вращение модели
+    void on_decreaseButton_clicked();
+    void on_rotateButtonX_clicked();
+    void on_rotateButtonY_clicked();
+    void on_rotateButtonZ_clicked();
+    void on_rotateButtonX_2_clicked();
+    void on_rotateButtonY_2_clicked();
+    void on_rotateButtonZ_2_clicked();
 };
 
 #endif // MAINWINDOW_H
