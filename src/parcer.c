@@ -1,7 +1,6 @@
 #include "parcer.h"
 #include <string.h>
 
-
 void print_model(Model model) {
         printf("count_v: %d\n", model.vertex_count);
     for(unsigned x = 3; x < (model.vertex_count + 1)*3; x=x+3) {
@@ -19,6 +18,24 @@ void print_model(Model model) {
         }
         printf("\n");
     }
+}
+
+int count_groups(const char *line) {
+    int count_of_vertices = 0;  // Счетчик групп значений
+    int in_group = 0;  // Флаг, указывающий, находимся ли мы внутри группы
+    // Пройдем по строке, начиная с третьего символа, чтобы пропустить 'f '.
+    for (const char *tmp = line + 2; *tmp != '\0'; tmp++) {
+        if (*tmp != ' ' && !in_group) {
+            // Если встретили не пробел и ранее не были в группе, начинаем новую группу.
+            in_group = 1;
+            count_of_vertices++;
+        } else if (*tmp == ' ') {
+            // Если встретили пробел, завершаем группу.
+            in_group = 0;
+        }
+    }
+
+    return count_of_vertices;
 }
 
 // обработка ошибок
@@ -55,15 +72,8 @@ void s21_parser2(const char *filename, Model *model){
             id_vertex ++;
         } else if (line[0] == 'f' && line[1] == ' ') {
             int count_of_vertices = 0;	// количество вхождений подстроки
-            char *tmp = (char *)line;	// временный указатель
-            // Пропускаем 'f ' в начале строки
-            char *token = strtok(tmp, " ");
-            // ищем вхождения
-            while (token != NULL)
-            {
-                count_of_vertices++;
-                token = strtok(NULL, " ");
-            }
+            // ищем группы
+            count_of_vertices = count_groups(line);
             model->facets[id_facet].count_of_vertices = count_of_vertices;
             model->facets[id_facet].numbers_of_vertices = (int * )malloc(count_of_vertices * sizeof(int));
             
@@ -72,9 +82,7 @@ void s21_parser2(const char *filename, Model *model){
         }
     }
     fclose(file);
-
     print_model(*model);
-
 }
 
 
@@ -90,50 +98,19 @@ void s21_get_vector(Model *model, char *line, int id_vertex){
 void s21_get_facet(Model *model, char *line, int id_facet){
 
     char *ptr = (char *)line + 2;  // Пропускаем 'f ' в начале строки
-    
     char *token = strtok(ptr, " ");  // Разбиваем строку по пробелам
     int count = 0;  // Инициализируем счетчик вершин
 
-    printf("%d : ", id_facet);  // Выводим номер грани
-
     while (token != NULL) {
-        // Просто игнорируем всё, что после символа '/'
-        char *space_pos = strchr(token, '/');
-        if (space_pos != NULL) {
-            *space_pos = '\0';  // Прерываем строку на символе '/'
-        }
-
         // Преобразуем оставшуюся часть в индекс вершины
         model->facets[id_facet].numbers_of_vertices[count++] = atoi(token);
-
-        // Выводим номер вершины
-        printf("%s ", token);
-
         // Переходим к следующему токену
         token = strtok(NULL, " ");
     }
-    
-    printf("\n");  // Переход на следующую строку после вывода всех вершин
-// }
-
-
-    // char *ptr = (char *)line + 2;  // Пропускаем 'f ' в начале строки
-    
-    // char *token = strtok(ptr, " ");  // Разбиваем строку по пробелам
-    // int count = 0;  // Инициализируем счетчик вершин
-    // // Пока есть токены (группы вида v/vt/vn)
-    // while (token != NULL) {
-    //     // Преобразуем строку в число (индекс вершины)
-    //     model->facets[id_facet].numbers_of_vertices[count++] = atoi(token);
-    //     printf("%d : %s\n",id_facet, token);
-        
-    //     // Переходим к следующему токену
-    //     token = strtok(NULL, " ");
-    // }
+    printf("%d : %d\n", id_facet, model->facets[id_facet].count_of_vertices);
 }
 
 void s21_cleaner(Model *model) {
-
     // clean array of polygon's
     if(model->facets) {
         for(size_t i = 0; i < model->facets_count; i++){
@@ -145,7 +122,6 @@ void s21_cleaner(Model *model) {
     if(model->vertices) {
         free(model->vertices);
     }
-    // null all counter's
     model->vertex_count = 0;
     model->facets_count = 0;
 } // s21_cleaner
