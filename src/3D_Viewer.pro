@@ -1,6 +1,6 @@
 QT       += core gui
 QT       += openglwidgets
-LIBS   += -lopengl32    # библиотека для windows
+#LIBS   += -lopengl32    # библиотека для windows
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 

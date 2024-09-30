@@ -57,10 +57,10 @@ void GLWidget::paintGL()
         glEnableClientState(GL_VERTEX_ARRAY);     // разрешаем OpenGL использовать вершинный буфер
 
             // РИСУЕМ ПОЛИГОНЫ
-            for(unsigned i = 0; i < model.total_polygons; i++)
+            for(unsigned i = 0; i < model.facets_count; i++)
             {
-                glDrawElements( GL_LINE_LOOP, model.polygons[i].count_of_vertices,
-                                GL_UNSIGNED_INT, model.polygons[i].numbers_of_vertices);
+                glDrawElements( GL_LINE_LOOP, model.facets[i].count_of_vertices,
+                                GL_UNSIGNED_INT, model.facets[i].numbers_of_vertices);
             }
 
             if(property.pointType) {
@@ -74,7 +74,7 @@ void GLWidget::paintGL()
                 }
 
                 // РИСУЕМ ТОЧКИ
-                glDrawArrays(GL_POINTS, 1, model.total_vertices);
+                glDrawArrays(GL_POINTS, 1, model.vertex_count);
             }
 
         glDisableClientState(GL_VERTEX_ARRAY);    // выключаем вершинный буфер

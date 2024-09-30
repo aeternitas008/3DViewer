@@ -37,7 +37,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = 3D_Viewer1.0.0
-DISTDIR = /Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/open_file/.tmp/3D_Viewer1.0.0
+DISTDIR = /Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/.tmp/3D_Viewer1.0.0
 LINK          = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
 LFLAGS        = -stdlib=libc++ -headerpad_max_install_names $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -mmacosx-version-min=11.0 -Wl,-rpath,@executable_path/../Frameworks -Wl,-rpath,/usr/local/Qt-6.6.2/lib
 LIBS          = $(SUBLIBS) /usr/local/Qt-6.6.2/lib/libQt6OpenGLWidgets.dylib /usr/local/Qt-6.6.2/lib/libQt6OpenGL.dylib /usr/local/Qt-6.6.2/lib/libQt6Widgets.dylib /usr/local/Qt-6.6.2/lib/libQt6Gui.dylib -framework AppKit -framework ImageIO -framework Metal /usr/local/Qt-6.6.2/lib/libQt6Core.dylib -framework IOKit -framework DiskArbitration -framework AGL -framework OpenGL   
@@ -382,7 +382,7 @@ EXPORT_VALID_ARCHS = x86_64
 EXPORT_DEFAULT_ARCHS = x86_64
 EXPORT_ARCHS = $(filter $(EXPORT_VALID_ARCHS), $(if $(ARCHS), $(ARCHS), $(if $(EXPORT_DEFAULT_ARCHS), $(EXPORT_DEFAULT_ARCHS), $(EXPORT_VALID_ARCHS))))
 EXPORT_ARCH_ARGS = $(foreach arch, $(if $(EXPORT_ARCHS), $(EXPORT_ARCHS), $(EXPORT_VALID_ARCHS)), -arch $(arch))
-EXPORT__PRO_FILE_ = /Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/open_file/3D_Viewer.pro
+EXPORT__PRO_FILE_ = /Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/3D_Viewer.pro
 
 
 include /usr/local/Qt-6.6.2/mkspecs/features/mac/sdk.mk
@@ -1240,7 +1240,7 @@ moc_mainwindow.cpp: mainwindow.h \
 		/usr/local/Qt-6.6.2/include/QtWidgets/qtabwidget.h \
 		moc_predefs.h \
 		/usr/local/Qt-6.6.2/libexec/moc
-	/usr/local/Qt-6.6.2/libexec/moc $(DEFINES) --include /Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/open_file/moc_predefs.h -I/usr/local/Qt-6.6.2/mkspecs/macx-clang -I/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/open_file -I/usr/local/Qt-6.6.2/include -I/usr/local/Qt-6.6.2/include/QtOpenGLWidgets -I/usr/local/Qt-6.6.2/include/QtOpenGL -I/usr/local/Qt-6.6.2/include/QtWidgets -I/usr/local/Qt-6.6.2/include/QtGui -I/usr/local/Qt-6.6.2/include/QtCore -I/usr/local/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include mainwindow.h -o moc_mainwindow.cpp
+	/usr/local/Qt-6.6.2/libexec/moc $(DEFINES) --include /Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/moc_predefs.h -I/usr/local/Qt-6.6.2/mkspecs/macx-clang -I/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src -I/usr/local/Qt-6.6.2/include -I/usr/local/Qt-6.6.2/include/QtOpenGLWidgets -I/usr/local/Qt-6.6.2/include/QtOpenGL -I/usr/local/Qt-6.6.2/include/QtWidgets -I/usr/local/Qt-6.6.2/include/QtGui -I/usr/local/Qt-6.6.2/include/QtCore -I/usr/local/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include mainwindow.h -o moc_mainwindow.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -1606,34 +1606,7 @@ glwidget.o: glwidget.cpp glwidget.h \
 		/usr/local/Qt-6.6.2/include/QtGui/qsurfaceformat.h \
 		/usr/local/Qt-6.6.2/include/QtGui/qopengl.h \
 		/usr/local/Qt-6.6.2/include/QtGui/qopenglext.h \
-		parcer.h \
-		/usr/local/Qt-6.6.2/include/QtWidgets/QFileDialog \
-		/usr/local/Qt-6.6.2/include/QtWidgets/qfiledialog.h \
-		/usr/local/Qt-6.6.2/include/QtCore/qdir.h \
-		/usr/local/Qt-6.6.2/include/QtCore/qfile.h \
-		/usr/local/Qt-6.6.2/include/QtCore/qfiledevice.h \
-		/usr/local/Qt-6.6.2/include/QtCore/qfileinfo.h \
-		/usr/local/Qt-6.6.2/include/QtCore/qdatetime.h \
-		/usr/local/Qt-6.6.2/include/QtCore/qcalendar.h \
-		/usr/local/Qt-6.6.2/include/QtCore/qlocale.h \
-		/usr/local/Qt-6.6.2/include/QtCore/qtimezone.h \
-		/usr/local/Qt-6.6.2/include/QtWidgets/qdialog.h \
-		/usr/local/Qt-6.6.2/include/QtWidgets/QLineEdit \
-		/usr/local/Qt-6.6.2/include/QtWidgets/qlineedit.h \
-		/usr/local/Qt-6.6.2/include/QtWidgets/qframe.h \
-		/usr/local/Qt-6.6.2/include/QtGui/qtextcursor.h \
-		/usr/local/Qt-6.6.2/include/QtGui/qtextdocument.h \
-		/usr/local/Qt-6.6.2/include/QtGui/qtextformat.h \
-		/usr/local/Qt-6.6.2/include/QtGui/qpen.h \
-		/usr/local/Qt-6.6.2/include/QtGui/qtextoption.h \
-		/usr/local/Qt-6.6.2/include/QtWidgets/QHBoxLayout \
-		/usr/local/Qt-6.6.2/include/QtWidgets/qboxlayout.h \
-		/usr/local/Qt-6.6.2/include/QtWidgets/qlayout.h \
-		/usr/local/Qt-6.6.2/include/QtWidgets/qlayoutitem.h \
-		/usr/local/Qt-6.6.2/include/QtWidgets/qgridlayout.h \
-		/usr/local/Qt-6.6.2/include/QtWidgets/QPushButton \
-		/usr/local/Qt-6.6.2/include/QtWidgets/qpushbutton.h \
-		/usr/local/Qt-6.6.2/include/QtWidgets/qabstractbutton.h
+		parcer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o glwidget.o glwidget.cpp
 
 main.o: main.cpp /usr/local/Qt-6.6.2/include/QtWidgets/QApplication \
@@ -1988,7 +1961,19 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		/usr/local/Qt-6.6.2/include/QtGui/QTransform \
 		/usr/local/Qt-6.6.2/include/QtCore/qnativeinterface.h \
 		/usr/local/Qt-6.6.2/include/QtWidgets/qtabwidget.h \
-		ui_mainwindow.h
+		ui_mainwindow.h \
+		/usr/local/Qt-6.6.2/include/QtWidgets/QFileDialog \
+		/usr/local/Qt-6.6.2/include/QtWidgets/qfiledialog.h \
+		/usr/local/Qt-6.6.2/include/QtCore/qdir.h \
+		/usr/local/Qt-6.6.2/include/QtCore/qfile.h \
+		/usr/local/Qt-6.6.2/include/QtCore/qfiledevice.h \
+		/usr/local/Qt-6.6.2/include/QtCore/qfileinfo.h \
+		/usr/local/Qt-6.6.2/include/QtCore/qdatetime.h \
+		/usr/local/Qt-6.6.2/include/QtCore/qcalendar.h \
+		/usr/local/Qt-6.6.2/include/QtCore/qlocale.h \
+		/usr/local/Qt-6.6.2/include/QtCore/qtimezone.h \
+		/usr/local/Qt-6.6.2/include/QtWidgets/qdialog.h \
+		parcer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o mainwindow.cpp
 
 parcer.o: parcer.c parcer.h

@@ -94,7 +94,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QToolBox" name="glWidgetMenu">
+   <widget class="QToolBox" name="toolBox">
     <property name="geometry">
      <rect>
       <x>600</x>
@@ -440,9 +440,6 @@
        <height>395</height>
       </rect>
      </property>
-     <property name="contextMenuPolicy">
-      <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
-     </property>
      <attribute name="icon">
       <iconset theme="QIcon::ThemeIcon::DocumentProperties"/>
      </attribute>
@@ -581,9 +578,9 @@
      <widget class="QRadioButton" name="radioButton_2">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>20</x>
         <y>30</y>
-        <width>81</width>
+        <width>60</width>
         <height>20</height>
        </rect>
       </property>
@@ -594,9 +591,9 @@
      <widget class="QRadioButton" name="radioButton">
       <property name="geometry">
        <rect>
-        <x>90</x>
+        <x>110</x>
         <y>30</y>
-        <width>91</width>
+        <width>60</width>
         <height>20</height>
        </rect>
       </property>
@@ -607,7 +604,7 @@
      <widget class="QLabel" name="lineLabel_2">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>20</x>
         <y>110</y>
         <width>50</width>
         <height>20</height>
@@ -636,7 +633,7 @@
      <widget class="QLabel" name="lineLabel_3">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>20</x>
         <y>140</y>
         <width>50</width>
         <height>20</height>
@@ -678,7 +675,7 @@
      <widget class="QLabel" name="pointLabel_3">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>20</x>
         <y>250</y>
         <width>50</width>
         <height>20</height>
@@ -694,7 +691,7 @@
      <widget class="QLabel" name="pointLabel_2">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>20</x>
         <y>220</y>
         <width>50</width>
         <height>20</height>
@@ -723,7 +720,7 @@
      <widget class="QLabel" name="pointLabel_1">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>20</x>
         <y>190</y>
         <width>50</width>
         <height>20</height>
@@ -752,7 +749,7 @@
      <widget class="QLabel" name="label_14">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>20</x>
         <y>300</y>
         <width>40</width>
         <height>20</height>
@@ -781,9 +778,9 @@
      <widget class="QRadioButton" name="radioButton_3">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>20</x>
         <y>80</y>
-        <width>71</width>
+        <width>60</width>
         <height>20</height>
        </rect>
       </property>
@@ -794,14 +791,14 @@
      <widget class="QRadioButton" name="radioButton_4">
       <property name="geometry">
        <rect>
-        <x>90</x>
+        <x>110</x>
         <y>80</y>
-        <width>91</width>
+        <width>60</width>
         <height>20</height>
        </rect>
       </property>
       <property name="text">
-       <string>Dashed</string>
+       <string>Stipple</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="lineEdit_4">
@@ -846,7 +843,7 @@
      <string>File Name</string>
     </property>
    </widget>
-   <widget class="QLabel" name="labelVertex">
+   <widget class="QLabel" name="pathFile_2">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -866,7 +863,7 @@
      <string>ver</string>
     </property>
    </widget>
-   <widget class="QLabel" name="labelPolygon">
+   <widget class="QLabel" name="pathFile_3">
     <property name="geometry">
      <rect>
       <x>110</x>
@@ -886,7 +883,7 @@
      <string>pol</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="countVertex">
+   <widget class="QLineEdit" name="lineEdit_6">
     <property name="geometry">
      <rect>
       <x>50</x>
@@ -896,7 +893,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLineEdit" name="countPolygon">
+   <widget class="QLineEdit" name="lineEdit_7">
     <property name="geometry">
      <rect>
       <x>150</x>
