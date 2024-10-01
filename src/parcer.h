@@ -61,6 +61,8 @@ typedef struct {
     Polygon *polygons;
     unsigned int total_vertices;  // кол во вершин
     unsigned int polygons_count;  // кол во граней
+    double max[3];
+    double min[3];
 } Model;
 
 void s21_parser(Model *model);

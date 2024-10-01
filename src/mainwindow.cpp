@@ -30,18 +30,14 @@ void MainWindow::on_openButton_clicked()
 
     if (!strQ.isEmpty()) {
         // Обновляем QLabel с путем к файлу
-        ui->pathFile->setText(strQ);
+        // ui->pathFile->setText(strQ);
+        QFileInfo fileInfo(strQ);
+        QString fileName = fileInfo.fileName();
+        ui->pathFile->setText(fileName);
 
         // Преобразуем QString в C-строку
         std::string strStd = strQ.toStdString();   
         const char *str = strStd.c_str();  // Используем c_str() для получения C-строки
-       
-        //ui обновляется только после выполнения функции
-        // sleep(10);
-      
-
-        // s21_cleaner(&ui->glWidget->model);
-        // s21_parser(&ui->glWidget->model);
 
         // Запускаем парсер с выбранным файлом
         s21_cleaner(&ui->glWidget->model);

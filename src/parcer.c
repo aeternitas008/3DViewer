@@ -18,6 +18,9 @@ void print_model(Model model) {
         }
         printf("\n");
     }
+
+    printf("max x y z: %f %f %f\n", model.max[0], model.max[1], model.max[2]);
+    printf("min x y z: %f %f %f\n", model.min[0], model.min[1], model.min[2]);
 }
 
 int count_groups(const char *line) {
@@ -37,6 +40,7 @@ int count_groups(const char *line) {
     return count_of_vertices;
 }
 
+
 // обработка ошибок
 void s21_parser2(const char *filename, Model *model){
     FILE *file =fopen(filename, "r");
@@ -48,6 +52,7 @@ void s21_parser2(const char *filename, Model *model){
     //вершины начинаем с 1 чтобы было удобно строить грани
     model->total_vertices=0;
     model->polygons_count=0;
+
     char line[255];
     while (fgets(line, sizeof(line), file)){
         if(line[0]== 'v' && line[1] == ' '){
@@ -82,13 +87,33 @@ void s21_parser2(const char *filename, Model *model){
     fclose(file);
 }
 
+void set_extremum(Model *model) {
+    for (int i = 0; i < 3; i++) {
+        model->max[i] = model->vertices[i + 3];
+        model->min[i] = model->vertices[i + 3];
+    }
+}
+
+void check_extremum(Model *model, int id_vertex) {
+    for (int i = 0; i < 3; i++) {
+        if ( model->vertices[id_vertex * 3 + i] > model->max[i]) model->max[i] = model->vertices[id_vertex * 3 + i] ;
+        if ( model->vertices[id_vertex * 3 + i] < model->min[i]) model->min[i] = model->vertices[id_vertex * 3 + i] ;
+    }
+}
 
 // обработка ошибок
 void s21_get_vector(Model *model, char *line, int id_vertex){
     char *ptr = line + 2;
-    model->vertices[id_vertex * 3] = strtod(ptr, &ptr);
-    model->vertices[id_vertex * 3 + 1] = strtod(ptr, &ptr);
-    model->vertices[id_vertex * 3 + 2] = strtod(ptr, &ptr);
+    for (int i = id_vertex * 3; i < id_vertex * 3 + 3; i++) {
+        model->vertices[i] = strtod(ptr, &ptr);
+    }
+
+    if (id_vertex == 1) {
+        set_extremum(model);
+    } else {
+        check_extremum(model, id_vertex);
+    }
+
 }
 
 // обработка ошибок
