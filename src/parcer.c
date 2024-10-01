@@ -76,7 +76,6 @@ void s21_parser2(const char *filename, Model *model){
             count_of_vertices = count_groups(line);
             model->facets[id_facet].count_of_vertices = count_of_vertices;
             model->facets[id_facet].numbers_of_vertices = (int * )malloc(count_of_vertices * sizeof(int));
-            
             s21_get_facet(model, line, id_facet);
             id_facet++;
         }
