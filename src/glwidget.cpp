@@ -3,30 +3,31 @@
 // конструктор модуля GLWidget
 GLWidget::GLWidget(QWidget* parent) : QOpenGLWidget(parent)
 {
-    // property = {{0}, {0.8, 0.9, 0}, {1, 1, 1}, 5.0, 2, 1.0, 0, 0};
-    // qDebug("HELLO");
+    s21_cleaner(&model);
+    s21_parser(&model);
     // qDebug()<<QString::number(model.polygons[0].numbers_of_vertices[0]);
 
 }
 
 void GLWidget::initializeGL()
 {
-    // qDebug("INITIALIZE_GL");
-
-    glMatrixMode(GL_MODELVIEW);  // выбираем матрицу
+    // работа с матрицами
+    glMatrixMode(GL_PROJECTION);  // выбираем матрицу
     glLoadIdentity();             // загружаем единичную матрицу?
-
     // определяем проекцию и систему координат (xLeft,xRight,yBottom,yTop,zNear,zFar)
     // умножает текущую матрицу на орфографическую матрицу
+    // glOrtho(-3, 3, -3, 3, 1, 7);  // центральная проекция
+    glFrustum(-1, 1, -1, 1, 1, 7);  // параллельная проекция
 
-    // glOrtho(-1, 1, -1, 1, 1, 3);  // центральная проекция
-    glFrustum(-1, 1, -1, 1, 1, 3);  // параллельная проекция
+    glMatrixMode(GL_MODELVIEW);  // выбираем матрицу
+    glLoadIdentity();
+    glTranslated(0, 0, -3);
+
+    glEnable(GL_DEPTH_BUFFER_BIT);
 }
 
 void GLWidget::resizeGL(int w, int h)
 {
-    // qDebug("RESIZE_GL");
-
     glViewport(0, 0, w, h);
 }
 
@@ -57,10 +58,10 @@ void GLWidget::paintGL()
         glEnableClientState(GL_VERTEX_ARRAY);     // разрешаем OpenGL использовать вершинный буфер
 
             // РИСУЕМ ПОЛИГОНЫ
-            for(unsigned i = 0; i < model.facets_count; i++)
+            for(unsigned i = 0; i < model.polygons_count; i++)
             {
-                glDrawElements( GL_LINE_LOOP, model.facets[i].count_of_vertices,
-                                GL_UNSIGNED_INT, model.facets[i].numbers_of_vertices);
+                glDrawElements( GL_LINE_LOOP, model.polygons[i].count_of_vertices,
+                                GL_UNSIGNED_INT, model.polygons[i].numbers_of_vertices);
             }
 
             if(property.pointType) {
@@ -74,7 +75,7 @@ void GLWidget::paintGL()
                 }
 
                 // РИСУЕМ ТОЧКИ
-                glDrawArrays(GL_POINTS, 1, model.vertex_count);
+                glDrawArrays(GL_POINTS, 1, model.total_vertices);
             }
 
         glDisableClientState(GL_VERTEX_ARRAY);    // выключаем вершинный буфер

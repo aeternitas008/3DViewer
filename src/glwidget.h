@@ -14,6 +14,7 @@
 
 extern "C" {
     #include "parcer.h"
+    #include "affine_transformations.h"
 }
 
 struct View
@@ -39,10 +40,10 @@ protected:
     void initializeGL() override;
     void resizeGL(int w, int h) override;
     void paintGL() override;
-
+// {0.8, 0.9, 0.0}
 public:
     Model model = {nullptr, nullptr, 0, 0};
-    View property = {{0}, {0.8, 0.9, 0}, {1, 1, 1}, 5.0, 2, 1.0, 0, 0}; // данные по умолчанию
+    View property = {{0}, {0.9, 0.7, 0.2}, {1, 1, 1}, 5.0, 2, 1.0, 0, 0}; // данные по умолчанию
 
     GLWidget(QWidget* parent = nullptr);
     ~GLWidget();

@@ -58,9 +58,9 @@ typedef struct {
 
 typedef struct {
     double *vertices;
-    Polygon *facets;
-    unsigned int vertex_count;  // кол во вершин
-    unsigned int facets_count;  // кол во граней
+    Polygon *polygons;
+    unsigned int total_vertices;  // кол во вершин
+    unsigned int polygons_count;  // кол во граней
 } Model;
 
 void s21_parser(Model *model);
