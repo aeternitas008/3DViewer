@@ -70,4 +70,6 @@ void s21_get_facet(Model *model, char *line, int x);
 
 void s21_cleaner(Model *model);
 
+void print_model(Model model);
+
 #endif // PARCER_H

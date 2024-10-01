@@ -34,7 +34,6 @@ int count_groups(const char *line) {
             in_group = 0;
         }
     }
-
     return count_of_vertices;
 }
 
@@ -59,7 +58,7 @@ void s21_parser2(const char *filename, Model *model){
     }
 
     rewind(file);
-    model->vertices = (double *)malloc(model->vertex_count * sizeof(double) * 3 + 3);
+    model->vertices = (double *)calloc((model->vertex_count + 1) * 3, sizeof(double));
     model->facets = (Polygon *)malloc(model->facets_count * sizeof(Polygon));
     model->vertices[0] = 0;
     model->vertices[1] = 0;
@@ -81,7 +80,6 @@ void s21_parser2(const char *filename, Model *model){
         }
     }
     fclose(file);
-    print_model(*model);
 }
 
 
