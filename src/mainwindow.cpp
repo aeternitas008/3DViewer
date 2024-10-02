@@ -194,6 +194,7 @@ void MainWindow::on_radioTypeParallel_clicked()
 void MainWindow::on_radioLineDashed_clicked()
 {
     ui->glWidget->property.line_type = 1;
+    QMessageBox::information(this, "type", "dashed");
      ui->glWidget->update();
 }
 
@@ -201,22 +202,7 @@ void MainWindow::on_radioLineDashed_clicked()
 void MainWindow::on_radioLineSolid_clicked()
 {
     ui->glWidget->property.line_type = 0;
+    QMessageBox::information(this, "type", "solid");
      ui->glWidget->update();
 }
 
-
-void MainWindow::on_sliderLineWidth_valueChanged(int value)
-{
-    ui->lineEditLineWidth->setText(QString::number(value));
-}
-
-
-void MainWindow::on_lineEditLineWidth_returnPressed()
-{
-    this->clearFocus();
-    ui->sliderPointSize->setFocus();
-}
-
-
-
-QStringList colorNames = {"White", "Black", "Red", "Green", "Blue", "Yellow", "Cyan", "Magenta"};
