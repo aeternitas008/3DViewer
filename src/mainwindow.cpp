@@ -42,11 +42,12 @@ void MainWindow::on_openButton_clicked()
         // Запускаем парсер с выбранным файлом
         s21_cleaner(&ui->glWidget->model);
         s21_parser2(str, &ui->glWidget->model);
+        // s21_parser(&ui->glWidget->model);
         ui->countVertex->setText(QString::number(ui->glWidget->model.total_vertices));
         ui->countPolygon->setText(QString::number(ui->glWidget->model.polygons_count));
         print_extremum(ui->glWidget->model);
         // вывести вектора и модель
-        // print_model(ui->glWidget->model);
+        print_model(ui->glWidget->model);
     }
 }
 
