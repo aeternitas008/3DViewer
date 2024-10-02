@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /*
  *  ПОЛИГОНЫ
@@ -58,11 +59,9 @@ typedef struct {
 
 typedef struct {
     double *vertices;
-    Polygon *polygons;
-    unsigned int total_vertices;  // кол во вершин
-    unsigned int polygons_count;  // кол во граней
-    double max[3];
-    double min[3];
+    Polygon *facets;
+    unsigned int vertex_count;  // кол во вершин
+    unsigned int facets_count;  // кол во граней
 } Model;
 
 void s21_parser(Model *model);
@@ -71,7 +70,5 @@ void s21_get_vector(Model *model, char *line, int x);
 void s21_get_facet(Model *model, char *line, int x);
 
 void s21_cleaner(Model *model);
-
-void print_model(Model model);
 
 #endif // PARCER_H
