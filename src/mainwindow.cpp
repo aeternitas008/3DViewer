@@ -185,6 +185,7 @@ void MainWindow::on_radioTypeCentral_clicked()
 void MainWindow::on_radioTypeParallel_clicked()
 {
     ui->glWidget->property.projection_type = 1;
+    QMessageBox::information(this, "type", "parallel");
     // ui->glWidget->update();
 //    ui->glWidget->initializeGL();
 }
@@ -193,6 +194,7 @@ void MainWindow::on_radioTypeParallel_clicked()
 void MainWindow::on_radioLineDashed_clicked()
 {
     ui->glWidget->property.line_type = 1;
+    QMessageBox::information(this, "type", "dashed");
      ui->glWidget->update();
 }
 
@@ -200,59 +202,7 @@ void MainWindow::on_radioLineDashed_clicked()
 void MainWindow::on_radioLineSolid_clicked()
 {
     ui->glWidget->property.line_type = 0;
+    QMessageBox::information(this, "type", "solid");
      ui->glWidget->update();
 }
 
-
-void MainWindow::on_sliderLineWidth_valueChanged(int value)
-{
-    ui->lineEditLineWidth->setText(QString::number(value));
-    ui->glWidget->property.line_width = value;
-    ui->glWidget->update();
-}
-
-
-void MainWindow::on_lineEditLineWidth_returnPressed()
-{
-    int value = ui->lineEditLineWidth->text().toInt();
-    ui->sliderLineWidth->setValue(value);
-//    this->clearFocus();
-    ui->glWidget->property.line_width = value;
-//    ui->sliderPointSize->setFocus();
-    ui->lineEditLineWidth->clearFocus();
-    ui->glWidget->update();
-}
-
-
-void MainWindow::on_sliderPointSize_valueChanged(int value)
-{
-    ui->lineEditPointSize->setText(QString::number(value));
-    ui->glWidget->property.point_size = value;
-    ui->glWidget->update();
-}
-
-
-void MainWindow::on_lineEditPointSize_returnPressed()
-{
-//    this->clearFocus();
-    int value = ui->lineEditPointSize->text().toInt();
-    ui->sliderPointSize->setValue(value);
-
-    ui->glWidget->property.point_size = value;
-    ui->glWidget->update();
-
-    ui->lineEditPointSize->clearFocus();
-}
-
-
-void MainWindow::on_comboBoxPointType_currentIndexChanged(int index)
-{
-    if (index == 0) {
-        ui->glWidget->property.point_type = 2;
-    } else if (index == 1) {
-        ui->glWidget->property.point_type = 1;
-    } else {
-        ui->glWidget->property.point_type = 0;
-    }
-    ui->glWidget->update();
-}

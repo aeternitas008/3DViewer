@@ -47,11 +47,14 @@ private slots:
     void on_radioTypeParallel_clicked();
     void on_radioLineDashed_clicked();
     void on_radioLineSolid_clicked();
+<<<<<<< HEAD
     void on_sliderLineWidth_valueChanged(int value);
     void on_lineEditLineWidth_returnPressed();
     void on_sliderPointSize_valueChanged(int value);
     void on_lineEditPointSize_returnPressed();
     void on_comboBoxPointType_currentIndexChanged(int index);
+=======
+>>>>>>> c7718eb (start settings)
 };
 
 #endif // MAINWINDOW_H

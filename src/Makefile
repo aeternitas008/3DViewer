@@ -1996,12 +1996,15 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		/usr/local/Qt-6.6.2/include/QtCore/qlocale.h \
 		/usr/local/Qt-6.6.2/include/QtCore/qtimezone.h \
 		/usr/local/Qt-6.6.2/include/QtWidgets/qdialog.h \
+<<<<<<< HEAD
 		/usr/local/Qt-6.6.2/include/QtWidgets/QRadioButton \
 		/usr/local/Qt-6.6.2/include/QtWidgets/qradiobutton.h \
 		/usr/local/Qt-6.6.2/include/QtWidgets/qabstractbutton.h \
 		/usr/local/Qt-6.6.2/include/QtWidgets/QMessageBox \
 		/usr/local/Qt-6.6.2/include/QtWidgets/qmessagebox.h \
 		/usr/local/Qt-6.6.2/include/QtWidgets/qdialogbuttonbox.h \
+=======
+>>>>>>> c7718eb (start settings)
 		parcer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o mainwindow.cpp
 

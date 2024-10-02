@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!-- Written by QtCreator 7.0.0, 2024-10-03T18:08:48. -->
 =======
 <<<<<<< HEAD
@@ -9,6 +10,9 @@
 <!-- Written by QtCreator 7.0.0, 2024-10-02T19:42:29. -->
 >>>>>>> 851781c (make)
 >>>>>>> fd99ec6 (make)
+=======
+<!-- Written by QtCreator 7.0.0, 2024-10-02T21:20:44. -->
+>>>>>>> c7718eb (start settings)
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
