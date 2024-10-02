@@ -12,4 +12,5 @@ typedef enum {X = 3, Y, Z} Axis_t;
     void s21_rotate_back(Model *model, double value, Axis_t axis);
 
 
+
 #endif // AFFINE_TRANSFORMATIONS_H
