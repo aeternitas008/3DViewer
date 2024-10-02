@@ -194,7 +194,6 @@ void MainWindow::on_radioTypeParallel_clicked()
 void MainWindow::on_radioLineDashed_clicked()
 {
     ui->glWidget->property.line_type = 1;
-    QMessageBox::information(this, "type", "dashed");
      ui->glWidget->update();
 }
 
@@ -202,7 +201,6 @@ void MainWindow::on_radioLineDashed_clicked()
 void MainWindow::on_radioLineSolid_clicked()
 {
     ui->glWidget->property.line_type = 0;
-    QMessageBox::information(this, "type", "solid");
      ui->glWidget->update();
 }
 
