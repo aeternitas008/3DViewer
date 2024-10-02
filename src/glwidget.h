@@ -14,6 +14,7 @@
 
 extern "C" {
     #include "parcer.h"
+    #include "properties.h"
     #include "affine_transformations.h"
 }
 
@@ -33,6 +34,7 @@ struct View
 };
 
 
+
 class GLWidget : public QOpenGLWidget
 {
 
@@ -43,7 +45,10 @@ protected:
 // {0.8, 0.9, 0.0}
 public:
     Model model = {nullptr, nullptr, 0, 0};
-    View property = {{0}, {0.9, 0.7, 0.2}, {1, 1, 1}, 5.0, 2, 1.0, 0, 0}; // данные по умолчанию
+    Properties property = get_start_props();
+
+    // View property = {{0}, {0.9, 0.7, 0.2}, {1, 1, 1}, 5.0, 2, 1.0, 0, 0}; // данные по умолчанию
+
 
     GLWidget(QWidget* parent = nullptr);
     ~GLWidget();

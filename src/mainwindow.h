@@ -43,6 +43,10 @@ private slots:
     void on_rotateButtonX_2_clicked();
     void on_rotateButtonY_2_clicked();
     void on_rotateButtonZ_2_clicked();
+    void on_radioTypeCentral_clicked();
+    void on_radioTypeParallel_clicked();
+    void on_radioLineDashed_clicked();
+    void on_radioLineSolid_clicked();
 };
 
 #endif // MAINWINDOW_H

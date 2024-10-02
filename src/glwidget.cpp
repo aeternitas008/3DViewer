@@ -16,11 +16,15 @@ void GLWidget::initializeGL()
     glLoadIdentity();             // загружаем единичную матрицу?
    
     // тут наоборот ortho это параллельная а frustum это центральная/перспективная
-    
+
+    // @todo как обновить контекст отображения в процессе работы?
+    if(property.projection_type) {
     // определяем проекцию и систему координат (xLeft,xRight,yBottom,yTop,zNear,zFar)
     // умножает текущую матрицу на орфографическую матрицу
-    // glOrtho(-3, 3, -3, 3, 1, 7);  // центральная проекция
-    glFrustum(-1, 1, -1, 1, 1, 7);  // параллельная проекция
+        glOrtho(-3, 3, -3, 3, 1, 7);  // ortho это параллельная 
+    } else {
+        glFrustum(-1, 1, -1, 1, 1, 7);  // frustum это центральная
+    }
 
     glMatrixMode(GL_MODELVIEW);  // выбираем матрицу
     glLoadIdentity();
@@ -41,19 +45,24 @@ void GLWidget::paintGL()
         // qDebug("PAINT_GL");
 
         //задам цвет и очищаем экран в этот цвет
-        glClearColor(property.backColor[0], property.backColor[1], property.backColor[2], 0);
+        glClearColor(property.back_color[0], property.back_color[1], property.back_color[2], 0);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         // задаём цвет для рисования
-        glColor3fv(property.lineColor);
+        glColor3fv(property.line_color);
 
         // настройки линий
-        glLineWidth(property.lineWidth);          // толщина линий
+        glLineWidth(property.line_width);          // толщина линий
 
-        if(property.lineType) {
+        // @todo may be shorter
+        if(property.line_type == 1) {
             glLineStipple(1, 0x000F);              // прерывистость линий
             glEnable(GL_LINE_STIPPLE);             // включает рисование прерывистой линии
-        }// возможно сделать property.lineType = 0x000F || 0xFFFF и вставить в glLineStipple (убрать иф)
+        } else {
+            glLineStipple(1, 0xFFFF);              
+            glDisable(GL_LINE_STIPPLE);  
+        }
+            // возможно сделать property.lineType = 0x000F || 0xFFFF и вставить в glLineStipple (убрать иф)
 
         // загружаем координаты точек в вершинный буфер
         glVertexPointer(3, GL_DOUBLE, 0, model.vertices);
@@ -67,13 +76,13 @@ void GLWidget::paintGL()
                                 GL_UNSIGNED_INT, model.polygons[i].numbers_of_vertices);
             }
 
-            if(property.pointType) {
+            if(property.point_type) {
 
                 // настройки точек
-                glPointSize(property.pointSize);  // размер точек
-                glColor3fv(property.pointColor);  // задаём цвет для рисования точек
+                glPointSize(property.point_size);  // размер точек
+                glColor3fv(property.point_color);  // задаём цвет для рисования точек
 
-                if(property.pointType > 1) {
+                if(property.point_type > 1) {
                     glEnable(GL_POINT_SMOOTH);    // форма точек (без этого квадратные)
                 }
 
