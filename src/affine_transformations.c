@@ -26,6 +26,7 @@ void s21_rotate_forward(Model *model, double value, Axis_t axis) {
 
     value *= M_PI / 180;
 
+
     for (size_t i = 3; i < (model->total_vertices + 1) * 3; i += 3) {
 
         double x = model->vertices[i];
