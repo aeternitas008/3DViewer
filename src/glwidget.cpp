@@ -4,7 +4,7 @@
 GLWidget::GLWidget(QWidget* parent) : QOpenGLWidget(parent)
 {
     s21_cleaner(&model);
-    s21_parser(&model);
+    // s21_parser(&model);
     // qDebug()<<QString::number(model.polygons[0].numbers_of_vertices[0]);
 
 }
@@ -14,6 +14,9 @@ void GLWidget::initializeGL()
     // работа с матрицами
     glMatrixMode(GL_PROJECTION);  // выбираем матрицу
     glLoadIdentity();             // загружаем единичную матрицу?
+   
+    // тут наоборот ortho это параллельная а frustum это центральная/перспективная
+    
     // определяем проекцию и систему координат (xLeft,xRight,yBottom,yTop,zNear,zFar)
     // умножает текущую матрицу на орфографическую матрицу
     // glOrtho(-3, 3, -3, 3, 1, 7);  // центральная проекция

@@ -1,6 +1,11 @@
 #include "parcer.h"
 #include <string.h>
 
+void print_extremum(Model model) {
+    printf("max x y z: %f %f %f\n", model.max[0], model.max[1], model.max[2]);
+    printf("min x y z: %f %f %f\n", model.min[0], model.min[1], model.min[2]);
+}
+
 void print_model(Model model) {
         printf("count_v: %d\n", model.total_vertices);
     for(unsigned x = 3; x < (model.total_vertices + 1)*3; x=x+3) {
@@ -19,9 +24,10 @@ void print_model(Model model) {
         printf("\n");
     }
 
-    printf("max x y z: %f %f %f\n", model.max[0], model.max[1], model.max[2]);
-    printf("min x y z: %f %f %f\n", model.min[0], model.min[1], model.min[2]);
+    // printf("max x y z: %f %f %f\n", model.max[0], model.max[1], model.max[2]);
+    // printf("min x y z: %f %f %f\n", model.min[0], model.min[1], model.min[2]);
 }
+
 
 int count_groups(const char *line) {
     int count_of_vertices = 0;  // Счетчик групп значений
@@ -129,7 +135,6 @@ void s21_get_facet(Model *model, char *line, int id_facet){
         // Переходим к следующему токену
         token = strtok(NULL, " ");
     }
-    printf("%d : %d\n", id_facet, model->polygons[id_facet].count_of_vertices);
 }
 
 void s21_cleaner(Model *model) {

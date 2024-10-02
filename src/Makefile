@@ -2015,6 +2015,8 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		/usr/local/Qt-6.6.2/include/QtWidgets/qrubberband.h \
 		/usr/local/Qt-6.6.2/include/QtWidgets/qframe.h \
 		/usr/local/Qt-6.6.2/include/QtCore/qabstractitemmodel.h \
+		/usr/local/Qt-6.6.2/include/QtWidgets/QGroupBox \
+		/usr/local/Qt-6.6.2/include/QtWidgets/qgroupbox.h \
 		/usr/local/Qt-6.6.2/include/QtWidgets/QLabel \
 		/usr/local/Qt-6.6.2/include/QtWidgets/qlabel.h \
 		/usr/local/Qt-6.6.2/include/QtGui/qpicture.h \
