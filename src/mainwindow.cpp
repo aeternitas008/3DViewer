@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QFileDialog>
+#include <QRadioButton>
+#include <QMessageBox>
 
 #include <unistd.h>
 
@@ -10,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    // QObject::connect(&ui->radioTypeCentral, &QRadioButton::checked, onClick);
 }
 
 MainWindow::~MainWindow()
@@ -49,7 +52,6 @@ void MainWindow::on_openButton_clicked()
         // print_model(ui->glWidget->model);
     }
 }
-
 // ------------- КНОПКИ СДВИГА -------------
 
 void MainWindow::on_leftButton_clicked()
@@ -165,5 +167,41 @@ void MainWindow::on_rotateButtonZ_2_clicked()
 {
     s21_rotate_back(&ui->glWidget->model, 5.0, Z);
     ui->glWidget->update();
+}
+
+
+    // как обновить тип проекции??
+void MainWindow::on_radioTypeCentral_clicked()
+{
+    // как обновить тип проекции??
+    ui->glWidget->property.projection_type = 0;
+    QMessageBox::information(this, "type", "central");
+    // ui->glWidget->update();
+//    ui->glWidget->initializeGL();
+}
+
+
+void MainWindow::on_radioTypeParallel_clicked()
+{
+    ui->glWidget->property.projection_type = 1;
+    QMessageBox::information(this, "type", "parallel");
+    // ui->glWidget->update();
+//    ui->glWidget->initializeGL();
+}
+
+
+void MainWindow::on_radioLineDashed_clicked()
+{
+    ui->glWidget->property.line_type = 1;
+    QMessageBox::information(this, "type", "dashed");
+     ui->glWidget->update();
+}
+
+
+void MainWindow::on_radioLineSolid_clicked()
+{
+    ui->glWidget->property.line_type = 0;
+    QMessageBox::information(this, "type", "solid");
+     ui->glWidget->update();
 }
 

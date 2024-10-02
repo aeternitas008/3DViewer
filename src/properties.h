@@ -1,19 +1,20 @@
 #ifndef PROPERTIES_H
 #define PROPERTIES_H
 
+
 typedef struct {
     int projection_type;
     int line_type;
-    int line_color;
-    int line_width;
+    float line_color[3];
+    float line_width;
     int point_type;
-    int point_color;
-    int point_size;
-    int back_color;
+    float point_color[3];
+    float point_size;
+    float back_color[3];
 } Properties;
 
 // 
 void set_properties(Properties props);
 
-void set_start_props(Properties props);
+Properties get_start_props();
 #endif // PROPERTIES_H
