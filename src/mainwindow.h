@@ -47,6 +47,8 @@ private slots:
     void on_radioTypeParallel_clicked();
     void on_radioLineDashed_clicked();
     void on_radioLineSolid_clicked();
+    void on_sliderLineWidth_valueChanged(int value);
+    void on_lineEditLineWidth_returnPressed();
 };
 
 #endif // MAINWINDOW_H
