@@ -203,3 +203,16 @@ void MainWindow::on_radioLineSolid_clicked()
      ui->glWidget->update();
 }
 
+
+void MainWindow::on_sliderLineWidth_valueChanged(int value)
+{
+    ui->lineEditLineWidth->setText(QString::number(value));
+}
+
+
+void MainWindow::on_lineEditLineWidth_returnPressed()
+{
+    this->clearFocus();
+    ui->sliderPointSize->setFocus();
+}
+
