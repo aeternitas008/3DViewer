@@ -207,12 +207,38 @@ void MainWindow::on_radioLineSolid_clicked()
 void MainWindow::on_sliderLineWidth_valueChanged(int value)
 {
     ui->lineEditLineWidth->setText(QString::number(value));
+    ui->glWidget->property.line_width = value;
+    ui->sliderPointSize->setFocus();
+    ui->glWidget->update();
 }
 
 
 void MainWindow::on_lineEditLineWidth_returnPressed()
 {
-    this->clearFocus();
+    int value = ui->lineEditLineWidth->text().toInt();
+    ui->sliderLineWidth->setValue(value);
+//    this->clearFocus();
+    ui->glWidget->property.line_width = value;
+    ui->sliderPointSize->setFocus();
+    ui->glWidget->update();
+}
+
+
+void MainWindow::on_sliderPointSize_valueChanged(int value)
+{
+    ui->lineEditPointSize->setText(QString::number(value));
+}
+
+
+void MainWindow::on_lineEditPointSize_returnPressed()
+{
+//    this->clearFocus();
+    int value = ui->lineEditPointSize->text().toInt();
+    ui->sliderPointSize->setValue(value);
+
+    ui->glWidget->property.point_size = value;
+    ui->glWidget->update();
+
     ui->sliderPointSize->setFocus();
 }
 

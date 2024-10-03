@@ -49,6 +49,8 @@ private slots:
     void on_radioLineSolid_clicked();
     void on_sliderLineWidth_valueChanged(int value);
     void on_lineEditLineWidth_returnPressed();
+    void on_sliderPointSize_valueChanged(int value);
+    void on_lineEditPointSize_returnPressed();
 };
 
 #endif // MAINWINDOW_H
