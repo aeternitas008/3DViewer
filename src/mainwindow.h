@@ -52,6 +52,8 @@ private slots:
     void on_lineEditLineWidth_returnPressed();
     void on_sliderPointSize_valueChanged(int value);
     void on_lineEditPointSize_returnPressed();
+    void on_sliderPointSize_valueChanged(int value);
+    void on_lineEditPointSize_returnPressed();
     void on_comboBoxPointType_currentIndexChanged(int index);
 =======
 >>>>>>> c7718eb (start settings)
