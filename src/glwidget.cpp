@@ -84,7 +84,9 @@ void GLWidget::paintGL()
 
                 if(property.point_type > 1) {
                     glEnable(GL_POINT_SMOOTH);    // форма точек (без этого квадратные)
-                }
+                } else if(property.point_type == 1) {
+                    glDisable(GL_POINT_SMOOTH);    // форма точек (без этого квадратные)
+                } 
 
                 // РИСУЕМ ТОЧКИ
                 glDrawArrays(GL_POINTS, 1, model.total_vertices);
