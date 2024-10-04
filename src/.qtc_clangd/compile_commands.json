@@ -3,11 +3,11 @@
     "arguments": [
         "clang",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
         "-I",
-        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpbc00z5kv/T/QtCreator-bZYeVU/clang-uiheader-mNRmzh",
+        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpv800z5pt/T/QtCreator-qHyzZP/clang-uiheader-mrxZXi",
         "-nostdinc",
         "-nostdinc++",
         "-pipe",
@@ -30,7 +30,7 @@
         "-DQT_GUI_LIB",
         "-DQT_CORE_LIB",
         "-I",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src",
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src",
         "-I",
         "/usr/local/Qt-6.6.2/include",
         "-I",
@@ -56,7 +56,7 @@
         "-isystem",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1",
         "-isystem",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
         "-isystem",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include",
         "-isystem",
@@ -71,20 +71,20 @@
         "-Wno-unknown-pragmas",
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/glwidget.cpp"
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src/glwidget.cpp"
     ],
-    "directory": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/.qtc_clangd",
-    "file": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/glwidget.cpp"
+    "directory": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/.qtc_clangd",
+    "file": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/glwidget.cpp"
 },
 {
     "arguments": [
         "clang",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
         "-I",
-        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpbc00z5kv/T/QtCreator-bZYeVU/clang-uiheader-mNRmzh",
+        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpv800z5pt/T/QtCreator-qHyzZP/clang-uiheader-mrxZXi",
         "-nostdinc",
         "-nostdinc++",
         "-pipe",
@@ -107,7 +107,7 @@
         "-DQT_GUI_LIB",
         "-DQT_CORE_LIB",
         "-I",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src",
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src",
         "-I",
         "/usr/local/Qt-6.6.2/include",
         "-I",
@@ -133,7 +133,7 @@
         "-isystem",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1",
         "-isystem",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
         "-isystem",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include",
         "-isystem",
@@ -148,20 +148,20 @@
         "-Wno-unknown-pragmas",
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/main.cpp"
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src/main.cpp"
     ],
-    "directory": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/.qtc_clangd",
-    "file": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/main.cpp"
+    "directory": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/.qtc_clangd",
+    "file": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/main.cpp"
 },
 {
     "arguments": [
         "clang",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
         "-I",
-        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpbc00z5kv/T/QtCreator-bZYeVU/clang-uiheader-mNRmzh",
+        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpv800z5pt/T/QtCreator-qHyzZP/clang-uiheader-mrxZXi",
         "-nostdinc",
         "-nostdinc++",
         "-pipe",
@@ -184,7 +184,7 @@
         "-DQT_GUI_LIB",
         "-DQT_CORE_LIB",
         "-I",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src",
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src",
         "-I",
         "/usr/local/Qt-6.6.2/include",
         "-I",
@@ -210,7 +210,7 @@
         "-isystem",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1",
         "-isystem",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
         "-isystem",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include",
         "-isystem",
@@ -225,20 +225,20 @@
         "-Wno-unknown-pragmas",
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/mainwindow.cpp"
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src/mainwindow.cpp"
     ],
-    "directory": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/.qtc_clangd",
-    "file": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/mainwindow.cpp"
+    "directory": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/.qtc_clangd",
+    "file": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/mainwindow.cpp"
 },
 {
     "arguments": [
         "clang",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
         "-I",
-        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpbc00z5kv/T/QtCreator-bZYeVU/clang-uiheader-mNRmzh",
+        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpv800z5pt/T/QtCreator-qHyzZP/clang-uiheader-mrxZXi",
         "-nostdinc",
         "-nostdinc++",
         "-pipe",
@@ -261,7 +261,7 @@
         "-DQT_GUI_LIB",
         "-DQT_CORE_LIB",
         "-I",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src",
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src",
         "-I",
         "/usr/local/Qt-6.6.2/include",
         "-I",
@@ -287,7 +287,7 @@
         "-isystem",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1",
         "-isystem",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
         "-isystem",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include",
         "-isystem",
@@ -302,20 +302,20 @@
         "-Wno-unknown-pragmas",
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/properties.h"
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src/properties.h"
     ],
-    "directory": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/.qtc_clangd",
-    "file": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/properties.h"
+    "directory": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/.qtc_clangd",
+    "file": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/properties.h"
 },
 {
     "arguments": [
         "clang",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
         "-I",
-        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpbc00z5kv/T/QtCreator-bZYeVU/clang-uiheader-mNRmzh",
+        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpv800z5pt/T/QtCreator-qHyzZP/clang-uiheader-mrxZXi",
         "-nostdinc",
         "-nostdinc++",
         "-pipe",
@@ -338,7 +338,7 @@
         "-DQT_GUI_LIB",
         "-DQT_CORE_LIB",
         "-I",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src",
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src",
         "-I",
         "/usr/local/Qt-6.6.2/include",
         "-I",
@@ -364,7 +364,7 @@
         "-isystem",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1",
         "-isystem",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
         "-isystem",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include",
         "-isystem",
@@ -379,20 +379,20 @@
         "-Wno-unknown-pragmas",
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/affine_transformations.h"
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src/affine_transformations.h"
     ],
-    "directory": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/.qtc_clangd",
-    "file": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/affine_transformations.h"
+    "directory": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/.qtc_clangd",
+    "file": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/affine_transformations.h"
 },
 {
     "arguments": [
         "clang",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
         "-I",
-        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpbc00z5kv/T/QtCreator-bZYeVU/clang-uiheader-mNRmzh",
+        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpv800z5pt/T/QtCreator-qHyzZP/clang-uiheader-mrxZXi",
         "-nostdinc",
         "-nostdinc++",
         "-pipe",
@@ -415,7 +415,7 @@
         "-DQT_GUI_LIB",
         "-DQT_CORE_LIB",
         "-I",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src",
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src",
         "-I",
         "/usr/local/Qt-6.6.2/include",
         "-I",
@@ -441,7 +441,7 @@
         "-isystem",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1",
         "-isystem",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
         "-isystem",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include",
         "-isystem",
@@ -456,20 +456,20 @@
         "-Wno-unknown-pragmas",
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/glwidget.h"
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src/glwidget.h"
     ],
-    "directory": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/.qtc_clangd",
-    "file": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/glwidget.h"
+    "directory": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/.qtc_clangd",
+    "file": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/glwidget.h"
 },
 {
     "arguments": [
         "clang",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
         "-I",
-        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpbc00z5kv/T/QtCreator-bZYeVU/clang-uiheader-mNRmzh",
+        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpv800z5pt/T/QtCreator-qHyzZP/clang-uiheader-mrxZXi",
         "-nostdinc",
         "-nostdinc++",
         "-pipe",
@@ -492,7 +492,7 @@
         "-DQT_GUI_LIB",
         "-DQT_CORE_LIB",
         "-I",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src",
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src",
         "-I",
         "/usr/local/Qt-6.6.2/include",
         "-I",
@@ -518,7 +518,7 @@
         "-isystem",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1",
         "-isystem",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
         "-isystem",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include",
         "-isystem",
@@ -533,20 +533,20 @@
         "-Wno-unknown-pragmas",
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/mainwindow.h"
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src/mainwindow.h"
     ],
-    "directory": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/.qtc_clangd",
-    "file": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/mainwindow.h"
+    "directory": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/.qtc_clangd",
+    "file": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/mainwindow.h"
 },
 {
     "arguments": [
         "clang",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
         "-I",
-        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpbc00z5kv/T/QtCreator-bZYeVU/clang-uiheader-mNRmzh",
+        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpv800z5pt/T/QtCreator-qHyzZP/clang-uiheader-mrxZXi",
         "-nostdinc",
         "-nostdinc++",
         "-pipe",
@@ -569,7 +569,7 @@
         "-DQT_GUI_LIB",
         "-DQT_CORE_LIB",
         "-I",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src",
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src",
         "-I",
         "/usr/local/Qt-6.6.2/include",
         "-I",
@@ -595,7 +595,7 @@
         "-isystem",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1",
         "-isystem",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
         "-isystem",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include",
         "-isystem",
@@ -610,20 +610,20 @@
         "-Wno-unknown-pragmas",
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/parcer.h"
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src/parcer.h"
     ],
-    "directory": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/.qtc_clangd",
-    "file": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/parcer.h"
+    "directory": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/.qtc_clangd",
+    "file": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/parcer.h"
 },
 {
     "arguments": [
         "clang",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
         "-I",
-        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpbc00z5kv/T/QtCreator-bZYeVU/clang-uiheader-mNRmzh",
+        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpv800z5pt/T/QtCreator-qHyzZP/clang-uiheader-mrxZXi",
         "-nostdinc",
         "-nostdinc++",
         "-pipe",
@@ -646,7 +646,7 @@
         "-DQT_GUI_LIB",
         "-DQT_CORE_LIB",
         "-I",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src",
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src",
         "-I",
         "/usr/local/Qt-6.6.2/include",
         "-I",
@@ -672,7 +672,7 @@
         "-isystem",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1",
         "-isystem",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
         "-isystem",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include",
         "-isystem",
@@ -687,20 +687,20 @@
         "-Wno-unknown-pragmas",
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/ui_mainwindow.h"
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src/ui_mainwindow.h"
     ],
-    "directory": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/.qtc_clangd",
-    "file": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/ui_mainwindow.h"
+    "directory": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/.qtc_clangd",
+    "file": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/ui_mainwindow.h"
 },
 {
     "arguments": [
         "clang",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
         "-I",
-        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpbc00z5kv/T/QtCreator-bZYeVU/clang-uiheader-mNRmzh",
+        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpv800z5pt/T/QtCreator-qHyzZP/clang-uiheader-mrxZXi",
         "-nostdinc",
         "-nostdinc++",
         "-pipe",
@@ -722,7 +722,7 @@
         "-DQT_GUI_LIB",
         "-DQT_CORE_LIB",
         "-I",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src",
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src",
         "-I",
         "/usr/local/Qt-6.6.2/include",
         "-I",
@@ -746,7 +746,7 @@
         "-F",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks",
         "-isystem",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
         "-isystem",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include",
         "-isystem",
@@ -761,20 +761,20 @@
         "-Wno-unknown-pragmas",
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/properties.c"
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src/properties.c"
     ],
-    "directory": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/.qtc_clangd",
-    "file": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/properties.c"
+    "directory": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/.qtc_clangd",
+    "file": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/properties.c"
 },
 {
     "arguments": [
         "clang",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
         "-I",
-        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpbc00z5kv/T/QtCreator-bZYeVU/clang-uiheader-mNRmzh",
+        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpv800z5pt/T/QtCreator-qHyzZP/clang-uiheader-mrxZXi",
         "-nostdinc",
         "-nostdinc++",
         "-pipe",
@@ -796,7 +796,7 @@
         "-DQT_GUI_LIB",
         "-DQT_CORE_LIB",
         "-I",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src",
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src",
         "-I",
         "/usr/local/Qt-6.6.2/include",
         "-I",
@@ -820,7 +820,7 @@
         "-F",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks",
         "-isystem",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
         "-isystem",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include",
         "-isystem",
@@ -835,20 +835,20 @@
         "-Wno-unknown-pragmas",
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/affine_transformations.c"
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src/affine_transformations.c"
     ],
-    "directory": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/.qtc_clangd",
-    "file": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/affine_transformations.c"
+    "directory": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/.qtc_clangd",
+    "file": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/affine_transformations.c"
 },
 {
     "arguments": [
         "clang",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
         "-I",
-        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpbc00z5kv/T/QtCreator-bZYeVU/clang-uiheader-mNRmzh",
+        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpv800z5pt/T/QtCreator-qHyzZP/clang-uiheader-mrxZXi",
         "-nostdinc",
         "-nostdinc++",
         "-pipe",
@@ -870,7 +870,7 @@
         "-DQT_GUI_LIB",
         "-DQT_CORE_LIB",
         "-I",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src",
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src",
         "-I",
         "/usr/local/Qt-6.6.2/include",
         "-I",
@@ -894,7 +894,7 @@
         "-F",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks",
         "-isystem",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
         "-isystem",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include",
         "-isystem",
@@ -909,20 +909,20 @@
         "-Wno-unknown-pragmas",
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/parcer.c"
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src/parcer.c"
     ],
-    "directory": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/.qtc_clangd",
-    "file": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/parcer.c"
+    "directory": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/.qtc_clangd",
+    "file": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/parcer.c"
 },
 {
     "arguments": [
         "clang",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
         "-I",
-        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpbc00z5kv/T/QtCreator-bZYeVU/clang-uiheader-mNRmzh",
+        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpv800z5pt/T/QtCreator-qHyzZP/clang-uiheader-mrxZXi",
         "-nostdinc",
         "-nostdinc++",
         "-pipe",
@@ -944,7 +944,7 @@
         "-DQT_GUI_LIB",
         "-DQT_CORE_LIB",
         "-I",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src",
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src",
         "-I",
         "/usr/local/Qt-6.6.2/include",
         "-I",
@@ -968,7 +968,7 @@
         "-F",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks",
         "-isystem",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
         "-isystem",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include",
         "-isystem",
@@ -983,20 +983,20 @@
         "-Wno-unknown-pragmas",
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/properties.h"
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src/properties.h"
     ],
-    "directory": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/.qtc_clangd",
-    "file": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/properties.h"
+    "directory": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/.qtc_clangd",
+    "file": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/properties.h"
 },
 {
     "arguments": [
         "clang",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
         "-I",
-        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpbc00z5kv/T/QtCreator-bZYeVU/clang-uiheader-mNRmzh",
+        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpv800z5pt/T/QtCreator-qHyzZP/clang-uiheader-mrxZXi",
         "-nostdinc",
         "-nostdinc++",
         "-pipe",
@@ -1018,7 +1018,7 @@
         "-DQT_GUI_LIB",
         "-DQT_CORE_LIB",
         "-I",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src",
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src",
         "-I",
         "/usr/local/Qt-6.6.2/include",
         "-I",
@@ -1042,7 +1042,7 @@
         "-F",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks",
         "-isystem",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
         "-isystem",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include",
         "-isystem",
@@ -1057,20 +1057,20 @@
         "-Wno-unknown-pragmas",
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/affine_transformations.h"
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src/affine_transformations.h"
     ],
-    "directory": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/.qtc_clangd",
-    "file": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/affine_transformations.h"
+    "directory": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/.qtc_clangd",
+    "file": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/affine_transformations.h"
 },
 {
     "arguments": [
         "clang",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
         "-I",
-        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpbc00z5kv/T/QtCreator-bZYeVU/clang-uiheader-mNRmzh",
+        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpv800z5pt/T/QtCreator-qHyzZP/clang-uiheader-mrxZXi",
         "-nostdinc",
         "-nostdinc++",
         "-pipe",
@@ -1092,7 +1092,7 @@
         "-DQT_GUI_LIB",
         "-DQT_CORE_LIB",
         "-I",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src",
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src",
         "-I",
         "/usr/local/Qt-6.6.2/include",
         "-I",
@@ -1116,7 +1116,7 @@
         "-F",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks",
         "-isystem",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
         "-isystem",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include",
         "-isystem",
@@ -1131,20 +1131,20 @@
         "-Wno-unknown-pragmas",
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/glwidget.h"
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src/glwidget.h"
     ],
-    "directory": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/.qtc_clangd",
-    "file": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/glwidget.h"
+    "directory": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/.qtc_clangd",
+    "file": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/glwidget.h"
 },
 {
     "arguments": [
         "clang",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
         "-I",
-        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpbc00z5kv/T/QtCreator-bZYeVU/clang-uiheader-mNRmzh",
+        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpv800z5pt/T/QtCreator-qHyzZP/clang-uiheader-mrxZXi",
         "-nostdinc",
         "-nostdinc++",
         "-pipe",
@@ -1166,7 +1166,7 @@
         "-DQT_GUI_LIB",
         "-DQT_CORE_LIB",
         "-I",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src",
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src",
         "-I",
         "/usr/local/Qt-6.6.2/include",
         "-I",
@@ -1190,7 +1190,7 @@
         "-F",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks",
         "-isystem",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
         "-isystem",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include",
         "-isystem",
@@ -1205,20 +1205,20 @@
         "-Wno-unknown-pragmas",
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/mainwindow.h"
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src/mainwindow.h"
     ],
-    "directory": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/.qtc_clangd",
-    "file": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/mainwindow.h"
+    "directory": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/.qtc_clangd",
+    "file": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/mainwindow.h"
 },
 {
     "arguments": [
         "clang",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
         "-I",
-        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpbc00z5kv/T/QtCreator-bZYeVU/clang-uiheader-mNRmzh",
+        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpv800z5pt/T/QtCreator-qHyzZP/clang-uiheader-mrxZXi",
         "-nostdinc",
         "-nostdinc++",
         "-pipe",
@@ -1240,7 +1240,7 @@
         "-DQT_GUI_LIB",
         "-DQT_CORE_LIB",
         "-I",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src",
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src",
         "-I",
         "/usr/local/Qt-6.6.2/include",
         "-I",
@@ -1264,7 +1264,7 @@
         "-F",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks",
         "-isystem",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
         "-isystem",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include",
         "-isystem",
@@ -1279,20 +1279,20 @@
         "-Wno-unknown-pragmas",
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/parcer.h"
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src/parcer.h"
     ],
-    "directory": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/.qtc_clangd",
-    "file": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/parcer.h"
+    "directory": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/.qtc_clangd",
+    "file": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/parcer.h"
 },
 {
     "arguments": [
         "clang",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders",
         "-I",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/cplusplus/wrappedQtHeaders/QtCore",
         "-I",
-        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpbc00z5kv/T/QtCreator-bZYeVU/clang-uiheader-mNRmzh",
+        "/private/var/folders/zz/zyxvpxvq6csfxvn_n003wpv800z5pt/T/QtCreator-qHyzZP/clang-uiheader-mrxZXi",
         "-nostdinc",
         "-nostdinc++",
         "-pipe",
@@ -1314,7 +1314,7 @@
         "-DQT_GUI_LIB",
         "-DQT_CORE_LIB",
         "-I",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src",
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src",
         "-I",
         "/usr/local/Qt-6.6.2/include",
         "-I",
@@ -1338,7 +1338,7 @@
         "-F",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks",
         "-isystem",
-        "/opt/goinfre/louellat/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
+        "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/libexec/clang/lib/clang/14.0.0/include",
         "-isystem",
         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include",
         "-isystem",
@@ -1353,9 +1353,9 @@
         "-Wno-unknown-pragmas",
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
-        "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/ui_mainwindow.h"
+        "/Users/hoarfros/C8_3DViewer_v1.0-2/src/ui_mainwindow.h"
     ],
-    "directory": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/.qtc_clangd",
-    "file": "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/ui_mainwindow.h"
+    "directory": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/.qtc_clangd",
+    "file": "/Users/hoarfros/C8_3DViewer_v1.0-2/src/ui_mainwindow.h"
 }
 ]

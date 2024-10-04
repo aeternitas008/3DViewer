@@ -217,3 +217,6 @@ void MainWindow::on_lineEditLineWidth_returnPressed()
     ui->sliderPointSize->setFocus();
 }
 
+
+
+QStringList colorNames = {"White", "Black", "Red", "Green", "Blue", "Yellow", "Cyan", "Magenta"};
