@@ -661,6 +661,51 @@
           <property name="editable">
            <bool>false</bool>
           </property>
+          <item>
+           <property name="text">
+            <string>фиолетовый</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>черный</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>красный</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>желтый</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>синий</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>зеленый</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>оранжевый</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>белый</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>рандомный</string>
+           </property>
+          </item>
          </widget>
         </widget>
        </item>
@@ -761,6 +806,51 @@
           <property name="editable">
            <bool>false</bool>
           </property>
+          <item>
+           <property name="text">
+            <string>белый</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>черный</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>фиолетовый</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>красный</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>желтый</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>синий</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>зеленный</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>оранжевый</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>рандомный</string>
+           </property>
+          </item>
          </widget>
         </widget>
        </item>
@@ -826,6 +916,51 @@
           <property name="editable">
            <bool>false</bool>
           </property>
+          <item>
+           <property name="text">
+            <string>черный</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>фиолетовый</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>красный</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>желтый</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>синий</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>зеленый</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>оранжевый</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>белый</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>рандомный</string>
+           </property>
+          </item>
          </widget>
         </widget>
        </item>
