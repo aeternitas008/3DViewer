@@ -184,7 +184,6 @@ void MainWindow::on_radioTypeCentral_clicked()
 void MainWindow::on_radioTypeParallel_clicked()
 {
     ui->glWidget->property.projection_type = 1;
-    QMessageBox::information(this, "type", "parallel");
     // ui->glWidget->update();
 //    ui->glWidget->initializeGL();
 }
@@ -208,7 +207,6 @@ void MainWindow::on_sliderLineWidth_valueChanged(int value)
 {
     ui->lineEditLineWidth->setText(QString::number(value));
     ui->glWidget->property.line_width = value;
-    ui->sliderPointSize->setFocus();
     ui->glWidget->update();
 }
 
@@ -219,7 +217,8 @@ void MainWindow::on_lineEditLineWidth_returnPressed()
     ui->sliderLineWidth->setValue(value);
 //    this->clearFocus();
     ui->glWidget->property.line_width = value;
-    ui->sliderPointSize->setFocus();
+//    ui->sliderPointSize->setFocus();
+    ui->lineEditLineWidth->clearFocus();
     ui->glWidget->update();
 }
 
@@ -227,6 +226,8 @@ void MainWindow::on_lineEditLineWidth_returnPressed()
 void MainWindow::on_sliderPointSize_valueChanged(int value)
 {
     ui->lineEditPointSize->setText(QString::number(value));
+    ui->glWidget->property.point_size = value;
+    ui->glWidget->update();
 }
 
 
@@ -239,6 +240,18 @@ void MainWindow::on_lineEditPointSize_returnPressed()
     ui->glWidget->property.point_size = value;
     ui->glWidget->update();
 
-    ui->sliderPointSize->setFocus();
+    ui->lineEditPointSize->clearFocus();
 }
 
+
+void MainWindow::on_comboBoxPointType_currentIndexChanged(int index)
+{
+    if (index == 0) {
+        ui->glWidget->property.point_type = 2;
+    } else if (index == 1) {
+        ui->glWidget->property.point_type = 1;
+    } else {
+        ui->glWidget->property.point_type = 0;
+    }
+    ui->glWidget->update();
+}
