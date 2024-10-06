@@ -13,8 +13,5 @@ typedef struct {
     float back_color[3];
 } Properties;
 
-// 
-void set_properties(Properties props);
-
 Properties get_start_props();
 #endif // PROPERTIES_H
