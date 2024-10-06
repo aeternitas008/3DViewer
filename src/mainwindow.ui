@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>640</height>
+    <width>801</width>
+    <height>652</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -100,9 +100,9 @@
     <property name="geometry">
      <rect>
       <x>600</x>
-      <y>60</y>
+      <y>40</y>
       <width>190</width>
-      <height>501</height>
+      <height>541</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -135,7 +135,7 @@
        <x>0</x>
        <y>0</y>
        <width>190</width>
-       <height>445</height>
+       <height>485</height>
       </rect>
      </property>
      <attribute name="icon">
@@ -148,10 +148,10 @@
      <widget class="QPushButton" name="rotateButtonX">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>250</y>
-        <width>50</width>
-        <height>30</height>
+        <x>59</x>
+        <y>260</y>
+        <width>55</width>
+        <height>32</height>
        </rect>
       </property>
       <property name="font">
@@ -180,9 +180,9 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>40</y>
-        <width>40</width>
-        <height>30</height>
+        <y>60</y>
+        <width>55</width>
+        <height>32</height>
        </rect>
       </property>
       <property name="text">
@@ -192,10 +192,10 @@
      <widget class="QPushButton" name="upButton">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>40</y>
-        <width>40</width>
-        <height>30</height>
+        <x>59</x>
+        <y>29</y>
+        <width>55</width>
+        <height>32</height>
        </rect>
       </property>
       <property name="text">
@@ -205,10 +205,10 @@
      <widget class="QPushButton" name="rightButton">
       <property name="geometry">
        <rect>
-        <x>150</x>
-        <y>40</y>
-        <width>40</width>
-        <height>30</height>
+        <x>120</x>
+        <y>60</y>
+        <width>55</width>
+        <height>32</height>
        </rect>
       </property>
       <property name="text">
@@ -218,10 +218,10 @@
      <widget class="QPushButton" name="downButton">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>40</y>
-        <width>40</width>
-        <height>30</height>
+        <x>60</x>
+        <y>90</y>
+        <width>55</width>
+        <height>32</height>
        </rect>
       </property>
       <property name="text">
@@ -231,10 +231,10 @@
      <widget class="QPushButton" name="closerButton">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>80</y>
-        <width>40</width>
-        <height>30</height>
+        <x>0</x>
+        <y>90</y>
+        <width>31</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="font">
@@ -251,10 +251,10 @@
      <widget class="QPushButton" name="furtherButton">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>80</y>
-        <width>40</width>
-        <height>30</height>
+        <x>140</x>
+        <y>30</y>
+        <width>31</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="font">
@@ -293,7 +293,7 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>120</y>
+        <y>130</y>
         <width>170</width>
         <height>30</height>
        </rect>
@@ -310,82 +310,13 @@
        <string>________SCALE________</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="increaseButton">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>160</y>
-        <width>90</width>
-        <height>30</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset theme="QIcon::ThemeIcon::ZoomIn">
-        <normaloff>.</normaloff>.</iconset>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="decreaseButton">
-      <property name="geometry">
-       <rect>
-        <x>100</x>
-        <y>160</y>
-        <width>90</width>
-        <height>30</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset theme="QIcon::ThemeIcon::ZoomOut">
-        <normaloff>.</normaloff>.</iconset>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="rotateButtonZ">
-      <property name="geometry">
-       <rect>
-        <x>140</x>
-        <y>250</y>
-        <width>50</width>
-        <height>30</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Arial</family>
-        <pointsize>12</pointsize>
-       </font>
-      </property>
-      <property name="locale">
-       <locale language="English" country="UnitedStates"/>
-      </property>
-      <property name="text">
-       <string> Z</string>
-      </property>
-      <property name="icon">
-       <iconset theme="QIcon::ThemeIcon::ViewRefresh">
-        <normaloff>.</normaloff>.</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>12</width>
-        <height>12</height>
-       </size>
-      </property>
-      <property name="shortcut">
-       <string/>
-      </property>
-     </widget>
      <widget class="QPushButton" name="rotateButtonY">
       <property name="geometry">
        <rect>
-        <x>70</x>
-        <y>250</y>
-        <width>50</width>
-        <height>30</height>
+        <x>0</x>
+        <y>290</y>
+        <width>55</width>
+        <height>32</height>
        </rect>
       </property>
       <property name="font">
@@ -414,7 +345,7 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>210</y>
+        <y>220</y>
         <width>170</width>
         <height>30</height>
        </rect>
@@ -434,10 +365,10 @@
      <widget class="QPushButton" name="rotateButtonX_2">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>290</y>
-        <width>50</width>
-        <height>30</height>
+        <x>60</x>
+        <y>330</y>
+        <width>55</width>
+        <height>32</height>
        </rect>
       </property>
       <property name="font">
@@ -465,10 +396,10 @@
      <widget class="QPushButton" name="rotateButtonY_2">
       <property name="geometry">
        <rect>
-        <x>70</x>
+        <x>120</x>
         <y>290</y>
-        <width>50</width>
-        <height>30</height>
+        <width>55</width>
+        <height>32</height>
        </rect>
       </property>
       <property name="font">
@@ -493,13 +424,58 @@
        <string/>
       </property>
      </widget>
+     <widget class="QLineEdit" name="lineEdit_2">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>290</y>
+        <width>51</width>
+        <height>32</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="rotateButtonZ">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>260</y>
+        <width>55</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="locale">
+       <locale language="English" country="UnitedStates"/>
+      </property>
+      <property name="text">
+       <string> Z</string>
+      </property>
+      <property name="icon">
+       <iconset theme="QIcon::ThemeIcon::ViewRefresh">
+        <normaloff>.</normaloff>.</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>12</width>
+        <height>12</height>
+       </size>
+      </property>
+      <property name="shortcut">
+       <string/>
+      </property>
+     </widget>
      <widget class="QPushButton" name="rotateButtonZ_2">
       <property name="geometry">
        <rect>
-        <x>140</x>
-        <y>290</y>
-        <width>50</width>
-        <height>30</height>
+        <x>0</x>
+        <y>330</y>
+        <width>55</width>
+        <height>32</height>
        </rect>
       </property>
       <property name="font">
@@ -528,6 +504,48 @@
        <string/>
       </property>
      </widget>
+     <widget class="QLineEdit" name="lineEdit_3">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>60</y>
+        <width>51</width>
+        <height>32</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QSplitter" name="splitter_33">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>170</y>
+        <width>171</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QPushButton" name="increaseButton">
+       <property name="text">
+        <string>+</string>
+       </property>
+       <property name="icon">
+        <iconset theme="QIcon::ThemeIcon::ZoomIn">
+         <normaloff>.</normaloff>.</iconset>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_13"/>
+      <widget class="QPushButton" name="decreaseButton">
+       <property name="text">
+        <string>-</string>
+       </property>
+       <property name="icon">
+        <iconset theme="QIcon::ThemeIcon::ZoomOut">
+         <normaloff>.</normaloff>.</iconset>
+       </property>
+      </widget>
+     </widget>
     </widget>
     <widget class="QWidget" name="Properties">
      <property name="geometry">
@@ -535,7 +553,7 @@
        <x>0</x>
        <y>0</y>
        <width>190</width>
-       <height>445</height>
+       <height>485</height>
       </rect>
      </property>
      <property name="contextMenuPolicy">
