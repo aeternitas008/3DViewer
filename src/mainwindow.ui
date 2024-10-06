@@ -663,6 +663,11 @@
           </property>
           <item>
            <property name="text">
+            <string>желтый</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
             <string>фиолетовый</string>
            </property>
           </item>
@@ -674,11 +679,6 @@
           <item>
            <property name="text">
             <string>красный</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>желтый</string>
            </property>
           </item>
           <item>

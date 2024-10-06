@@ -55,11 +55,6 @@ private slots:
     void on_comboBoxLineColor_currentIndexChanged(int index);
     void on_comboBoxPointColor_currentIndexChanged(int index);
     void on_comboBoxBackColor_currentIndexChanged(int index);
-
-
-    void setBackgroundColor(const QColor &color);
-    void setLineColor(const QColor &color);
-    void setPointColor(const QColor &color);
 };
 
 #endif // MAINWINDOW_H
