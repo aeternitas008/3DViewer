@@ -43,6 +43,22 @@ private slots:
     void on_rotateButtonX_2_clicked();
     void on_rotateButtonY_2_clicked();
     void on_rotateButtonZ_2_clicked();
+
+
+    // настройки отображения
+    void on_radioTypeCentral_clicked();
+    void on_radioTypeParallel_clicked();
+    void on_radioLineSolid_clicked();
+    void on_radioLineDashed_clicked();
+
+    void on_sliderLineWidth_valueChanged(int value);
+    void on_lineEditLineWidth_returnPressed();
+    void on_comboBoxLineColor_activated(int index);
+
+    void on_sliderPointSize_valueChanged(int value);
+    void on_lineEditPointSize_returnPressed();
+    void on_comboBoxPointType_currentIndexChanged(int index);
+
 };
 
 #endif // MAINWINDOW_H

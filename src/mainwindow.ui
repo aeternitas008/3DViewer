@@ -98,9 +98,9 @@
     <property name="geometry">
      <rect>
       <x>600</x>
-      <y>110</y>
+      <y>80</y>
       <width>190</width>
-      <height>451</height>
+      <height>481</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -122,7 +122,7 @@
      <number>-1</number>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <property name="tabSpacing">
      <number>4</number>
@@ -133,7 +133,7 @@
        <x>0</x>
        <y>0</y>
        <width>190</width>
-       <height>395</height>
+       <height>397</height>
       </rect>
      </property>
      <attribute name="icon">
@@ -537,7 +537,7 @@
        <x>0</x>
        <y>0</y>
        <width>190</width>
-       <height>395</height>
+       <height>397</height>
       </rect>
      </property>
      <property name="contextMenuPolicy">
@@ -549,40 +549,6 @@
      <attribute name="label">
       <string>Properties</string>
      </attribute>
-     <widget class="QPushButton" name="openButton_5">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>340</y>
-        <width>190</width>
-        <height>30</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Arial</family>
-        <pointsize>12</pointsize>
-       </font>
-      </property>
-      <property name="locale">
-       <locale language="English" country="UnitedStates"/>
-      </property>
-      <property name="text">
-       <string> Apply</string>
-      </property>
-      <property name="icon">
-       <iconset theme="appointment-new"/>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>12</width>
-        <height>12</height>
-       </size>
-      </property>
-      <property name="shortcut">
-       <string/>
-      </property>
-     </widget>
      <widget class="QLabel" name="projectionLabel">
       <property name="geometry">
        <rect>
@@ -678,32 +644,6 @@
        <set>Qt::AlignmentFlag::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QRadioButton" name="radioButton_2">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>30</y>
-        <width>81</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Central</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="radioButton">
-      <property name="geometry">
-       <rect>
-        <x>90</x>
-        <y>30</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Parallel</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="lineLabel_2">
       <property name="geometry">
        <rect>
@@ -720,7 +660,7 @@
        <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox_2">
+     <widget class="QComboBox" name="comboBoxLineColor">
       <property name="geometry">
        <rect>
         <x>70</x>
@@ -749,17 +689,29 @@
        <string>Width</string>
       </property>
      </widget>
-     <widget class="QSlider" name="horizontalSlider">
+     <widget class="QSlider" name="sliderLineWidth">
       <property name="geometry">
        <rect>
         <x>70</x>
         <y>140</y>
-        <width>70</width>
+        <width>61</width>
         <height>20</height>
        </rect>
       </property>
+      <property name="minimum">
+       <number>1</number>
+      </property>
+      <property name="maximum">
+       <number>50</number>
+      </property>
       <property name="orientation">
        <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+      <property name="tickPosition">
+       <enum>QSlider::TickPosition::NoTicks</enum>
+      </property>
+      <property name="tickInterval">
+       <number>0</number>
       </property>
      </widget>
      <widget class="QComboBox" name="comboBox_3">
@@ -807,14 +759,23 @@
        <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
       </property>
      </widget>
-     <widget class="QSlider" name="horizontalSlider_2">
+     <widget class="QSlider" name="sliderPointSize">
       <property name="geometry">
        <rect>
         <x>70</x>
         <y>250</y>
-        <width>70</width>
+        <width>61</width>
         <height>20</height>
        </rect>
+      </property>
+      <property name="minimum">
+       <number>1</number>
+      </property>
+      <property name="maximum">
+       <number>50</number>
+      </property>
+      <property name="sliderPosition">
+       <number>1</number>
       </property>
       <property name="orientation">
        <enum>Qt::Orientation::Horizontal</enum>
@@ -836,7 +797,7 @@
        <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox_4">
+     <widget class="QComboBox" name="comboBoxPointType">
       <property name="geometry">
        <rect>
         <x>70</x>
@@ -877,34 +838,33 @@
       <property name="editable">
        <bool>false</bool>
       </property>
+      <item>
+       <property name="text">
+        <string>Black</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Blue</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Green</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Red</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>White</string>
+       </property>
+      </item>
      </widget>
-     <widget class="QRadioButton" name="radioButton_3">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>80</y>
-        <width>71</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Solid</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="radioButton_4">
-      <property name="geometry">
-       <rect>
-        <x>90</x>
-        <y>80</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Dashed</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineEdit_4">
+     <widget class="QLineEdit" name="lineEditLineWidth">
       <property name="geometry">
        <rect>
         <x>150</x>
@@ -913,8 +873,14 @@
         <height>20</height>
        </rect>
       </property>
+      <property name="text">
+       <string>1</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+      </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_5">
+     <widget class="QLineEdit" name="lineEditPointSize">
       <property name="geometry">
        <rect>
         <x>150</x>
@@ -922,6 +888,125 @@
         <width>30</width>
         <height>20</height>
        </rect>
+      </property>
+      <property name="text">
+       <string>1</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QSplitter" name="splitter">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>171</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+      <widget class="QRadioButton" name="radioTypeCentral">
+       <property name="text">
+        <string>Central</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="radioTypeParallel">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="text">
+        <string>Parallel</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QSplitter" name="splitter_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>191</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+      <widget class="QRadioButton" name="radioLineSolid">
+       <property name="text">
+        <string>Solid</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="radioLineDashed">
+       <property name="text">
+        <string>Dashed</string>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Snapshot">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>190</width>
+       <height>397</height>
+      </rect>
+     </property>
+     <attribute name="icon">
+      <iconset theme="QIcon::ThemeIcon::MediaRecord"/>
+     </attribute>
+     <attribute name="label">
+      <string> Snapshot</string>
+     </attribute>
+     <widget class="QPushButton" name="jpegButton">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>30</y>
+        <width>190</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>JPEG</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="bmpButton">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>70</y>
+        <width>190</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>BMP</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="gifButton">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>110</y>
+        <width>190</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>GIF</string>
       </property>
      </widget>
     </widget>
