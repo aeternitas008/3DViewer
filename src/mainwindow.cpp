@@ -12,7 +12,6 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    // QObject::connect(&ui->radioTypeCentral, &QRadioButton::checked, onClick);
 }
 
 MainWindow::~MainWindow()
@@ -41,8 +40,6 @@ void MainWindow::on_openButton_clicked()
 
         // Запускаем парсер с выбранным файлом
         s21_cleaner(&ui->glWidget->model);
-        
-
         s21_parser(str, &ui->glWidget->model);
 
         // Центрируем модель
@@ -171,30 +168,17 @@ void MainWindow::on_radioTypeParallel_clicked()
 
 // ЛИНИИ
 
-// void MainWindow::on_radioLineSolid_clicked()
-// {
-//     ui->glWidget->property.lineType = 0xFFFF;
-//     ui->glWidget->update();
-// }
-
-// void MainWindow::on_radioLineDashed_clicked()
-// {
-//     ui->glWidget->property.lineType = 0x000F;
-//     ui->glWidget->update();
-// }
-
 void MainWindow::on_radioLineDashed_clicked()
 {
-    ui->glWidget->property.line_type = 1;
-     ui->glWidget->update();
+    ui->glWidget->property.line_type = 0x000F;
+    ui->glWidget->update();
 }
 
 void MainWindow::on_radioLineSolid_clicked()
 {
-    ui->glWidget->property.line_type = 0;
-     ui->glWidget->update();
+    ui->glWidget->property.line_type = 0xFFFF;
+    ui->glWidget->update();
 }
-
 
 void MainWindow::on_sliderLineWidth_valueChanged(int value)
 {
@@ -202,7 +186,6 @@ void MainWindow::on_sliderLineWidth_valueChanged(int value)
     ui->glWidget->property.line_width = value;
     ui->glWidget->update();
 }
-
 
 void MainWindow::on_lineEditLineWidth_returnPressed()
 {
@@ -213,14 +196,12 @@ void MainWindow::on_lineEditLineWidth_returnPressed()
     ui->glWidget->update();
 }
 
-
 void MainWindow::on_sliderPointSize_valueChanged(int value)
 {
     ui->lineEditPointSize->setText(QString::number(value));
     ui->glWidget->property.point_size = value;
     ui->glWidget->update();
 }
-
 
 void MainWindow::on_lineEditPointSize_returnPressed()
 {
@@ -232,7 +213,6 @@ void MainWindow::on_lineEditPointSize_returnPressed()
 
     ui->lineEditPointSize->clearFocus();
 }
-
 
 void MainWindow::on_comboBoxPointType_currentIndexChanged(int index)
 {

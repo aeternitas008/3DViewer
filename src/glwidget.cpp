@@ -20,16 +20,13 @@ void GLWidget::initializeGL()
 
 void GLWidget::resizeGL(int w, int h)
 {
-
     // qDebug("RESIZE");
-
     glViewport(0, 0, w, h);
 }
 
 void GLWidget::paintGL()
 {
     // qDebug("PAINT_GL");
-
     if(model.vertices)
     {
     // ----- выставляем камеру -----
@@ -55,25 +52,6 @@ void GLWidget::paintGL()
         glClearColor(property.back_color[0], property.back_color[1], property.back_color[2], 0);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    // --------------------------------------
-    //          РИСУЕТ СЕТКУ КООРДИНАТ
-    //          СЛУЖЕБНОЕ, НЕ В ПРОЕКТ
-    // --------------------------------------
-
-        // glColor3d(0.0, 0.3, 0.0);
-        // glLineStipple(1, 0xFFFF);
-        // glLineWidth(1.0);
-
-        // glBegin(GL_LINES);
-        //     glVertex3d(-500.0, 0.0, 0.0);
-        //     glVertex3d(500.0, 0.0, 0.0);
-        //     glVertex3d(0.0, -500.0, 0.0);
-        //     glVertex3d(0.0, 500.0, 0.0);
-        //     glVertex3d(0.0, 0.0, -500.0);
-        //     glVertex3d(0.0, 0.0, 500.0);
-        // glEnd();
-    // --------------------------------------
-
         // загружаем координаты точек в вершинный буфер
         glVertexPointer(3, GL_DOUBLE, 0, model.vertices);
 
@@ -82,16 +60,6 @@ void GLWidget::paintGL()
 
         // настройки линий
         glLineWidth(property.line_width);          // толщина линий
-
-        // @todo may be shorter
-        // if(property.line_type == 1) {
-        //     glLineStipple(1, 0x000F);              // прерывистость линий
-        //     glEnable(GL_LINE_STIPPLE);             // включает рисование прерывистой линии
-        // } else {
-        //     glLineStipple(1, 0xFFFF);              
-        //     glDisable(GL_LINE_STIPPLE);  
-        // }
-            // возможно сделать property.lineType = 0x000F || 0xFFFF и вставить в glLineStipple (убрать иф)
         glLineStipple(1, property.line_type);    // тип линии
 
         // Рисуем полигоны
@@ -102,23 +70,18 @@ void GLWidget::paintGL()
         }
 
         // Если включено отображение точек
-        if(property.pointType) {
+        if(property.point_type) {
 
                 // настройки точек
                 glPointSize(property.point_size);  // размер точек
                 glColor3fv(property.point_color);  // задаём цвет для рисования точек
+                glDisable(GL_POINT_SMOOTH);
 
-                if(property.point_type > 1) {
-                    glEnable(GL_POINT_SMOOTH);    // форма точек (без этого квадратные)
-                } else if(property.point_type == 1) {
-                    glDisable(GL_POINT_SMOOTH);    // форма точек (без этого квадратные)
-                } 
-
+                if(property.point_type > 1) glEnable(GL_POINT_SMOOTH);    // форма точек (без этого квадратные)
+                
                 // РИСУЕМ ТОЧКИ
                 glDrawArrays(GL_POINTS, 1, model.total_vertices);
             }
-
-        glDisableClientState(GL_VERTEX_ARRAY);    // выключаем вершинный буфер
 
         glFlush(); // принудительно выполняет функции OpenGL в конечное время
     }
