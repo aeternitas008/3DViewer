@@ -733,7 +733,7 @@
           </property>
           <item>
            <property name="text">
-            <string>Круглые</string>
+            <string>Нет</string>
            </property>
           </item>
           <item>
@@ -743,7 +743,7 @@
           </item>
           <item>
            <property name="text">
-            <string>Нет</string>
+            <string>Круглые</string>
            </property>
           </item>
          </widget>

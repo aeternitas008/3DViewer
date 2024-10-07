@@ -41,7 +41,7 @@ protected:
 // {0.8, 0.9, 0.0}
 public:
     Model model = {nullptr, nullptr, 0, 0, {0.0}, {0.0}};
-    Properties property = {1, 0xFFFF,  {0.9, 0.7, 0.2}, 1.0, 2, {1, 1, 1}, 5.0, {0}, 0};
+    Properties property = {0, 0xFFFF,  {0.9, 0.7, 0.2}, 1.0, 0, {1, 1, 1}, 5.0, {0}, 0};
 
     GLWidget(QWidget* parent = nullptr);
     ~GLWidget();
