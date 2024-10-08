@@ -5,7 +5,7 @@
 #include <QMessageBox>
 
 #include <unistd.h>
-#include <parcer.h>
+#include <parser.h>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
