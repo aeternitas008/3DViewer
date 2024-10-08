@@ -29,8 +29,8 @@
      <rect>
       <x>600</x>
       <y>10</y>
-      <width>191</width>
-      <height>32</height>
+      <width>190</width>
+      <height>30</height>
      </rect>
     </property>
     <property name="font">
@@ -46,8 +46,7 @@
      <string> Open File</string>
     </property>
     <property name="icon">
-     <iconset theme="QIcon::ThemeIcon::DocumentOpen">
-      <normaloff>.</normaloff>.</iconset>
+     <iconset theme="QIcon::ThemeIcon::DocumentOpen"/>
     </property>
     <property name="iconSize">
      <size>
@@ -64,14 +63,14 @@
      <rect>
       <x>600</x>
       <y>600</y>
-      <width>191</width>
-      <height>32</height>
+      <width>190</width>
+      <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Arial</family>
-      <pointsize>14</pointsize>
+      <pointsize>12</pointsize>
       <bold>false</bold>
       <kerning>true</kerning>
      </font>
@@ -83,8 +82,7 @@
      <string> Paint</string>
     </property>
     <property name="icon">
-     <iconset theme="QIcon::ThemeIcon::MailMessageNew">
-      <normaloff>.</normaloff>.</iconset>
+     <iconset theme="QIcon::ThemeIcon::MailMessageNew"/>
     </property>
     <property name="iconSize">
      <size>
@@ -139,8 +137,7 @@
       </rect>
      </property>
      <attribute name="icon">
-      <iconset theme="QIcon::ThemeIcon::MailAttachment">
-       <normaloff>.</normaloff>.</iconset>
+      <iconset theme="QIcon::ThemeIcon::MailAttachment"/>
      </attribute>
      <attribute name="label">
       <string>Transform</string>
@@ -288,6 +285,9 @@
       <property name="text">
        <string>_________SHIFT_________</string>
       </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
      </widget>
      <widget class="QLabel" name="label_2">
       <property name="geometry">
@@ -308,6 +308,9 @@
       </property>
       <property name="text">
        <string>________SCALE________</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
       </property>
      </widget>
      <widget class="QPushButton" name="rotateButtonY">
@@ -360,6 +363,9 @@
       </property>
       <property name="text">
        <string>________ROTATE________</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
       </property>
      </widget>
      <widget class="QPushButton" name="rotateButtonX_2">
@@ -491,8 +497,42 @@
        <string> Z</string>
       </property>
       <property name="icon">
-       <iconset theme="QIcon::ThemeIcon::SystemReboot">
+       <iconset theme="QIcon::ThemeIcon::ViewRefresh">
         <normaloff>.</normaloff>.</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>12</width>
+        <height>12</height>
+       </size>
+      </property>
+      <property name="shortcut">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="rotateButtonZ_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>330</y>
+        <width>55</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="locale">
+       <locale language="English" country="UnitedStates"/>
+      </property>
+      <property name="text">
+       <string> Z</string>
+      </property>
+      <property name="icon">
+       <iconset theme="QIcon::ThemeIcon::SystemReboot"/>
       </property>
       <property name="iconSize">
        <size>
@@ -794,7 +834,7 @@
           </property>
           <item>
            <property name="text">
-            <string>Круглые</string>
+            <string>Нет</string>
            </property>
           </item>
           <item>
@@ -804,7 +844,7 @@
           </item>
           <item>
            <property name="text">
-            <string>Нет</string>
+            <string>Круглые</string>
            </property>
           </item>
          </widget>
@@ -1014,13 +1054,69 @@
       </layout>
      </widget>
     </widget>
+    <!-- </widget> -->
+    <widget class="QWidget" name="Snapshot">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>190</width>
+       <height>397</height>
+      </rect>
+     </property>
+     <attribute name="icon">
+      <iconset theme="QIcon::ThemeIcon::MediaRecord"/>
+     </attribute>
+     <attribute name="label">
+      <string> Snapshot</string>
+     </attribute>
+     <widget class="QPushButton" name="jpegButton">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>30</y>
+        <width>190</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>JPEG</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="bmpButton">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>70</y>
+        <width>190</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>BMP</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="gifButton">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>110</y>
+        <width>190</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>GIF</string>
+      </property>
+     </widget>
+    </widget>
    </widget>
    <widget class="QLabel" name="pathFile">
     <property name="geometry">
      <rect>
-      <x>219</x>
+      <x>210</x>
       <y>10</y>
-      <width>371</width>
+      <width>380</width>
       <height>30</height>
      </rect>
     </property>
@@ -1078,9 +1174,9 @@
    <widget class="QLineEdit" name="countVertex">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>50</x>
       <y>10</y>
-      <width>61</width>
+      <width>40</width>
       <height>30</height>
      </rect>
     </property>
@@ -1088,9 +1184,9 @@
    <widget class="QLineEdit" name="countPolygon">
     <property name="geometry">
      <rect>
-      <x>139</x>
+      <x>150</x>
       <y>10</y>
-      <width>61</width>
+      <width>40</width>
       <height>30</height>
      </rect>
     </property>

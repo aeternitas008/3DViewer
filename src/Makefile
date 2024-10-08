@@ -52,14 +52,12 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = properties.c \
-		affine_transformations.c \
+SOURCES       = affine_transformations.c \
 		glwidget.cpp \
 		main.cpp \
 		mainwindow.cpp \
 		parcer.c moc_mainwindow.cpp
-OBJECTS       = properties.o \
-		affine_transformations.o \
+OBJECTS       = affine_transformations.o \
 		glwidget.o \
 		main.o \
 		mainwindow.o \
@@ -368,12 +366,10 @@ DIST          = /usr/local/Qt-6.6.2/mkspecs/features/spec_pre.prf \
 		/usr/local/Qt-6.6.2/mkspecs/features/exceptions.prf \
 		/usr/local/Qt-6.6.2/mkspecs/features/yacc.prf \
 		/usr/local/Qt-6.6.2/mkspecs/features/lex.prf \
-		3D_Viewer.pro properties.h \
-		affine_transformations.h \
+		3D_Viewer.pro affine_transformations.h \
 		glwidget.h \
 		mainwindow.h \
-		parcer.h properties.c \
-		affine_transformations.c \
+		parcer.h affine_transformations.c \
 		glwidget.cpp \
 		main.cpp \
 		mainwindow.cpp \
@@ -1046,8 +1042,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/local/Qt-6.6.2/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents properties.h affine_transformations.h glwidget.h mainwindow.h parcer.h $(DISTDIR)/
-	$(COPY_FILE) --parents properties.c affine_transformations.c glwidget.cpp main.cpp mainwindow.cpp parcer.c $(DISTDIR)/
+	$(COPY_FILE) --parents affine_transformations.h glwidget.h mainwindow.h parcer.h $(DISTDIR)/
+	$(COPY_FILE) --parents affine_transformations.c glwidget.cpp main.cpp mainwindow.cpp parcer.c $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui $(DISTDIR)/
 
 
@@ -1434,7 +1430,6 @@ ui_mainwindow.h: mainwindow.ui \
 		/usr/local/Qt-6.6.2/include/QtGui/qopengl.h \
 		/usr/local/Qt-6.6.2/include/QtGui/qopenglext.h \
 		parcer.h \
-		properties.h \
 		affine_transformations.h
 	/usr/local/Qt-6.6.2/libexec/uic mainwindow.ui -o ui_mainwindow.h
 
@@ -1449,9 +1444,6 @@ compiler_lex_clean:
 compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
 
 ####### Compile
-
-properties.o: properties.c properties.h
-	$(CC) -c $(CFLAGS) $(INCPATH) -o properties.o properties.c
 
 affine_transformations.o: affine_transformations.c affine_transformations.h \
 		parcer.h
@@ -1628,7 +1620,6 @@ glwidget.o: glwidget.cpp glwidget.h \
 		/usr/local/Qt-6.6.2/include/QtGui/qopengl.h \
 		/usr/local/Qt-6.6.2/include/QtGui/qopenglext.h \
 		parcer.h \
-		properties.h \
 		affine_transformations.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o glwidget.o glwidget.cpp
 

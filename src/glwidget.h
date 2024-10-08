@@ -14,25 +14,21 @@
 
 extern "C" {
     #include "parcer.h"
-    #include "properties.h"
     #include "affine_transformations.h"
 }
 
-struct View
-{
-    float backColor[3];   // цвет фона (R, G, B, Прозрачность)          / glClearColor(0-1, 0-1, 0-1, 0-1) (тип GLclampf)
-    float lineColor[3];   // линии: цвет                                / glColor3fv(*array) || glColor3f(R, G, B) (тип double)
-    float pointColor[3];  // точки: цвет                                / glColor3fv(*array) || glColor3f(R, G, B) (тип double)
+struct Properties {
+    int projection_type;
+    int line_type;
+    float line_color[3];
+    float line_width;
+    int point_type;
+    float point_color[3];
+    float point_size;
+    float back_color[3];
 
-    float pointSize;      // точки: размер                              / glPointSize(float);
-    int pointType;        // точки: тип (нет, квадратные, круглые)      / не отрисовывать || по умолчанию || glEnable(GL_POINT_SMOOTH);
-
-    float lineWidth;      // линии: толщина                             / glLineWidth(float)
-    bool lineType;        // линии: тип (сплошная, штриховка)           / по умолчанию || glEnable(GL_LINE_STIPPLE)+ glLineStipple(1, 000F)
-
-    bool ortho;           // тип проекции (параллельная и центральная)  / glFrustum() || glOrtho()
+    double scene;
 };
-
 
 
 class GLWidget : public QOpenGLWidget
@@ -44,15 +40,13 @@ protected:
     void paintGL() override;
 // {0.8, 0.9, 0.0}
 public:
-    Model model = {nullptr, nullptr, 0, 0};
-    Properties property = get_start_props();
-
-    // View property = {{0}, {0.9, 0.7, 0.2}, {1, 1, 1}, 5.0, 2, 1.0, 0, 0}; // данные по умолчанию
-
+    Model model = {nullptr, nullptr, 0, 0, {0.0}, {0.0}};
+    Properties property = {0, 0xFFFF,  {0.9, 0.7, 0.2}, 1.0, 0, {1, 1, 1}, 5.0, {0}, 0};
 
     GLWidget(QWidget* parent = nullptr);
     ~GLWidget();
 
+    void centering();
 };
 
 #endif // GLWIDGET_H

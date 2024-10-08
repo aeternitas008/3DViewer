@@ -5,14 +5,13 @@
 #include <QMessageBox>
 
 #include <unistd.h>
-
 #include <parcer.h>
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    // QObject::connect(&ui->radioTypeCentral, &QRadioButton::checked, onClick);
 }
 
 MainWindow::~MainWindow()
@@ -32,26 +31,25 @@ void MainWindow::on_openButton_clicked()
     QString strQ = QFileDialog::getOpenFileName(this, "Open File", QString(), "*.obj");
 
     if (!strQ.isEmpty()) {
-        // Обновляем QLabel с путем к файлу
-        // ui->pathFile->setText(strQ);
         QFileInfo fileInfo(strQ);
         QString fileName = fileInfo.fileName();
         ui->pathFile->setText(fileName);
 
-        // Преобразуем QString в C-строку
         std::string strStd = strQ.toStdString();   
         const char *str = strStd.c_str();  // Используем c_str() для получения C-строки
 
         // Запускаем парсер с выбранным файлом
         s21_cleaner(&ui->glWidget->model);
-        s21_parser2(str, &ui->glWidget->model);
+        s21_parser(str, &ui->glWidget->model);
+
+        // Центрируем модель
+        ui->glWidget->centering();
+
         ui->countVertex->setText(QString::number(ui->glWidget->model.total_vertices));
-        ui->countPolygon->setText(QString::number(ui->glWidget->model.polygons_count));
-        print_extremum(ui->glWidget->model);
-        // вывести вектора и модель
-        // print_model(ui->glWidget->model);
+        ui->countPolygon->setText(QString::number(ui->glWidget->model.total_polygons));
     }
 }
+
 // ------------- КНОПКИ СДВИГА -------------
 
 void MainWindow::on_leftButton_clicked()
@@ -82,9 +80,6 @@ void MainWindow::on_closerButton_clicked()
 {
     s21_shift(&ui->glWidget->model, 0.1, Z);
     ui->glWidget->update();
-    qDebug()<<QString::number(ui->glWidget->model.vertices[3]);
-    qDebug()<<QString::number(ui->glWidget->model.vertices[4]);
-    qDebug()<<QString::number(ui->glWidget->model.vertices[5]);
 }
 
 
@@ -92,9 +87,6 @@ void MainWindow::on_furtherButton_clicked()
 {
     s21_shift(&ui->glWidget->model, -0.1, Z);
     ui->glWidget->update();
-    qDebug()<<QString::number(ui->glWidget->model.vertices[3]);
-    qDebug()<<QString::number(ui->glWidget->model.vertices[4]);
-    qDebug()<<QString::number(ui->glWidget->model.vertices[5]);
 }
 
 // -------- КНОПКИ МАСШТАБИРОВАНИЯ ---------
@@ -103,16 +95,11 @@ void MainWindow::on_increaseButton_clicked()
 {
     if(ui->glWidget->model.vertices)
     {
-        qDebug()<<QString::number(ui->glWidget->model.vertices[3]);
-        qDebug()<<QString::number(ui->glWidget->model.vertices[4]);
-        qDebug()<<QString::number(ui->glWidget->model.vertices[5]);
         s21_scale(&ui->glWidget->model, 1.1);
         ui->glWidget->update();
-        qDebug()<<QString::number(ui->glWidget->model.vertices[3]);
-        qDebug()<<QString::number(ui->glWidget->model.vertices[4]);
-        qDebug()<<QString::number(ui->glWidget->model.vertices[5]);
     }
 }
+
 
 void MainWindow::on_decreaseButton_clicked()
 {
@@ -122,6 +109,8 @@ void MainWindow::on_decreaseButton_clicked()
         ui->glWidget->update();
     }
 }
+
+
 
 // ------------ КНОПКИ ВРАЩЕНИЯ ------------
 
@@ -151,16 +140,8 @@ void MainWindow::on_rotateButtonY_2_clicked()
 
 void MainWindow::on_rotateButtonZ_clicked()
 {
-    qDebug()<<QString::number(ui->glWidget->model.vertices[3]);
-    qDebug()<<QString::number(ui->glWidget->model.vertices[4]);
-    qDebug()<<QString::number(ui->glWidget->model.vertices[5]);
-
     s21_rotate_forward(&ui->glWidget->model, 5.0, Z);
     ui->glWidget->update();
-
-    qDebug()<<QString::number(ui->glWidget->model.vertices[3]);
-    qDebug()<<QString::number(ui->glWidget->model.vertices[4]);
-    qDebug()<<QString::number(ui->glWidget->model.vertices[5]);
 }
 
 void MainWindow::on_rotateButtonZ_2_clicked()
@@ -169,39 +150,37 @@ void MainWindow::on_rotateButtonZ_2_clicked()
     ui->glWidget->update();
 }
 
+// --------- НАСТРОЙКИ ОТОБРАЖЕНИЯ ---------
 
-    // как обновить тип проекции??
+// ПРОЕКЦИЯ
+
 void MainWindow::on_radioTypeCentral_clicked()
 {
-    // как обновить тип проекции??
     ui->glWidget->property.projection_type = 0;
-    QMessageBox::information(this, "type", "central");
-    // ui->glWidget->update();
-//    ui->glWidget->initializeGL();
+    ui->glWidget->update();
 }
-
 
 void MainWindow::on_radioTypeParallel_clicked()
 {
     ui->glWidget->property.projection_type = 1;
-    // ui->glWidget->update();
-//    ui->glWidget->initializeGL();
+    ui->glWidget->update();
 }
 
+
+
+// ЛИНИИ
 
 void MainWindow::on_radioLineDashed_clicked()
 {
-    ui->glWidget->property.line_type = 1;
-     ui->glWidget->update();
+    ui->glWidget->property.line_type = 0x000F;
+    ui->glWidget->update();
 }
-
 
 void MainWindow::on_radioLineSolid_clicked()
 {
-    ui->glWidget->property.line_type = 0;
-     ui->glWidget->update();
+    ui->glWidget->property.line_type = 0xFFFF;
+    ui->glWidget->update();
 }
-
 
 void MainWindow::on_sliderLineWidth_valueChanged(int value)
 {
@@ -210,18 +189,14 @@ void MainWindow::on_sliderLineWidth_valueChanged(int value)
     ui->glWidget->update();
 }
 
-
 void MainWindow::on_lineEditLineWidth_returnPressed()
 {
     int value = ui->lineEditLineWidth->text().toInt();
     ui->sliderLineWidth->setValue(value);
-//    this->clearFocus();
     ui->glWidget->property.line_width = value;
-//    ui->sliderPointSize->setFocus();
     ui->lineEditLineWidth->clearFocus();
     ui->glWidget->update();
 }
-
 
 void MainWindow::on_sliderPointSize_valueChanged(int value)
 {
@@ -230,10 +205,8 @@ void MainWindow::on_sliderPointSize_valueChanged(int value)
     ui->glWidget->update();
 }
 
-
 void MainWindow::on_lineEditPointSize_returnPressed()
 {
-//    this->clearFocus();
     int value = ui->lineEditPointSize->text().toInt();
     ui->sliderPointSize->setValue(value);
 
@@ -243,16 +216,9 @@ void MainWindow::on_lineEditPointSize_returnPressed()
     ui->lineEditPointSize->clearFocus();
 }
 
-
 void MainWindow::on_comboBoxPointType_currentIndexChanged(int index)
 {
-    if (index == 0) {
-        ui->glWidget->property.point_type = 2;
-    } else if (index == 1) {
-        ui->glWidget->property.point_type = 1;
-    } else {
-        ui->glWidget->property.point_type = 0;
-    }
+    ui->glWidget->property.point_type = index;
     ui->glWidget->update();
 }
 
@@ -309,3 +275,106 @@ void MainWindow::on_comboBoxBackColor_currentIndexChanged(int index)
 
 }
 
+
+QColor getColorFromString(const QString &colorName)
+{
+    if (colorName == "черный") return QColor(Qt::black);
+    if (colorName == "красный") return QColor(Qt::red);
+    if (colorName == "желтый") return QColor(Qt::yellow);
+    if (colorName == "синий") return QColor(Qt::blue);
+    if (colorName == "зеленый") return QColor(Qt::green);
+    if (colorName == "оранжевый") return QColor(255, 165, 0);  // Оранжевый
+    if (colorName == "фиолетовый") return QColor(128, 0, 128);  // Фиолетовый
+    if (colorName == "белый") return QColor(Qt::white);
+    if (colorName == "рандомный") return QColor::fromRgb(rand() % 256, rand() % 256, rand() % 256);  // Рандомный цвет
+    return QColor(Qt::black);  // Цвет по умолчанию
+}
+
+
+
+void MainWindow::on_comboBoxLineColor_currentIndexChanged(int index)
+{
+    QString selectedColor = ui->comboBoxLineColor->itemText(index);
+        QColor color = getColorFromString(selectedColor);
+        ui->glWidget->property.line_color[0] = color.redF();
+        ui->glWidget->property.line_color[1] = color.greenF();
+        ui->glWidget->property.line_color[2] = color.blueF();
+
+        ui->glWidget->update();
+
+}
+
+
+void MainWindow::on_comboBoxPointColor_currentIndexChanged(int index)
+{
+    QString selectedColor = ui->comboBoxPointColor->itemText(index);
+        QColor color = getColorFromString(selectedColor);
+        ui->glWidget->property.point_color[0] = color.redF();
+        ui->glWidget->property.point_color[1] = color.greenF();
+        ui->glWidget->property.point_color[2] = color.blueF();
+
+        ui->glWidget->update();
+
+}
+
+
+void MainWindow::on_comboBoxBackColor_currentIndexChanged(int index)
+{
+    QString selectedColor = ui->comboBoxBackColor->itemText(index);
+        QColor color = getColorFromString(selectedColor);
+        ui->glWidget->property.back_color[0] = color.redF();
+        ui->glWidget->property.back_color[1] = color.greenF();
+        ui->glWidget->property.back_color[2] = color.blueF();
+        ui->glWidget->update();
+
+}
+
+
+QColor getColorFromString(const QString &colorName)
+{
+    if (colorName == "черный") return QColor(Qt::black);
+    if (colorName == "красный") return QColor(Qt::red);
+    if (colorName == "желтый") return QColor(Qt::yellow);
+    if (colorName == "синий") return QColor(Qt::blue);
+    if (colorName == "зеленый") return QColor(Qt::green);
+    if (colorName == "оранжевый") return QColor(255, 165, 0);  // Оранжевый
+    if (colorName == "фиолетовый") return QColor(128, 0, 128);  // Фиолетовый
+    if (colorName == "белый") return QColor(Qt::white);
+    if (colorName == "рандомный") return QColor::fromRgb(rand() % 256, rand() % 256, rand() % 256);  // Рандомный цвет
+    return QColor(Qt::black);  // Цвет по умолчанию
+}
+
+void MainWindow::on_comboBoxLineColor_currentIndexChanged(int index)
+{
+    QString selectedColor = ui->comboBoxLineColor->itemText(index);
+        QColor color = getColorFromString(selectedColor);
+        ui->glWidget->property.line_color[0] = color.redF();
+        ui->glWidget->property.line_color[1] = color.greenF();
+        ui->glWidget->property.line_color[2] = color.blueF();
+
+        ui->glWidget->update();
+
+}
+
+void MainWindow::on_comboBoxPointColor_currentIndexChanged(int index)
+{
+    QString selectedColor = ui->comboBoxPointColor->itemText(index);
+        QColor color = getColorFromString(selectedColor);
+        ui->glWidget->property.point_color[0] = color.redF();
+        ui->glWidget->property.point_color[1] = color.greenF();
+        ui->glWidget->property.point_color[2] = color.blueF();
+
+        ui->glWidget->update();
+
+}
+
+void MainWindow::on_comboBoxBackColor_currentIndexChanged(int index)
+{
+    QString selectedColor = ui->comboBoxBackColor->itemText(index);
+        QColor color = getColorFromString(selectedColor);
+        ui->glWidget->property.back_color[0] = color.redF();
+        ui->glWidget->property.back_color[1] = color.greenF();
+        ui->glWidget->property.back_color[2] = color.blueF();
+        ui->glWidget->update();
+
+}

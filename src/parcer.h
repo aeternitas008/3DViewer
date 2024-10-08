@@ -14,18 +14,17 @@ typedef struct {
     double *vertices;
     Polygon *polygons;
     unsigned int total_vertices;  // кол во вершин
-    unsigned int polygons_count;  // кол во граней
+    unsigned int total_polygons;  // кол во граней
     double max[3];
     double min[3];
 } Model;
 
-void s21_parser(Model *model);
-void s21_parser2(const char *filename, Model *model);
+void s21_parser(const char *filename, Model *model);
 void s21_get_vector(Model *model, char *line, int x);
 void s21_get_facet(Model *model, char *line, int x);
 
 void s21_cleaner(Model *model);
 
-void print_model(Model model);
-void print_extremum(Model model);
+// void print_model(Model model);
+// void print_extremum(Model model);
 #endif // PARCER_H
