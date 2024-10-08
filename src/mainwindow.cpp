@@ -222,6 +222,7 @@ void MainWindow::on_comboBoxPointType_currentIndexChanged(int index)
     ui->glWidget->update();
 }
 
+<<<<<<< HEAD
 
 
 
@@ -236,3 +237,58 @@ void MainWindow::on_comboBoxPointType_currentIndexChanged(int index)
 //     ui->glWidget->property.lineType = 0x000F;
 //     ui->glWidget->update();
 // }
+=======
+QColor getColorFromString(const QString &colorName)
+{
+    if (colorName == "черный") return QColor(Qt::black);
+    if (colorName == "красный") return QColor(Qt::red);
+    if (colorName == "желтый") return QColor(Qt::yellow);
+    if (colorName == "синий") return QColor(Qt::blue);
+    if (colorName == "зеленый") return QColor(Qt::green);
+    if (colorName == "оранжевый") return QColor(255, 165, 0);  // Оранжевый
+    if (colorName == "фиолетовый") return QColor(128, 0, 128);  // Фиолетовый
+    if (colorName == "белый") return QColor(Qt::white);
+    if (colorName == "рандомный") return QColor::fromRgb(rand() % 256, rand() % 256, rand() % 256);  // Рандомный цвет
+    return QColor(Qt::black);  // Цвет по умолчанию
+}
+
+
+
+void MainWindow::on_comboBoxLineColor_currentIndexChanged(int index)
+{
+    QString selectedColor = ui->comboBoxLineColor->itemText(index);
+        QColor color = getColorFromString(selectedColor);
+        ui->glWidget->property.line_color[0] = color.redF();
+        ui->glWidget->property.line_color[1] = color.greenF();
+        ui->glWidget->property.line_color[2] = color.blueF();
+
+        ui->glWidget->update();
+
+}
+
+
+void MainWindow::on_comboBoxPointColor_currentIndexChanged(int index)
+{
+    QString selectedColor = ui->comboBoxPointColor->itemText(index);
+        QColor color = getColorFromString(selectedColor);
+        ui->glWidget->property.point_color[0] = color.redF();
+        ui->glWidget->property.point_color[1] = color.greenF();
+        ui->glWidget->property.point_color[2] = color.blueF();
+
+        ui->glWidget->update();
+
+}
+
+
+void MainWindow::on_comboBoxBackColor_currentIndexChanged(int index)
+{
+    QString selectedColor = ui->comboBoxBackColor->itemText(index);
+        QColor color = getColorFromString(selectedColor);
+        ui->glWidget->property.back_color[0] = color.redF();
+        ui->glWidget->property.back_color[1] = color.greenF();
+        ui->glWidget->property.back_color[2] = color.blueF();
+        ui->glWidget->update();
+
+}
+
+>>>>>>> origin/beautifull-hoarfros
