@@ -157,11 +157,13 @@ void MainWindow::on_rotateButtonZ_2_clicked()
 void MainWindow::on_radioTypeCentral_clicked()
 {
     ui->glWidget->property.projection_type = 0;
+    ui->glWidget->update();
 }
 
 void MainWindow::on_radioTypeParallel_clicked()
 {
     ui->glWidget->property.projection_type = 1;
+    ui->glWidget->update();
 }
 
 
