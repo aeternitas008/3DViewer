@@ -222,22 +222,6 @@ void MainWindow::on_comboBoxPointType_currentIndexChanged(int index)
     ui->glWidget->update();
 }
 
-<<<<<<< HEAD
-
-
-
-// void MainWindow::on_radioLineSolid_clicked()
-// {
-//     ui->glWidget->property.lineType = 0xFFFF;
-//     ui->glWidget->update();
-// }
-
-// void MainWindow::on_radioLineDashed_clicked()
-// {
-//     ui->glWidget->property.lineType = 0x000F;
-//     ui->glWidget->update();
-// }
-=======
 QColor getColorFromString(const QString &colorName)
 {
     if (colorName == "черный") return QColor(Qt::black);
@@ -252,8 +236,6 @@ QColor getColorFromString(const QString &colorName)
     return QColor(Qt::black);  // Цвет по умолчанию
 }
 
-
-
 void MainWindow::on_comboBoxLineColor_currentIndexChanged(int index)
 {
     QString selectedColor = ui->comboBoxLineColor->itemText(index);
@@ -265,7 +247,6 @@ void MainWindow::on_comboBoxLineColor_currentIndexChanged(int index)
         ui->glWidget->update();
 
 }
-
 
 void MainWindow::on_comboBoxPointColor_currentIndexChanged(int index)
 {
@@ -279,7 +260,6 @@ void MainWindow::on_comboBoxPointColor_currentIndexChanged(int index)
 
 }
 
-
 void MainWindow::on_comboBoxBackColor_currentIndexChanged(int index)
 {
     QString selectedColor = ui->comboBoxBackColor->itemText(index);
@@ -290,5 +270,3 @@ void MainWindow::on_comboBoxBackColor_currentIndexChanged(int index)
         ui->glWidget->update();
 
 }
-
->>>>>>> origin/beautifull-hoarfros

@@ -52,6 +52,10 @@ private slots:
     void on_sliderPointSize_valueChanged(int value);
     void on_lineEditPointSize_returnPressed();
     void on_comboBoxPointType_currentIndexChanged(int index);
+
+    void on_comboBoxLineColor_currentIndexChanged(int index);
+    void on_comboBoxPointColor_currentIndexChanged(int index);
+    void on_comboBoxBackColor_currentIndexChanged(int index);
 };
 
 #endif // MAINWINDOW_H
