@@ -321,6 +321,12 @@
         <height>32</height>
        </rect>
       </property>
+      <property name="inputMask">
+       <string>d0</string>
+      </property>
+      <property name="text">
+       <string>1</string>
+      </property>
      </widget>
      <widget class="QPushButton" name="rotateButtonZ">
       <property name="geometry">
@@ -401,6 +407,12 @@
         <height>32</height>
        </rect>
       </property>
+      <property name="inputMask">
+       <string>d0</string>
+      </property>
+      <property name="text">
+       <string>1</string>
+      </property>
      </widget>
      <widget class="QSplitter" name="splitter_33">
       <property name="geometry">
@@ -423,7 +435,14 @@
          <normaloff>.</normaloff>.</iconset>
        </property>
       </widget>
-      <widget class="QLineEdit" name="inputScale"/>
+      <widget class="QLineEdit" name="inputScale">
+       <property name="inputMask">
+        <string>d0</string>
+       </property>
+       <property name="text">
+        <string>1</string>
+       </property>
+      </widget>
       <widget class="QPushButton" name="decreaseButton">
        <property name="text">
         <string>-</string>

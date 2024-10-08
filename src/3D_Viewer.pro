@@ -18,13 +18,13 @@ SOURCES += \
     glwidget.cpp \
     main.cpp \
     mainwindow.cpp \
-    parcer.c \
+    parser.c \
 
 HEADERS += \
     affine_transformations.h \
     glwidget.h \
     mainwindow.h \
-    parcer.h \
+    parser.h \
 
 FORMS += \
     mainwindow.ui

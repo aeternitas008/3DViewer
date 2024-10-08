@@ -54,38 +54,44 @@ void MainWindow::on_openButton_clicked()
 
 void MainWindow::on_leftButton_clicked()
 {
-    s21_shift(&ui->glWidget->model, -0.1, X);
+    double value = -(ui->inputShift->text().toDouble() / 100);
+    s21_shift(&ui->glWidget->model, value, X);
     ui->glWidget->update();
 }
 
 void MainWindow::on_rightButton_clicked()
 {
-    s21_shift(&ui->glWidget->model, 0.1, X);
+    double value = ui->inputShift->text().toDouble() / 100;
+    s21_shift(&ui->glWidget->model, value, X);
     ui->glWidget->update();
 }
 
 void MainWindow::on_upButton_clicked()
 {
-    s21_shift(&ui->glWidget->model, 0.1, Y);
+    double value = ui->inputShift->text().toDouble() / 100;
+    s21_shift(&ui->glWidget->model, value, Y);
     ui->glWidget->update();
 }
 
 void MainWindow::on_downButton_clicked()
 {
-    s21_shift(&ui->glWidget->model, -0.1, Y);
+    double value = -(ui->inputShift->text().toDouble() / 100);
+    s21_shift(&ui->glWidget->model, value, Y);
     ui->glWidget->update();
 }
 
 void MainWindow::on_closerButton_clicked()
 {
-    s21_shift(&ui->glWidget->model, 0.1, Z);
+    double value = ui->inputShift->text().toDouble() / 100;
+    s21_shift(&ui->glWidget->model, value, Z);
     ui->glWidget->update();
 }
 
 
 void MainWindow::on_furtherButton_clicked()
 {
-    s21_shift(&ui->glWidget->model, -0.1, Z);
+    double value = -(ui->inputShift->text().toDouble() / 100);
+    s21_shift(&ui->glWidget->model, value, Z);
     ui->glWidget->update();
 }
 
@@ -95,7 +101,8 @@ void MainWindow::on_increaseButton_clicked()
 {
     if(ui->glWidget->model.vertices)
     {
-        s21_scale(&ui->glWidget->model, 1.1);
+        double value = 1 + ui->inputScale->text().toDouble() / 100;
+        s21_scale(&ui->glWidget->model, value);
         ui->glWidget->update();
     }
 }
@@ -105,7 +112,8 @@ void MainWindow::on_decreaseButton_clicked()
 {
     if(ui->glWidget->model.vertices)
     {
-        s21_scale(&ui->glWidget->model, 0.9);
+        double value = 1 - ui->inputScale->text().toDouble() / 100;
+        s21_scale(&ui->glWidget->model, value);
         ui->glWidget->update();
     }
 }
@@ -116,37 +124,43 @@ void MainWindow::on_decreaseButton_clicked()
 
 void MainWindow::on_rotateButtonX_clicked()
 {
-    s21_rotate_forward(&ui->glWidget->model, 5.0, X);
+    double value = ui->inputScale->text().toDouble() / 10;
+    s21_rotate_forward(&ui->glWidget->model, value, X);
     ui->glWidget->update();
 }
 
 void MainWindow::on_rotateButtonX_2_clicked()
 {
-    s21_rotate_back(&ui->glWidget->model, 5.0, X);
+    double value = ui->inputScale->text().toDouble() / 10;
+    s21_rotate_back(&ui->glWidget->model, value, X);
     ui->glWidget->update();
 }
 
 void MainWindow::on_rotateButtonY_clicked()
 {
-    s21_rotate_forward(&ui->glWidget->model, 5.0, Y);
+    double value = ui->inputScale->text().toDouble() / 10;
+    s21_rotate_forward(&ui->glWidget->model, value, Y);
     ui->glWidget->update();
 }
 
 void MainWindow::on_rotateButtonY_2_clicked()
 {
-    s21_rotate_back(&ui->glWidget->model, 5.0, Y);
+    double value = ui->inputScale->text().toDouble() / 10;
+    s21_rotate_back(&ui->glWidget->model, value, Y);
     ui->glWidget->update();
 }
 
 void MainWindow::on_rotateButtonZ_clicked()
 {
-    s21_rotate_forward(&ui->glWidget->model, 5.0, Z);
+    double value = ui->inputScale->text().toDouble() / 10;
+    s21_rotate_forward(&ui->glWidget->model, value, Z);
     ui->glWidget->update();
 }
 
 void MainWindow::on_rotateButtonZ_2_clicked()
 {
-    s21_rotate_back(&ui->glWidget->model, 5.0, Z);
+    double value = ui->inputScale->text().toDouble() / 10;
+    s21_rotate_back(&ui->glWidget->model, value, Z);
     ui->glWidget->update();
 }
 
