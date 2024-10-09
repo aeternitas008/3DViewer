@@ -124,42 +124,42 @@ void MainWindow::on_decreaseButton_clicked()
 
 void MainWindow::on_rotateButtonX_clicked()
 {
-    double value = ui->inputScale->text().toDouble() / 10;
+    double value = ui->inputRotate->text().toDouble() / 10;
     s21_rotate_forward(&ui->glWidget->model, value, X);
     ui->glWidget->update();
 }
 
 void MainWindow::on_rotateButtonX_2_clicked()
 {
-    double value = ui->inputScale->text().toDouble() / 10;
+    double value = ui->inputRotate->text().toDouble() / 10;
     s21_rotate_back(&ui->glWidget->model, value, X);
     ui->glWidget->update();
 }
 
 void MainWindow::on_rotateButtonY_clicked()
 {
-    double value = ui->inputScale->text().toDouble() / 10;
+    double value = ui->inputRotate->text().toDouble() / 10;
     s21_rotate_forward(&ui->glWidget->model, value, Y);
     ui->glWidget->update();
 }
 
 void MainWindow::on_rotateButtonY_2_clicked()
 {
-    double value = ui->inputScale->text().toDouble() / 10;
+    double value = ui->inputRotate->text().toDouble() / 10;
     s21_rotate_back(&ui->glWidget->model, value, Y);
     ui->glWidget->update();
 }
 
 void MainWindow::on_rotateButtonZ_clicked()
 {
-    double value = ui->inputScale->text().toDouble() / 10;
+    double value = ui->inputRotate->text().toDouble() / 10;
     s21_rotate_forward(&ui->glWidget->model, value, Z);
     ui->glWidget->update();
 }
 
 void MainWindow::on_rotateButtonZ_2_clicked()
 {
-    double value = ui->inputScale->text().toDouble() / 10;
+    double value = ui->inputRotate->text().toDouble() / 10;
     s21_rotate_back(&ui->glWidget->model, value, Z);
     ui->glWidget->update();
 }
@@ -253,13 +253,12 @@ QColor getColorFromString(const QString &colorName)
 void MainWindow::on_comboBoxLineColor_currentIndexChanged(int index)
 {
     QString selectedColor = ui->comboBoxLineColor->itemText(index);
-        QColor color = getColorFromString(selectedColor);
-        ui->glWidget->property.line_color[0] = color.redF();
-        ui->glWidget->property.line_color[1] = color.greenF();
-        ui->glWidget->property.line_color[2] = color.blueF();
+    QColor color = getColorFromString(selectedColor);
+    ui->glWidget->property.line_color[0] = color.redF();
+    ui->glWidget->property.line_color[1] = color.greenF();
+    ui->glWidget->property.line_color[2] = color.blueF();
 
-        ui->glWidget->update();
-
+    ui->glWidget->update();
 }
 
 void MainWindow::on_comboBoxPointColor_currentIndexChanged(int index)
@@ -271,7 +270,6 @@ void MainWindow::on_comboBoxPointColor_currentIndexChanged(int index)
         ui->glWidget->property.point_color[2] = color.blueF();
 
         ui->glWidget->update();
-
 }
 
 void MainWindow::on_comboBoxBackColor_currentIndexChanged(int index)
@@ -282,5 +280,4 @@ void MainWindow::on_comboBoxBackColor_currentIndexChanged(int index)
         ui->glWidget->property.back_color[1] = color.greenF();
         ui->glWidget->property.back_color[2] = color.blueF();
         ui->glWidget->update();
-
 }

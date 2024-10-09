@@ -2,6 +2,8 @@
 #define GLWIDGET_H
 
 #include <QOpenGLWidget>
+#include <QPoint>
+#include <QMouseEvent>
 
 #if defined(__APPLE__)
     #include <OpenGL/gl.h>
@@ -38,7 +40,11 @@ protected:
     void initializeGL() override;
     void resizeGL(int w, int h) override;
     void paintGL() override;
-// {0.8, 0.9, 0.0}
+    
+    // float xRot, yRot, zRot;
+    // QPoint mPos;
+    // void mousePressEvent(QMouseEvent*) override;
+    // void mouseMoveEvent(QMouseEvent*) override;
 public:
     Model model = {nullptr, nullptr, 0, 0, {0.0}, {0.0}};
     Properties property = {0, 0xFFFF,  {0.9, 0.7, 0.2}, 1.0, 0, {1, 1, 1}, 5.0, {0}, 0};

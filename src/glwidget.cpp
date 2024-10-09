@@ -26,6 +26,12 @@ void GLWidget::resizeGL(int w, int h)
 
 void GLWidget::paintGL()
 {
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+    glTranslatef(0,0, - 5);
+    // glTranslatef(0, 0, z);
+    glRotatef(xRot, 1, 0, 0);
+    glRotatef(yRot, 0, 1, 0);
     // qDebug("PAINT_GL");
     if(model.vertices)
     {
@@ -115,3 +121,13 @@ GLWidget::~GLWidget()
 {
     s21_cleaner(&model);
 }
+
+// void GLWidget::mousePressEvent(QMouseEvent* mo) {
+//     mPos = mo->pos();
+// }
+
+// void GLWidget::mouseMoveEvent(QMouseEvent* mo) {
+//     xRot = 1/M_PI * (mo->pos().y() - mPos.y());
+//     yRot = 1/M_PI * (mo->pos().x() - mPos.x());
+//     update();
+// }

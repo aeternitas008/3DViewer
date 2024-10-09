@@ -56,12 +56,12 @@ SOURCES       = affine_transformations.c \
 		glwidget.cpp \
 		main.cpp \
 		mainwindow.cpp \
-		parcer.c moc_mainwindow.cpp
+		parser.c moc_mainwindow.cpp
 OBJECTS       = affine_transformations.o \
 		glwidget.o \
 		main.o \
 		mainwindow.o \
-		parcer.o \
+		parser.o \
 		moc_mainwindow.o
 DIST          = /usr/local/Qt-6.6.2/mkspecs/features/spec_pre.prf \
 		/usr/local/Qt-6.6.2/mkspecs/features/device_config.prf \
@@ -369,11 +369,11 @@ DIST          = /usr/local/Qt-6.6.2/mkspecs/features/spec_pre.prf \
 		3D_Viewer.pro affine_transformations.h \
 		glwidget.h \
 		mainwindow.h \
-		parcer.h affine_transformations.c \
+		parser.h affine_transformations.c \
 		glwidget.cpp \
 		main.cpp \
 		mainwindow.cpp \
-		parcer.c
+		parser.c
 QMAKE_TARGET  = 3D_Viewer
 DESTDIR       = 
 TARGET        = 3D_Viewer.app/Contents/MacOS/3D_Viewer
@@ -1042,8 +1042,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/local/Qt-6.6.2/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents affine_transformations.h glwidget.h mainwindow.h parcer.h $(DISTDIR)/
-	$(COPY_FILE) --parents affine_transformations.c glwidget.cpp main.cpp mainwindow.cpp parcer.c $(DISTDIR)/
+	$(COPY_FILE) --parents affine_transformations.h glwidget.h mainwindow.h parser.h $(DISTDIR)/
+	$(COPY_FILE) --parents affine_transformations.c glwidget.cpp main.cpp mainwindow.cpp parser.c $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui $(DISTDIR)/
 
 
@@ -1429,7 +1429,9 @@ ui_mainwindow.h: mainwindow.ui \
 		/usr/local/Qt-6.6.2/include/QtGui/qsurfaceformat.h \
 		/usr/local/Qt-6.6.2/include/QtGui/qopengl.h \
 		/usr/local/Qt-6.6.2/include/QtGui/qopenglext.h \
-		parcer.h \
+		/usr/local/Qt-6.6.2/include/QtCore/QPoint \
+		/usr/local/Qt-6.6.2/include/QtGui/QMouseEvent \
+		parser.h \
 		affine_transformations.h
 	/usr/local/Qt-6.6.2/libexec/uic mainwindow.ui -o ui_mainwindow.h
 
@@ -1446,7 +1448,7 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 ####### Compile
 
 affine_transformations.o: affine_transformations.c affine_transformations.h \
-		parcer.h
+		parser.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o affine_transformations.o affine_transformations.c
 
 glwidget.o: glwidget.cpp glwidget.h \
@@ -1619,7 +1621,9 @@ glwidget.o: glwidget.cpp glwidget.h \
 		/usr/local/Qt-6.6.2/include/QtGui/qsurfaceformat.h \
 		/usr/local/Qt-6.6.2/include/QtGui/qopengl.h \
 		/usr/local/Qt-6.6.2/include/QtGui/qopenglext.h \
-		parcer.h \
+		/usr/local/Qt-6.6.2/include/QtCore/QPoint \
+		/usr/local/Qt-6.6.2/include/QtGui/QMouseEvent \
+		parser.h \
 		affine_transformations.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o glwidget.o glwidget.cpp
 
@@ -1976,6 +1980,85 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		/usr/local/Qt-6.6.2/include/QtCore/qnativeinterface.h \
 		/usr/local/Qt-6.6.2/include/QtWidgets/qtabwidget.h \
 		ui_mainwindow.h \
+		/usr/local/Qt-6.6.2/include/QtCore/QLocale \
+		/usr/local/Qt-6.6.2/include/QtCore/qlocale.h \
+		/usr/local/Qt-6.6.2/include/QtCore/QVariant \
+		/usr/local/Qt-6.6.2/include/QtGui/QIcon \
+		/usr/local/Qt-6.6.2/include/QtWidgets/QApplication \
+		/usr/local/Qt-6.6.2/include/QtWidgets/qapplication.h \
+		/usr/local/Qt-6.6.2/include/QtCore/qcoreapplication.h \
+		/usr/local/Qt-6.6.2/include/QtCore/qeventloop.h \
+		/usr/local/Qt-6.6.2/include/QtCore/qcoreapplication_platform.h \
+		/usr/local/Qt-6.6.2/include/QtCore/qfuture.h \
+		/usr/local/Qt-6.6.2/include/QtCore/qfutureinterface.h \
+		/usr/local/Qt-6.6.2/include/QtCore/qmutex.h \
+		/usr/local/Qt-6.6.2/include/QtCore/qdeadlinetimer.h \
+		/usr/local/Qt-6.6.2/include/QtCore/qelapsedtimer.h \
+		/usr/local/Qt-6.6.2/include/QtCore/qtsan_impl.h \
+		/usr/local/Qt-6.6.2/include/QtCore/qresultstore.h \
+		/usr/local/Qt-6.6.2/include/QtCore/qfuture_impl.h \
+		/usr/local/Qt-6.6.2/include/QtCore/qthreadpool.h \
+		/usr/local/Qt-6.6.2/include/QtCore/qthread.h \
+		/usr/local/Qt-6.6.2/include/QtCore/qrunnable.h \
+		/usr/local/Qt-6.6.2/include/QtCore/qexception.h \
+		/usr/local/Qt-6.6.2/include/QtCore/qpromise.h \
+		/usr/local/Qt-6.6.2/include/QtGui/qguiapplication.h \
+		/usr/local/Qt-6.6.2/include/QtGui/qinputmethod.h \
+		/usr/local/Qt-6.6.2/include/QtGui/qguiapplication_platform.h \
+		/usr/local/Qt-6.6.2/include/QtWidgets/QComboBox \
+		/usr/local/Qt-6.6.2/include/QtWidgets/qcombobox.h \
+		/usr/local/Qt-6.6.2/include/QtWidgets/qabstractitemdelegate.h \
+		/usr/local/Qt-6.6.2/include/QtWidgets/qstyleoption.h \
+		/usr/local/Qt-6.6.2/include/QtWidgets/qabstractspinbox.h \
+		/usr/local/Qt-6.6.2/include/QtGui/qvalidator.h \
+		/usr/local/Qt-6.6.2/include/QtCore/qregularexpression.h \
+		/usr/local/Qt-6.6.2/include/QtWidgets/qslider.h \
+		/usr/local/Qt-6.6.2/include/QtWidgets/qabstractslider.h \
+		/usr/local/Qt-6.6.2/include/QtWidgets/qstyle.h \
+		/usr/local/Qt-6.6.2/include/QtWidgets/qtabbar.h \
+		/usr/local/Qt-6.6.2/include/QtWidgets/qrubberband.h \
+		/usr/local/Qt-6.6.2/include/QtWidgets/qframe.h \
+		/usr/local/Qt-6.6.2/include/QtCore/qabstractitemmodel.h \
+		/usr/local/Qt-6.6.2/include/QtWidgets/QLabel \
+		/usr/local/Qt-6.6.2/include/QtWidgets/qlabel.h \
+		/usr/local/Qt-6.6.2/include/QtGui/qpicture.h \
+		/usr/local/Qt-6.6.2/include/QtGui/qtextdocument.h \
+		/usr/local/Qt-6.6.2/include/QtWidgets/QLayout \
+		/usr/local/Qt-6.6.2/include/QtWidgets/qlayout.h \
+		/usr/local/Qt-6.6.2/include/QtWidgets/qlayoutitem.h \
+		/usr/local/Qt-6.6.2/include/QtWidgets/qboxlayout.h \
+		/usr/local/Qt-6.6.2/include/QtWidgets/qgridlayout.h \
+		/usr/local/Qt-6.6.2/include/QtWidgets/QLineEdit \
+		/usr/local/Qt-6.6.2/include/QtWidgets/qlineedit.h \
+		/usr/local/Qt-6.6.2/include/QtGui/qtextcursor.h \
+		/usr/local/Qt-6.6.2/include/QtGui/qtextformat.h \
+		/usr/local/Qt-6.6.2/include/QtGui/qpen.h \
+		/usr/local/Qt-6.6.2/include/QtGui/qtextoption.h \
+		/usr/local/Qt-6.6.2/include/QtWidgets/QPushButton \
+		/usr/local/Qt-6.6.2/include/QtWidgets/qpushbutton.h \
+		/usr/local/Qt-6.6.2/include/QtWidgets/qabstractbutton.h \
+		/usr/local/Qt-6.6.2/include/QtWidgets/QRadioButton \
+		/usr/local/Qt-6.6.2/include/QtWidgets/qradiobutton.h \
+		/usr/local/Qt-6.6.2/include/QtWidgets/QSlider \
+		/usr/local/Qt-6.6.2/include/QtWidgets/QSplitter \
+		/usr/local/Qt-6.6.2/include/QtWidgets/qsplitter.h \
+		/usr/local/Qt-6.6.2/include/QtWidgets/QToolBox \
+		/usr/local/Qt-6.6.2/include/QtWidgets/qtoolbox.h \
+		/usr/local/Qt-6.6.2/include/QtWidgets/QVBoxLayout \
+		/usr/local/Qt-6.6.2/include/QtWidgets/QWidget \
+		glwidget.h \
+		/usr/local/Qt-6.6.2/include/QtOpenGLWidgets/QOpenGLWidget \
+		/usr/local/Qt-6.6.2/include/QtOpenGLWidgets/qopenglwidget.h \
+		/usr/local/Qt-6.6.2/include/QtOpenGLWidgets/qtopenglwidgetsglobal.h \
+		/usr/local/Qt-6.6.2/include/QtOpenGLWidgets/qtopenglwidgetsexports.h \
+		/usr/local/Qt-6.6.2/include/QtGui/QSurfaceFormat \
+		/usr/local/Qt-6.6.2/include/QtGui/qsurfaceformat.h \
+		/usr/local/Qt-6.6.2/include/QtGui/qopengl.h \
+		/usr/local/Qt-6.6.2/include/QtGui/qopenglext.h \
+		/usr/local/Qt-6.6.2/include/QtCore/QPoint \
+		/usr/local/Qt-6.6.2/include/QtGui/QMouseEvent \
+		parser.h \
+		affine_transformations.h \
 		/usr/local/Qt-6.6.2/include/QtWidgets/QFileDialog \
 		/usr/local/Qt-6.6.2/include/QtWidgets/qfiledialog.h \
 		/usr/local/Qt-6.6.2/include/QtCore/qdir.h \
@@ -1984,20 +2067,15 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		/usr/local/Qt-6.6.2/include/QtCore/qfileinfo.h \
 		/usr/local/Qt-6.6.2/include/QtCore/qdatetime.h \
 		/usr/local/Qt-6.6.2/include/QtCore/qcalendar.h \
-		/usr/local/Qt-6.6.2/include/QtCore/qlocale.h \
 		/usr/local/Qt-6.6.2/include/QtCore/qtimezone.h \
 		/usr/local/Qt-6.6.2/include/QtWidgets/qdialog.h \
-		/usr/local/Qt-6.6.2/include/QtWidgets/QRadioButton \
-		/usr/local/Qt-6.6.2/include/QtWidgets/qradiobutton.h \
-		/usr/local/Qt-6.6.2/include/QtWidgets/qabstractbutton.h \
 		/usr/local/Qt-6.6.2/include/QtWidgets/QMessageBox \
 		/usr/local/Qt-6.6.2/include/QtWidgets/qmessagebox.h \
-		/usr/local/Qt-6.6.2/include/QtWidgets/qdialogbuttonbox.h \
-		parcer.h
+		/usr/local/Qt-6.6.2/include/QtWidgets/qdialogbuttonbox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o mainwindow.cpp
 
-parcer.o: parcer.c parcer.h
-	$(CC) -c $(CFLAGS) $(INCPATH) -o parcer.o parcer.c
+parser.o: parser.c parser.h
+	$(CC) -c $(CFLAGS) $(INCPATH) -o parser.o parser.c
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
