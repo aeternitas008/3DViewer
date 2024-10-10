@@ -122,12 +122,12 @@ GLWidget::~GLWidget()
     s21_cleaner(&model);
 }
 
-// void GLWidget::mousePressEvent(QMouseEvent* mo) {
-//     mPos = mo->pos();
-// }
+void GLWidget::mousePressEvent(QMouseEvent* mo) {
+    mPos = mo->pos();
+}
 
-// void GLWidget::mouseMoveEvent(QMouseEvent* mo) {
-//     xRot = 1/M_PI * (mo->pos().y() - mPos.y());
-//     yRot = 1/M_PI * (mo->pos().x() - mPos.x());
-//     update();
-// }
+void GLWidget::mouseMoveEvent(QMouseEvent* mo) {
+    xRot = 1/M_PI * (mo->pos().y() - mPos.y());
+    yRot = 1/M_PI * (mo->pos().x() - mPos.x());
+    update();
+}

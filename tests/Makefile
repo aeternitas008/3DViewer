@@ -14,13 +14,17 @@ endif
 
 
 
-LIBRARY_SOURCES = ../src/parcer.c
+LIBRARY_SOURCES = ../src/parser.c
 
 
 LIBRARY_OBJECTS = parser.o 
 
-TEST_SOURCES =  s21_parcer.c \
+TEST_SOURCES =  s21_parser.c \
 				test.c \
+				s21_affin_rotate_test.c \
+				s21_affin_shift_test.c \
+				s21_affin_scale_test.c \
+				
 
 all: test gcov_report
 
