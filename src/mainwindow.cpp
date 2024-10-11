@@ -125,42 +125,42 @@ void MainWindow::on_decreaseButton_clicked()
 void MainWindow::on_rotateButtonX_clicked()
 {
     double value = ui->inputRotate->text().toDouble() / 10;
-    s21_rotate_forward(&ui->glWidget->model, value, X);
+    s21_rotate(&ui->glWidget->model, value, X);
     ui->glWidget->update();
 }
 
 void MainWindow::on_rotateButtonX_2_clicked()
 {
     double value = ui->inputRotate->text().toDouble() / 10;
-    s21_rotate_back(&ui->glWidget->model, value, X);
+    s21_rotate(&ui->glWidget->model, -value, X);
     ui->glWidget->update();
 }
 
 void MainWindow::on_rotateButtonY_clicked()
 {
     double value = ui->inputRotate->text().toDouble() / 10;
-    s21_rotate_forward(&ui->glWidget->model, value, Y);
+    s21_rotate(&ui->glWidget->model, value, Y);
     ui->glWidget->update();
 }
 
 void MainWindow::on_rotateButtonY_2_clicked()
 {
     double value = ui->inputRotate->text().toDouble() / 10;
-    s21_rotate_back(&ui->glWidget->model, value, Y);
+    s21_rotate(&ui->glWidget->model, -value, Y);
     ui->glWidget->update();
 }
 
 void MainWindow::on_rotateButtonZ_clicked()
 {
     double value = ui->inputRotate->text().toDouble() / 10;
-    s21_rotate_forward(&ui->glWidget->model, value, Z);
+    s21_rotate(&ui->glWidget->model, value, Z);
     ui->glWidget->update();
 }
 
 void MainWindow::on_rotateButtonZ_2_clicked()
 {
     double value = ui->inputRotate->text().toDouble() / 10;
-    s21_rotate_back(&ui->glWidget->model, value, Z);
+    s21_rotate(&ui->glWidget->model, -value, Z);
     ui->glWidget->update();
 }
 

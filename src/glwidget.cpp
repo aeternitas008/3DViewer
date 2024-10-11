@@ -26,13 +26,19 @@ void GLWidget::resizeGL(int w, int h)
 
 void GLWidget::paintGL()
 {
+    // Очищаем буфер цвета и глубины
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    // Переключаемся в режим работы с моделью
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-    glTranslatef(0,0, - 5);
-    // glTranslatef(0, 0, z);
-    glRotatef(xRot, 1, 0, 0);
-    glRotatef(yRot, 0, 1, 0);
-    // qDebug("PAINT_GL");
+
+    // Перемещаем камеру
+    // glTranslatef(0.0f, 0.0f, -5.0f);
+
+    // Применяем повороты, используя xRot и yRot
+    glRotatef(xRot, 1.0f, 0.0f, 0.0f);
+    glRotatef(yRot, 0.0f, 1.0f, 0.0f);
     if(model.vertices)
     {
     // ----- выставляем камеру -----
@@ -127,7 +133,21 @@ void GLWidget::mousePressEvent(QMouseEvent* mo) {
 }
 
 void GLWidget::mouseMoveEvent(QMouseEvent* mo) {
-    xRot = 1/M_PI * (mo->pos().y() - mPos.y());
-    yRot = 1/M_PI * (mo->pos().x() - mPos.x());
+    // Вычисляем изменение позиции мыши
+    int dx = mo->pos().x() - mPos.x();
+    int dy = mo->pos().y() - mPos.y();
+
+    // Изменяем углы поворота модели в зависимости от перемещения мыши
+    xRot += dy * 0.5f; // Множитель 0.5 для плавности
+    yRot += dx * 0.5f;
+
+    // Ограничиваем углы, чтобы избежать слишком большого значения
+    xRot = std::fmod(xRot, 360.0f);
+    yRot = std::fmod(yRot, 360.0f);
+
+    // Обновляем позицию мыши для следующего вызова
+    mPos = mo->pos();
+
+    // Запрашиваем перерисовку экрана
     update();
 }
