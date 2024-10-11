@@ -41,10 +41,10 @@ protected:
     void resizeGL(int w, int h) override;
     void paintGL() override;
     
-    float xRot = 0.0f, yRot = 0.0f, zRot = 0.0f;
-    QPoint mPos;
-    void mousePressEvent(QMouseEvent*) override;
-    void mouseMoveEvent(QMouseEvent*) override;
+    // float xRot = 0.0f, yRot = 0.0f, zRot = 0.0f;
+    // QPoint mPos;
+    // void mousePressEvent(QMouseEvent*) override;
+    // void mouseMoveEvent(QMouseEvent*) override;
 public:
     Model model = {nullptr, nullptr, 0, 0, {0.0}, {0.0}};
     Properties property = {0, 0xFFFF,  {0.9, 0.7, 0.2}, 1.0, 0, {1, 1, 1}, 5.0, {0}, 0};
