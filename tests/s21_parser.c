@@ -105,6 +105,32 @@ START_TEST(s21_test_empty_lines) {
 }
 END_TEST
 
+START_TEST(s21_test_invalid_file) {
+    Model model = {0};
+
+    // Попытка парсинга несуществующего файла
+    bool result = s21_parser("non_existent.obj", &model);
+    ck_assert_int_eq(result, false);
+
+    // Попытка парсинга пустого файла
+    result = s21_parser("empty.obj", &model);
+    ck_assert_int_eq(result, true);
+
+    s21_cleaner(&model);
+}
+END_TEST
+
+
+START_TEST(s21_test_memory_allocation_error) {
+    Model model = {0};
+    model.vertices = NULL;
+    bool result = s21_parser("invalide_file.obj", &model);
+    ck_assert_int_eq(result, true);
+
+    s21_cleaner(&model);
+}
+END_TEST
+
 
 Suite *parser_suite() {
   Suite *s;
@@ -115,6 +141,8 @@ Suite *parser_suite() {
   tcase_add_test(tc_core, s21_test2);
   tcase_add_test(tc_core, s21_test3);
   tcase_add_test(tc_core, s21_test_empty_lines);
+  tcase_add_test(tc_core, s21_test_invalid_file);
+  tcase_add_test(tc_core, s21_test_memory_allocation_error);
 
   suite_add_tcase(s, tc_core);
 
