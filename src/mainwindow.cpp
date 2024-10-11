@@ -256,19 +256,22 @@ void MainWindow::on_jpegButton_clicked()
 
         // формируем имя файла
         QString name;
-        name = ui->pathFile->text();
+        name = "Screenshot/" + ui->pathFile->text();
         name.truncate(name.indexOf('.'));
+        name += "_";
 
         // проверяем существование файла
-        if(QFile().exists("Screenshot/" + name + ".jpeg")) {
-            static quint32 i{1};
-            name += "_" + QString::number(i++);
+        for(quint32 i = 0; ; i++) {
+            if(!QFile().exists(name + QString::number(i) + ".jpeg")) {
+                name += QString::number(i) + ".jpeg";
+                break;
+            }
         }
 
         // формируем изображение и сохраняем его
         QImage picture;
         picture = ui->glWidget->grabFramebuffer();
-        picture.save("Screenshot/" + name + ".jpeg", "jpeg", 100);
+        picture.save(name, "jpeg", 100);
     }
 }
 
@@ -287,19 +290,22 @@ void MainWindow::on_bmpButton_clicked()
 
         // формируем имя файла
         QString name;
-        name = ui->pathFile->text();
+        name = "Screenshot/" + ui->pathFile->text();
         name.truncate(name.indexOf('.'));
+        name += "_";
 
         // проверяем существование файла
-        if(QFile().exists("Screenshot/" + name + ".bmp")) {
-            static quint32 i{1};
-            name += "_" + QString::number(i++);
+        for(quint32 i = 0; ; i++) {
+            if(!QFile().exists(name + QString::number(i) + ".bmp")) {
+                name += QString::number(i) + ".bmp";
+                break;
+            }
         }
 
         // формируем изображение и сохраняем его
         QImage picture;
         picture = ui->glWidget->grabFramebuffer();
-        picture.save("Screenshot/" + name + ".bmp", "bmp", 100);
+        picture.save(name, "bmp", 100);
     }
 }
 
