@@ -19,12 +19,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-// кнопка Paint
-void MainWindow::on_paintButton_clicked()
-{
-    ui->glWidget->update();
-}
-
  // кнопка Open File
 void MainWindow::on_openButton_clicked()
 {   
@@ -198,36 +192,16 @@ void MainWindow::on_radioLineSolid_clicked()
 
 void MainWindow::on_sliderLineWidth_valueChanged(int value)
 {
-    ui->lineEditLineWidth->setText(QString::number(value));
+    ui->lineEditLineWidth->setValue(value);
     ui->glWidget->property.line_width = value;
-    ui->glWidget->update();
-}
-
-void MainWindow::on_lineEditLineWidth_returnPressed()
-{
-    int value = ui->lineEditLineWidth->text().toInt();
-    ui->sliderLineWidth->setValue(value);
-    ui->glWidget->property.line_width = value;
-    ui->lineEditLineWidth->clearFocus();
     ui->glWidget->update();
 }
 
 void MainWindow::on_sliderPointSize_valueChanged(int value)
 {
-    ui->lineEditPointSize->setText(QString::number(value));
+    ui->lineEditPointSize->setValue(value);
     ui->glWidget->property.point_size = value;
     ui->glWidget->update();
-}
-
-void MainWindow::on_lineEditPointSize_returnPressed()
-{
-    int value = ui->lineEditPointSize->text().toInt();
-    ui->sliderPointSize->setValue(value);
-
-    ui->glWidget->property.point_size = value;
-    ui->glWidget->update();
-
-    ui->lineEditPointSize->clearFocus();
 }
 
 void MainWindow::on_comboBoxPointType_currentIndexChanged(int index)
@@ -281,3 +255,19 @@ void MainWindow::on_comboBoxBackColor_currentIndexChanged(int index)
         ui->glWidget->property.back_color[2] = color.blueF();
         ui->glWidget->update();
 }
+
+void MainWindow::on_lineEditLineWidth_valueChanged(int arg1)
+{
+     ui->sliderLineWidth->setValue(arg1);
+     ui->glWidget->property.line_width = arg1;
+     ui->glWidget->update();
+}
+
+
+void MainWindow::on_lineEditPointSize_valueChanged(int arg1)
+{
+     ui->sliderPointSize->setValue(arg1);
+     ui->glWidget->property.point_size = arg1;
+     ui->glWidget->update();
+}
+

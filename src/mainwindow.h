@@ -21,7 +21,7 @@ private:
     Ui::MainWindow *ui;
 
 private slots:
-    void on_paintButton_clicked();
+    // void on_paintButton_clicked();
     void on_openButton_clicked();
 
     // сдвиг модели
@@ -48,14 +48,15 @@ private slots:
     void on_radioLineDashed_clicked();
     void on_radioLineSolid_clicked();
     void on_sliderLineWidth_valueChanged(int value);
-    void on_lineEditLineWidth_returnPressed();
     void on_sliderPointSize_valueChanged(int value);
-    void on_lineEditPointSize_returnPressed();
     void on_comboBoxPointType_currentIndexChanged(int index);
 
     void on_comboBoxLineColor_currentIndexChanged(int index);
     void on_comboBoxPointColor_currentIndexChanged(int index);
     void on_comboBoxBackColor_currentIndexChanged(int index);
+    
+    void on_lineEditLineWidth_valueChanged(int arg1);
+    void on_lineEditPointSize_valueChanged(int arg1);
 };
 
 #endif // MAINWINDOW_H

@@ -26,19 +26,19 @@ void GLWidget::resizeGL(int w, int h)
 
 void GLWidget::paintGL()
 {
+
+    // Дополнительный функционал для управления объектом мышью
     // Очищаем буфер цвета и глубины
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
+    // glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     // Переключаемся в режим работы с моделью
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity();
-
+    // glMatrixMode(GL_MODELVIEW);
+    // glLoadIdentity();
     // Перемещаем камеру
     // glTranslatef(0.0f, 0.0f, -5.0f);
-
     // Применяем повороты, используя xRot и yRot
-    glRotatef(xRot, 1.0f, 0.0f, 0.0f);
-    glRotatef(yRot, 0.0f, 1.0f, 0.0f);
+    // glRotatef(xRot, 1.0f, 0.0f, 0.0f);
+    // glRotatef(yRot, 0.0f, 1.0f, 0.0f);
+    
     if(model.vertices)
     {
     // ----- выставляем камеру -----
@@ -128,26 +128,18 @@ GLWidget::~GLWidget()
     s21_cleaner(&model);
 }
 
-void GLWidget::mousePressEvent(QMouseEvent* mo) {
-    mPos = mo->pos();
-}
+// Дополнительный функционал
+// void GLWidget::mousePressEvent(QMouseEvent* mo) {
+//     mPos = mo->pos();
+// }
 
-void GLWidget::mouseMoveEvent(QMouseEvent* mo) {
-    // Вычисляем изменение позиции мыши
-    int dx = mo->pos().x() - mPos.x();
-    int dy = mo->pos().y() - mPos.y();
+// void GLWidget::mouseMoveEvent(QMouseEvent* mo) {
+//     // Вычисляем изменение позиции мыши
+//     int dx = mo->pos().x() - mPos.x();
+//     int dy = mo->pos().y() - mPos.y();
 
-    // Изменяем углы поворота модели в зависимости от перемещения мыши
-    xRot += dy * 0.5f; // Множитель 0.5 для плавности
-    yRot += dx * 0.5f;
-
-    // Ограничиваем углы, чтобы избежать слишком большого значения
-    xRot = std::fmod(xRot, 360.0f);
-    yRot = std::fmod(yRot, 360.0f);
-
-    // Обновляем позицию мыши для следующего вызова
-    mPos = mo->pos();
-
-    // Запрашиваем перерисовку экрана
-    update();
-}
+//     xRot += dy * 1/M_2_PI; // Множитель 0.5 для плавности
+//     yRot += dx * 1/M_2_PI;
+    
+//     update();
+// }
