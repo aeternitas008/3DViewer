@@ -1,7 +1,11 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
+#include <QtWidgets>
+
+// #include <QApplication>
+// #include <QMainWindow>
+// #include <QFileDialog>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -21,7 +25,6 @@ private:
     Ui::MainWindow *ui;
 
 private slots:
-    void on_paintButton_clicked();
     void on_openButton_clicked();
 
     // сдвиг модели
@@ -53,12 +56,14 @@ private slots:
 
     void on_sliderLineWidth_valueChanged(int value);
     void on_lineEditLineWidth_returnPressed();
-    void on_comboBoxLineColor_activated(int index);
+    void on_comboBoxLineColor_activated();
 
     void on_sliderPointSize_valueChanged(int value);
     void on_lineEditPointSize_returnPressed();
     void on_comboBoxPointType_currentIndexChanged(int index);
 
+    void on_jpegButton_clicked();
+    void on_bmpButton_clicked();
 };
 
 #endif // MAINWINDOW_H

@@ -3,12 +3,11 @@
 
 // -------------------
 
-#include <QFileDialog>
-#include <QRadioButton>
-#include <QMessageBox>
+// #include <QRadioButton>
+// #include <QMessageBox>
 
-#include <unistd.h>
-#include <parcer.h>
+// #include <unistd.h>
+// #include <parcer.h>
 
 // --------------------
 
@@ -25,12 +24,6 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
-}
-
-// кнопка Paint
-void MainWindow::on_paintButton_clicked()
-{
-    ui->glWidget->update();
 }
 
  // кнопка Open File
@@ -77,122 +70,87 @@ void MainWindow::on_leftButton_clicked()
 {
     s21_shift(&ui->glWidget->model, -0.1, X);
     ui->glWidget->update();
-    // qDebug()<<QString::number(ui->glWidget->model.vertices[3]);
-    // qDebug()<<QString::number(ui->glWidget->model.vertices[4]);
-    // qDebug()<<QString::number(ui->glWidget->model.vertices[5]);
 }
 
 void MainWindow::on_rightButton_clicked()
 {
     s21_shift(&ui->glWidget->model, 0.1, X);
     ui->glWidget->update();
-    // qDebug()<<QString::number(ui->glWidget->model.vertices[3]);
-    // qDebug()<<QString::number(ui->glWidget->model.vertices[4]);
-    // qDebug()<<QString::number(ui->glWidget->model.vertices[5]);
 }
 
 void MainWindow::on_upButton_clicked()
 {
     s21_shift(&ui->glWidget->model, 0.1, Y);
     ui->glWidget->update();
-    // qDebug()<<QString::number(ui->glWidget->model.vertices[3]);
-    // qDebug()<<QString::number(ui->glWidget->model.vertices[4]);
-    // qDebug()<<QString::number(ui->glWidget->model.vertices[5]);
 }
 
 void MainWindow::on_downButton_clicked()
 {
     s21_shift(&ui->glWidget->model, -0.1, Y);
     ui->glWidget->update();
-    // qDebug()<<QString::number(ui->glWidget->model.vertices[3]);
-    // qDebug()<<QString::number(ui->glWidget->model.vertices[4]);
-    // qDebug()<<QString::number(ui->glWidget->model.vertices[5]);
 }
 
 void MainWindow::on_closerButton_clicked()
 {
     s21_shift(&ui->glWidget->model, 0.1, Z);
     ui->glWidget->update();
-    // qDebug()<<QString::number(ui->glWidget->model.vertices[3]);
-    // qDebug()<<QString::number(ui->glWidget->model.vertices[4]);
-    // qDebug()<<QString::number(ui->glWidget->model.vertices[5]);
 }
-
 
 void MainWindow::on_furtherButton_clicked()
 {
     s21_shift(&ui->glWidget->model, -0.1, Z);
     ui->glWidget->update();
-    // qDebug()<<QString::number(ui->glWidget->model.vertices[3]);
-    // qDebug()<<QString::number(ui->glWidget->model.vertices[4]);
-    // qDebug()<<QString::number(ui->glWidget->model.vertices[5]);
 }
 
 // -------- КНОПКИ МАСШТАБИРОВАНИЯ ---------
 
 void MainWindow::on_increaseButton_clicked()
 {
-    if(ui->glWidget->model.vertices)
-    {
-        s21_scale(&ui->glWidget->model, 1.1);
-        ui->glWidget->update();
-
-        // qDebug()<<QString::number(ui->glWidget->model.vertices[3]);
-        // qDebug()<<QString::number(ui->glWidget->model.vertices[4]);
-        // qDebug()<<QString::number(ui->glWidget->model.vertices[5]);
-        // qDebug()<<QString::number(ui->glWidget->model.vertices[24]);
-        // qDebug()<<QString::number(ui->glWidget->model.vertices[25]);
-        // qDebug()<<QString::number(ui->glWidget->model.vertices[26]);
-    }
+    s21_scale(&ui->glWidget->model, 1.1);
+    ui->glWidget->update();
 }
 
 void MainWindow::on_decreaseButton_clicked()
 {
-    if(ui->glWidget->model.vertices)
-    {
-        s21_scale(&ui->glWidget->model, 0.9);
-        ui->glWidget->update();
-        // qDebug()<<QString::number(ui->glWidget->model.vertices[3]);
-        // qDebug()<<QString::number(ui->glWidget->model.vertices[4]);
-        // qDebug()<<QString::number(ui->glWidget->model.vertices[5]);
-    }
+    s21_scale(&ui->glWidget->model, 0.9);
+    ui->glWidget->update();
 }
 
 // ------------ КНОПКИ ВРАЩЕНИЯ ------------
 
 void MainWindow::on_rotateButtonX_clicked()
 {
-    s21_rotate_forward(&ui->glWidget->model, 5.0, X);
+    s21_rotate(&ui->glWidget->model, 5.0, X);
     ui->glWidget->update();
 }
 
 void MainWindow::on_rotateButtonX_2_clicked()
 {
-    s21_rotate_back(&ui->glWidget->model, 5.0, X);
+    s21_rotate(&ui->glWidget->model, -5.0, X);
     ui->glWidget->update();
 }
 
 void MainWindow::on_rotateButtonY_clicked()
 {
-    s21_rotate_forward(&ui->glWidget->model, 5.0, Y);
+    s21_rotate(&ui->glWidget->model, 5.0, Y);
     ui->glWidget->update();
 }
 
 void MainWindow::on_rotateButtonY_2_clicked()
 {
-    s21_rotate_back(&ui->glWidget->model, 5.0, Y);
+    s21_rotate(&ui->glWidget->model, -5.0, Y);
     ui->glWidget->update();
 }
 
 void MainWindow::on_rotateButtonZ_clicked()
 {
-    s21_rotate_forward(&ui->glWidget->model, 5.0, Z);
+    s21_rotate(&ui->glWidget->model, 5.0, Z);
     ui->glWidget->update();
 }
 
 void MainWindow::on_rotateButtonZ_2_clicked()
 {
-    s21_rotate_back(&ui->glWidget->model, 5.0, Z);
+    s21_rotate(&ui->glWidget->model, -5.0, Z);
     ui->glWidget->update();
 }
 
@@ -245,7 +203,7 @@ void MainWindow::on_lineEditLineWidth_returnPressed()
     ui->glWidget->update();
 }
 
-void MainWindow::on_comboBoxLineColor_activated(int index)
+void MainWindow::on_comboBoxLineColor_activated()
 {
     // if(index == 0) {
     //     ui->glWidget->property.lineColor = {0, 0, 0};
@@ -282,8 +240,66 @@ void MainWindow::on_comboBoxPointType_currentIndexChanged(int index)
     ui->glWidget->update();
 }
 
+// -------- СОХРАНЕНИЕ ИЗОБРАЖЕНИЯ ---------
 
+void MainWindow::on_jpegButton_clicked()
+{
+    // проверяем открыт ли файл
+    if(ui->pathFile->text() == "File Name") {
+        QMessageBox::information(this, "3D_Viewer", "Ни один файл не открыт");
+    } else {
 
+        // проверяем существование каталога изображений
+        if(!QDir().exists("Screenshot")) {
+            QDir().mkdir("Screenshot");
+        }
 
+        // формируем имя файла
+        QString name;
+        name = ui->pathFile->text();
+        name.truncate(name.indexOf('.'));
 
+        // проверяем существование файла
+        if(QFile().exists("Screenshot/" + name + ".jpeg")) {
+            static quint32 i{1};
+            name += "_" + QString::number(i++);
+        }
+
+        // формируем изображение и сохраняем его
+        QImage picture;
+        picture = ui->glWidget->grabFramebuffer();
+        picture.save("Screenshot/" + name + ".jpeg", "jpeg", 100);
+    }
+}
+
+void MainWindow::on_bmpButton_clicked()
+{
+    if(ui->pathFile->text() == "File Name")
+    {
+        QMessageBox::information(this, "3D_Viewer", "Ни один файл не открыт");
+    }
+    else
+    {
+        // проверяем существование каталога изображений
+        if(!QDir().exists("Screenshot")) {
+            QDir().mkdir("Screenshot");
+        }
+
+        // формируем имя файла
+        QString name;
+        name = ui->pathFile->text();
+        name.truncate(name.indexOf('.'));
+
+        // проверяем существование файла
+        if(QFile().exists("Screenshot/" + name + ".bmp")) {
+            static quint32 i{1};
+            name += "_" + QString::number(i++);
+        }
+
+        // формируем изображение и сохраняем его
+        QImage picture;
+        picture = ui->glWidget->grabFramebuffer();
+        picture.save("Screenshot/" + name + ".bmp", "bmp", 100);
+    }
+}
 

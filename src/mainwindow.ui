@@ -58,42 +58,6 @@
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="paintButton">
-    <property name="geometry">
-     <rect>
-      <x>600</x>
-      <y>600</y>
-      <width>190</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial</family>
-      <pointsize>12</pointsize>
-      <bold>false</bold>
-      <kerning>true</kerning>
-     </font>
-    </property>
-    <property name="locale">
-     <locale language="English" country="UnitedStates"/>
-    </property>
-    <property name="text">
-     <string> Paint</string>
-    </property>
-    <property name="icon">
-     <iconset theme="QIcon::ThemeIcon::MailMessageNew"/>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>12</width>
-      <height>12</height>
-     </size>
-    </property>
-    <property name="shortcut">
-     <string/>
-    </property>
-   </widget>
    <widget class="QToolBox" name="glWidgetMenu">
     <property name="geometry">
      <rect>
@@ -122,7 +86,7 @@
      <number>-1</number>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <property name="tabSpacing">
      <number>4</number>
