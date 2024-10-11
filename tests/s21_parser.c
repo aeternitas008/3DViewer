@@ -1,12 +1,11 @@
 #include "s21_test.h"
 
 START_TEST(s21_test1) {
-    char fileName[] = "test.obj";
     Model model={0};
 
     int count_vertex=8;
     int count_facites=12;
-    s21_parser(fileName, &model);
+    s21_parser("test.obj", &model);
     ck_assert_int_eq(model.total_vertices, count_vertex);
     ck_assert_int_eq(model.total_polygons, count_facites);
 
@@ -17,7 +16,6 @@ END_TEST
 
 // Test that parsed vertices and facets are as expected
 START_TEST(s21_test2) {
-    char fileName[] = "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/tests/test.obj";
     Model model = {0};
 
     // Expected vertex data based on the .obj file
@@ -40,7 +38,7 @@ START_TEST(s21_test2) {
     };
 
     // Parse the file
-    s21_parser(fileName, &model);
+    s21_parser("test.obj", &model);
 
     // Check vertices
     for (unsigned int i = 0; i < model.total_vertices * 3; i++) {
@@ -60,7 +58,6 @@ START_TEST(s21_test2) {
 END_TEST
 
 START_TEST(s21_test3) {
-    char fileName[] = "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/src/tests/minimal.obj";
     Model model = {0};
 
     double expected_vertices[] = {
@@ -70,7 +67,7 @@ START_TEST(s21_test3) {
     };
 
     int expected_facets[1][3] = {{1, 2, 3}};
-    s21_parser(fileName, &model);
+    s21_parser("minimal.obj", &model);
 
     for (unsigned int i = 0; i < model.total_vertices * 3; i++) {
         ck_assert_double_eq_tol(model.vertices[i + 3], expected_vertices[i], 1e-6);
@@ -86,7 +83,6 @@ START_TEST(s21_test3) {
 END_TEST
 
 START_TEST(s21_test_empty_lines) {
-    char fileName[] = "/Users/louellat/Desktop/Projects/C8_3DViewer_v1.0-2/tests/empty_lines.obj";
 
     Model model = {0};
 
@@ -96,7 +92,7 @@ START_TEST(s21_test_empty_lines) {
     };
 
     int expected_facets[1][2] = {{1, 2}};
-    s21_parser(fileName, &model);
+    s21_parser("empty_lines.obj", &model);
     for (unsigned int i = 0; i < model.total_vertices * 3; i++) {
         ck_assert_double_eq_tol(model.vertices[i + 3], expected_vertices[i], 1e-6);
     }

@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 typedef struct {
     int *numbers_of_vertices;   // массив номеров вершин грани
@@ -19,9 +20,9 @@ typedef struct {
     double min[3];
 } Model;
 
-void s21_parser(const char *filename, Model *model);
-void s21_get_vector(Model *model, char *line, int x);
-void s21_get_facet(Model *model, char *line, int x);
+bool s21_parser(const char *filename, Model *model);
+bool s21_get_vector(Model *model, char *line, int x);
+bool s21_get_facet(Model *model, char *line, int x);
 
 void s21_cleaner(Model *model);
 

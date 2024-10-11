@@ -14,7 +14,7 @@ double array[] = { 0.0,  0.0,  0.0,
                   -1.0,  1.083350,  0.909038,
                   -1.0,  0.909038, -1.083350};
 
-  s21_parser("tests/my_cube.obj", &model);
+  s21_parser("my_cube.obj", &model);
   s21_rotate(&model, 5.0, X);
 
     for(size_t i = 3; i < (model.total_vertices + 1) * 3; i++) {
@@ -39,7 +39,7 @@ double array[] = { 0.0,  0.0,  0.0,
                   -1.083350,  1.0,  0.909038,
                   -0.909038,  1.0, -1.083350};
 
-  s21_parser("tests/my_cube.obj", &model);
+  s21_parser("my_cube.obj", &model);
   s21_rotate(&model, 5.0, Y);
 
     for(size_t i = 3; i < (model.total_vertices + 1) * 3; i++) {
@@ -65,7 +65,7 @@ double array[] = { 0.0,  0.0,  0.0,
                   -0.909038,  1.083350,  1.0,
                   -0.909038,  1.083350, -1.0};
 
-  s21_parser("tests/my_cube.obj", &model);
+  s21_parser("my_cube.obj", &model);
   s21_rotate(&model, 5.0, Z);
 
     for(size_t i = 3; i < (model.total_vertices + 1) * 3; i++) {
@@ -91,7 +91,7 @@ double array[] = { 0.0,  0.0,  0.0,
                   -1.0,  0.909038,  1.083350,
                   -1.0,  1.083350, -0.909038};
 
-  s21_parser("tests/my_cube.obj", &model);
+  s21_parser("my_cube.obj", &model);
   s21_rotate(&model, -5.0, X);
 
     for(size_t i = 3; i < (model.total_vertices + 1) * 3; i++) {
@@ -116,7 +116,7 @@ double array[] = { 0.0,  0.0,  0.0,
                   -0.909038,  1.0,  1.083350,
                   -1.083350,  1.0, -0.909038};
 
-  s21_parser("tests/my_cube.obj", &model);
+  s21_parser("my_cube.obj", &model);
   s21_rotate(&model, -5.0, Y);
 
     for(size_t i = 3; i < (model.total_vertices + 1) * 3; i++) {
@@ -142,7 +142,7 @@ double array[] = { 0.0,  0.0,  0.0,
                   -1.083350,  0.909038,  1.0,
                   -1.083350,  0.909038, -1.0};
 
-  s21_parser("tests/my_cube.obj", &model);
+  s21_parser("my_cube.obj", &model);
   s21_rotate(&model, -5.0, Z);
 
     for(size_t i = 3; i < (model.total_vertices + 1) * 3; i++) {

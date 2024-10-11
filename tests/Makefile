@@ -14,10 +14,11 @@ endif
 
 
 
-LIBRARY_SOURCES = ../src/parser.c
+LIBRARY_SOURCES = ../src/parser.c \
+				  ../src/affine_transformations.c
 
 
-LIBRARY_OBJECTS = parser.o 
+LIBRARY_OBJECTS = parser.o
 
 TEST_SOURCES =  s21_parser.c \
 				test.c \

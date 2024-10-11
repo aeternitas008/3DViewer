@@ -1,6 +1,7 @@
 #include "parser.h"
 #include <string.h>
 
+
 int count_groups(const char *line) {
     int count_of_vertices = 0;  
     int in_group = 0;  
@@ -16,11 +17,12 @@ int count_groups(const char *line) {
 }
 
 
-void s21_parser(const char *filename, Model *model){
+bool s21_parser(const char *filename, Model *model){
+    bool suc=true;
     FILE *file =fopen(filename, "r");
     if (file== NULL){
-        perror("error");
-        return;
+        perror("Ошибка открытия файла");
+        return false;
     }
 
     //вершины начинаем с 1 чтобы было удобно строить грани
@@ -38,27 +40,72 @@ void s21_parser(const char *filename, Model *model){
 
     rewind(file);
     model->vertices = (double *)calloc((model->total_vertices + 1) * 3, sizeof(double));
-    model->polygons = (Polygon *)malloc(model->total_polygons * sizeof(Polygon));
-    model->vertices[0] = 0;
-    model->vertices[1] = 0;
-    model->vertices[2] = 0;
-    int id_vertex = 1;
-    int id_facet = 0;
-    while (fgets(line, sizeof(line), file)){
-        if(line[0]=='v' && line[1] == ' '){
-            s21_get_vector(model, line, id_vertex);
-            id_vertex ++;
-        } else if (line[0] == 'f' && line[1] == ' ') {
-            int count_of_vertices = 0;	// количество вхождений подстроки
-            // ищем группы
-            count_of_vertices = count_groups(line);
-            model->polygons[id_facet].count_of_vertices = count_of_vertices;
-            model->polygons[id_facet].numbers_of_vertices = (int * )malloc(count_of_vertices * sizeof(int));
-            s21_get_facet(model, line, id_facet);
-            id_facet++;
-        }
+    if (model->vertices==NULL){
+        perror("ошибка выделения памяти для вершин");
+        fclose(file);
+        suc=false;
     }
-    fclose(file);
+    model->polygons = (Polygon *)malloc(model->total_polygons * sizeof(Polygon));
+    if (model->polygons==NULL){
+        perror("ошибка выделения памяти для граней");
+        fclose(file);
+        suc=false;
+    }
+    if(suc){
+        model->vertices[0] = 0;
+        model->vertices[1] = 0;
+        model->vertices[2] = 0;
+
+        int id_vertex = 1;
+        int id_facet = 0;
+
+        while (fgets(line, sizeof(line), file)){
+            if(line[0]=='v' && line[1] == ' '){
+                if (!s21_get_vector(model, line, id_vertex)) {
+                    perror("Ошибка при обработке вектора");
+                    free(model->vertices);
+                    free(model->polygons);
+                    fclose(file);
+                    suc= false;
+                id_vertex ++;
+            } else if (line[0] == 'f' && line[1] == ' ') {
+                int count_of_vertices = 0;	// количество вхождений подстроки
+                // ищем группы
+                count_of_vertices = count_groups(line);
+                model->polygons[id_facet].count_of_vertices = count_of_vertices;
+                model->polygons[id_facet].numbers_of_vertices = (int * )malloc(count_of_vertices * sizeof(int));
+                if (model->polygons[id_facet].numbers_of_vertices == NULL) {
+                    perror("Ошибка выделения памяти для вершин грани");
+                    free(model->vertices);
+                    // Освобождаем память, выделенную для предыдущих граней
+                    for (int i = 0; i < id_facet; i++) {
+                        free(model->polygons[i].numbers_of_vertices);
+                    }
+                    free(model->polygons);
+                    fclose(file);
+                    suc= false;
+                }
+                if ((!s21_get_facet(model, line, id_facet)) && suc) {
+                    perror("Ошибка при обработке грани");
+                    free(model->vertices);
+                    for (int i = 0; i < id_facet; i++) {
+                        free(model->polygons[i].numbers_of_vertices);
+                    }
+                    free(model->polygons[id_facet].numbers_of_vertices);
+                    free(model->polygons);
+                    fclose(file);
+                    suc= false;
+                    
+                }
+                if(suc){
+                    id_facet++;
+                }
+            }
+            }
+        }
+        fclose(file);
+    }
+    return suc;
 }
 
 void set_extremum(Model *model) {
@@ -75,10 +122,15 @@ void check_extremum(Model *model, int id_vertex) {
     }
 }
 
-void s21_get_vector(Model *model, char *line, int id_vertex){
+bool s21_get_vector(Model *model, char *line, int id_vertex){
+    bool suc=true;
     char *ptr = line + 2;
-    for (int i = id_vertex * 3; i < id_vertex * 3 + 3; i++) {
+    for (int i = id_vertex * 3; i < id_vertex * 3 + 3 && suc; i++) {
         model->vertices[i] = strtod(ptr, &ptr);
+        if (*ptr == '\0' || ptr == NULL) {
+            perror("Ошибка при преобразовании строки в число");
+            suc=false;
+        }
     }
 
     if (id_vertex == 1) {
@@ -86,19 +138,31 @@ void s21_get_vector(Model *model, char *line, int id_vertex){
     } else {
         check_extremum(model, id_vertex);
     }
+    return suc;
 
 }
 
-void s21_get_facet(Model *model, char *line, int id_facet){
-
+bool s21_get_facet(Model *model, char *line, int id_facet){
+    bool suc=true;
     char *ptr = (char *)line + 2;  
     char *token = strtok(ptr, " ");  
     int count = 0;  
 
-    while (token != NULL) {
-        model->polygons[id_facet].numbers_of_vertices[count++] = atoi(token);
+    while (token != NULL && suc) {
+        int vertex_id = atoi(token);
+        if (vertex_id == 0) {
+            perror("Ошибка при преобразовании идентификатора вершины");
+            suc = false;
+        }
+        model->polygons[id_facet].numbers_of_vertices[count++] = vertex_id;
+        if(count>model->polygons[id_facet].count_of_vertices){
+            perror("Превышено допустимое количество вершин для грани");
+            suc=false;
+        }
+
         token = strtok(NULL, " ");
     }
+    return suc;
 }
 
 void s21_cleaner(Model *model) {
