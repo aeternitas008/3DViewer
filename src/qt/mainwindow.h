@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QSettings>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -17,8 +18,13 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    void saveSettings();
+    void loadSettings();
+
+
 private:
     Ui::MainWindow *ui;
+    QSettings *settings;
 
 private slots:
     // void on_paintButton_clicked();

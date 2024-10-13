@@ -12,13 +12,27 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    settings=new QSettings("s21","3d_viewer",this);
+    loadSettings();
 }
 
 MainWindow::~MainWindow()
 {
+    saveSettings();
     delete ui;
 }
 
+void MainWindow::saveSettings()
+{
+    settings->value("")
+}
+
+void MainWindow::loadSettings() 
+{
+
+
+}
  // кнопка Open File
 void MainWindow::on_openButton_clicked()
 {   
