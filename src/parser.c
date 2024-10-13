@@ -67,6 +67,7 @@ bool s21_parser(const char *filename, Model *model){
                     free(model->polygons);
                     fclose(file);
                     suc= false;
+                }
                 id_vertex ++;
             } else if (line[0] == 'f' && line[1] == ' ') {
                 int count_of_vertices = 0;	// количество вхождений подстроки
@@ -85,7 +86,7 @@ bool s21_parser(const char *filename, Model *model){
                     fclose(file);
                     suc= false;
                 }
-                if ((!s21_get_facet(model, line, id_facet)) && suc) {
+                if ((!s21_get_facet(model, line, id_facet))) {
                     perror("Ошибка при обработке грани");
                     free(model->vertices);
                     for (int i = 0; i < id_facet; i++) {
@@ -95,12 +96,10 @@ bool s21_parser(const char *filename, Model *model){
                     free(model->polygons);
                     fclose(file);
                     suc= false;
-                    
                 }
                 if(suc){
                     id_facet++;
                 }
-            }
             }
         }
         fclose(file);
@@ -125,12 +124,8 @@ void check_extremum(Model *model, int id_vertex) {
 bool s21_get_vector(Model *model, char *line, int id_vertex){
     bool suc=true;
     char *ptr = line + 2;
-    for (int i = id_vertex * 3; i < id_vertex * 3 + 3 && suc; i++) {
+    for (int i = id_vertex * 3; i < id_vertex * 3 + 3; i++) {
         model->vertices[i] = strtod(ptr, &ptr);
-        if (*ptr == '\0' || ptr == NULL) {
-            perror("Ошибка при преобразовании строки в число");
-            suc=false;
-        }
     }
 
     if (id_vertex == 1) {
@@ -149,19 +144,14 @@ bool s21_get_facet(Model *model, char *line, int id_facet){
     int count = 0;  
 
     while (token != NULL && suc) {
-        int vertex_id = atoi(token);
-        if (vertex_id == 0) {
-            perror("Ошибка при преобразовании идентификатора вершины");
-            suc = false;
-        }
-        model->polygons[id_facet].numbers_of_vertices[count++] = vertex_id;
-        if(count>model->polygons[id_facet].count_of_vertices){
-            perror("Превышено допустимое количество вершин для грани");
-            suc=false;
-        }
+        model->polygons[id_facet].numbers_of_vertices[count++] = atoi(token);
 
         token = strtok(NULL, " ");
     }
+    if(count>model->polygons[id_facet].count_of_vertices){
+            perror("Превышено допустимое количество вершин для грани");
+            suc=false;
+        }
     return suc;
 }
 
