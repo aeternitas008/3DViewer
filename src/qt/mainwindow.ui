@@ -30,7 +30,7 @@
       <x>600</x>
       <y>80</y>
       <width>190</width>
-      <height>481</height>
+      <height>511</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -52,7 +52,7 @@
      <number>-1</number>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <property name="tabSpacing">
      <number>4</number>
@@ -63,7 +63,7 @@
        <x>0</x>
        <y>0</y>
        <width>190</width>
-       <height>397</height>
+       <height>427</height>
       </rect>
      </property>
      <attribute name="icon">
@@ -558,6 +558,43 @@
         <normaloff>.</normaloff>.</iconset>
       </property>
      </widget>
+     <widget class="QPushButton" name="gifSTOP">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>370</y>
+        <width>70</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string> STOP</string>
+      </property>
+      <property name="icon">
+       <iconset theme="QIcon::ThemeIcon::MediaPlaybackStop">
+        <normaloff>.</normaloff>.</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="gifREC">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>370</y>
+        <width>70</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string> REC</string>
+      </property>
+      <property name="icon">
+       <iconset theme="QIcon::ThemeIcon::MediaRecord">
+        <normaloff>.</normaloff>.</iconset>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="Properties">
      <property name="geometry">
@@ -565,7 +602,7 @@
        <x>0</x>
        <y>0</y>
        <width>190</width>
-       <height>397</height>
+       <height>427</height>
       </rect>
      </property>
      <property name="contextMenuPolicy">
@@ -1038,7 +1075,7 @@
        <x>0</x>
        <y>0</y>
        <width>190</width>
-       <height>397</height>
+       <height>427</height>
       </rect>
      </property>
      <attribute name="icon">
