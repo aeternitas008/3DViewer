@@ -21,8 +21,8 @@ typedef struct {
 } Model;
 
 bool s21_parser(const char *filename, Model *model);
-bool s21_get_vector(Model *model, char *line, int x);
-bool s21_get_facet(Model *model, char *line, int x);
+void s21_get_vector(Model *model, char *line, int x);
+void s21_get_facet(Model *model, char *line, int x);
 
 void s21_cleaner(Model *model);
 
