@@ -2,10 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QtWidgets>
-
-// #include <QApplication>
-// #include <QMainWindow>
-// #include <QFileDialog>
+#include "QtGifImage/gifimage/qgifimage.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -23,6 +20,11 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    QTimer gifTimer;
+    QGifImage *gifImage;
+
+signals:
+    void shot(const QString&);
 
 private slots:
     void on_openButton_clicked();
@@ -62,8 +64,16 @@ private slots:
     void on_lineEditPointSize_returnPressed();
     void on_comboBoxPointType_currentIndexChanged(int index);
 
+    // снимки экрана
+    void snapShot(QString extension);
     void on_jpegButton_clicked();
     void on_bmpButton_clicked();
+    void on_gifButton_clicked();
+
+    // запись экрана
+    void on_gifREC_clicked();
+    void on_gifSTOP_clicked();
+    void gifShot();
 };
 
 #endif // MAINWINDOW_H

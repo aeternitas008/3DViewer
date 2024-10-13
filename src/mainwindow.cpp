@@ -1,24 +1,16 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-// -------------------
-
-// #include <QRadioButton>
-// #include <QMessageBox>
-
-// #include <unistd.h>
-// #include <parcer.h>
-
-// --------------------
-
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 
-    ui->comboBoxLineColor->addItems({"White", "Red", "Green", "Blue", "Black"});
-    ui->comboBoxPointType->addItems({"None", "Square", "Round"});
+    gifTimer.setInterval(100);
+    connect(&gifTimer, SIGNAL(timeout()), SLOT(gifShot()));
+
+    connect(this, &MainWindow::shot, this, &MainWindow::snapShot);
 }
 
 MainWindow::~MainWindow()
@@ -244,39 +236,20 @@ void MainWindow::on_comboBoxPointType_currentIndexChanged(int index)
 
 void MainWindow::on_jpegButton_clicked()
 {
-    // проверяем открыт ли файл
-    if(ui->pathFile->text() == "File Name") {
-        QMessageBox::information(this, "3D_Viewer", "Ни один файл не открыт");
-    } else {
-
-        // проверяем существование каталога изображений
-        if(!QDir().exists("Screenshot")) {
-            QDir().mkdir("Screenshot");
-        }
-
-        // формируем имя файла
-        QString name;
-        name = "Screenshot/" + ui->pathFile->text();
-        name.truncate(name.indexOf('.'));
-        name += "_";
-
-        // проверяем существование файла
-        for(quint32 i = 0; ; i++) {
-            if(!QFile().exists(name + QString::number(i) + ".jpeg")) {
-                name += QString::number(i) + ".jpeg";
-                break;
-            }
-        }
-
-        // формируем изображение и сохраняем его
-        QImage picture;
-        picture = ui->glWidget->grabFramebuffer();
-        picture.save(name, "jpeg", 100);
-    }
+    emit shot(".jpeg");
 }
 
 void MainWindow::on_bmpButton_clicked()
 {
+    emit shot(".bmp");
+}
+
+void MainWindow::on_gifButton_clicked()
+{
+    emit shot(".gif");
+}
+
+void MainWindow::snapShot(QString extension) {
     if(ui->pathFile->text() == "File Name")
     {
         QMessageBox::information(this, "3D_Viewer", "Ни один файл не открыт");
@@ -296,16 +269,85 @@ void MainWindow::on_bmpButton_clicked()
 
         // проверяем существование файла
         for(quint32 i = 0; ; i++) {
-            if(!QFile().exists(name + QString::number(i) + ".bmp")) {
-                name += QString::number(i) + ".bmp";
+            if(!QFile().exists(name + QString::number(i) + extension)) {
+                name += QString::number(i) + extension;
                 break;
             }
         }
 
         // формируем изображение и сохраняем его
-        QImage picture;
-        picture = ui->glWidget->grabFramebuffer();
-        picture.save(name, "bmp", 100);
+        if(extension == ".gif"){    // gif файл
+            gifImage = new QGifImage;
+            gifImage->addFrame(ui->glWidget->grabFramebuffer());
+            gifImage->save(name);
+            delete gifImage;
+        } else {                    // jpeg/bmp файл
+            QImage picture;
+            picture = ui->glWidget->grabFramebuffer();
+            picture.save(name);
+        }
     }
+}
+
+// ---------- ЗАПИСЬ GIF-АНИМАЦИИ ----------
+
+void MainWindow::on_gifREC_clicked()
+{
+    if(ui->pathFile->text() == "File Name")
+    {
+        QMessageBox::information(this, "3D_Viewer", "Ни один файл не открыт");
+    }
+    else
+    {
+        // блокируем нажатие кнопки
+        ui->gifREC->setEnabled(false);
+        ui->gifSTOP->setEnabled(true);
+
+        gifImage = new QGifImage;
+        gifImage->setDefaultDelay(100);
+
+        gifTimer.start();
+    }
+    // вынести что-то в отдельные функции/методы?? (повторяющийся код)
+}
+
+void MainWindow::on_gifSTOP_clicked()
+{
+    gifTimer.stop();
+
+    // проверяем существование каталога изображений
+    if(!QDir().exists("Screenshot")) {
+        QDir().mkdir("Screenshot");
+    }
+
+    // формируем имя файла
+    QString name;
+    name = "Screenshot/" + ui->pathFile->text();
+    name.truncate(name.indexOf('.'));
+    name += "_";
+
+    // проверяем существование файла
+    for(quint32 i = 0; ; i++) {
+        if(!QFile().exists(name + QString::number(i) + ".gif")) {
+            name += QString::number(i) + ".gif";
+            break;
+        }
+    }
+
+    gifImage->save(name);
+    delete gifImage;
+
+    // блокируем нажатие кнопки
+    ui->gifSTOP->setEnabled(false);
+    ui->gifREC->setEnabled(true);
+}
+
+void MainWindow::gifShot()
+{
+    // С уменьшением размера кадра(480x480)
+    gifImage->addFrame(ui->glWidget->grabFramebuffer().scaled(480, 480));
+
+    // Без уменьшения размера кадра (580x580)
+    // gifImage->addFrame(ui->glWidget->grabFramebuffer());
 }
 
