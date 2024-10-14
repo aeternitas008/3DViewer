@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QSettings>
 #include <QtWidgets>
+
 #include "QtGifImage/gifimage/qgifimage.h"
 
 QT_BEGIN_NAMESPACE
@@ -21,12 +22,11 @@ class MainWindow : public QMainWindow {
   void saveSettings();
   void loadSettings();
 
-
-private:
-    Ui::MainWindow *ui;
-    QSettings *settings;
-    QTimer gifTimer;
-    QGifImage *gifImage;
+ private:
+  Ui::MainWindow *ui;
+  QSettings *settings;
+  QTimer gifTimer;
+  QGifImage *gifImage;
 
  signals:
   void shot(const QString &);
