@@ -28,7 +28,7 @@ TEST_SOURCES =  tests/s21_parser.c \
 				
 
 
-all: install
+all: install gcov_report dvi dist
 
 build: install
 
@@ -49,19 +49,16 @@ clean: uninstall
 dist:
 	tar -cvzf archive.tgz qt/
 
-# dvi:
-# 	touch readme.md
-
 dvi:
 	@rm -rf Documentation
 	@doxygen
 	@open Documentation/html/index.html
 
-test: clean
+tests: clean
 	$(CC) $(CFLAGS) $(TEST_SOURCES) -o tests.out ${LIBRARY_SOURCES} $(CHECK_FLAGS) $(GCOV_FLAGS)
 	./tests.out
 
-gcov_report: test
+gcov_report: tests
 	lcov --capture --directory . --output-file coverage.info
 	genhtml coverage.info --output-directory gcov_report
 	@if command -v $(OPEN_CMD) > /dev/null; then \
