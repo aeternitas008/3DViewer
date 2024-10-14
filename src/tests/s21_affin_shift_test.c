@@ -14,7 +14,7 @@ double array[] = { 0.0, 0.0,  0.0,
                   -1.0, 3.0,  1.0,
                   -1.0, 3.0, -1.0};
 
-  s21_parser("my_cube.obj", &model);
+  s21_parser("tests/tests_object/my_cube.obj", &model);
   s21_shift(&model, 2, Y);
 
     for(size_t i = 3; i < (model.total_vertices + 1) * 3; i++) {
@@ -40,7 +40,7 @@ START_TEST(s21_shift_down) {
                     -1.0, -1.0,  1.0,
                     -1.0, -1.0, -1.0};
 
-  s21_parser("my_cube.obj", &model);
+  s21_parser("tests/tests_object/my_cube.obj", &model);
   s21_shift(&model, -2, Y);
 
     for(size_t i = 3; i < (model.total_vertices + 1) * 3; i++) {
@@ -66,7 +66,7 @@ START_TEST(s21_shift_left) {
                     -3.0,  1.0,  1.0,
                     -3.0,  1.0, -1.0};
 
-  s21_parser("my_cube.obj", &model);
+  s21_parser("tests/tests_object/my_cube.obj", &model);
   s21_shift(&model, -2, X);
 
     for(size_t i = 3; i < (model.total_vertices + 1) * 3; i++) {
@@ -92,7 +92,7 @@ START_TEST(s21_shift_right) {
                      1.0,  1.0,  1.0,
                      1.0,  1.0, -1.0};
 
-  s21_parser("my_cube.obj", &model);
+  s21_parser("tests/tests_object/my_cube.obj", &model);
   s21_shift(&model, 2, X);
 
     for(size_t i = 3; i < (model.total_vertices + 1) * 3; i++) {
@@ -118,7 +118,7 @@ START_TEST(s21_shift_closer) {
                     -1.0,  1.0,  3.0,
                     -1.0,  1.0,  1.0};
 
-  s21_parser("my_cube.obj", &model);
+  s21_parser("tests/tests_object/my_cube.obj", &model);
   s21_shift(&model, 2, Z);
 
     for(size_t i = 3; i < (model.total_vertices + 1) * 3; i++) {
@@ -144,7 +144,7 @@ START_TEST(s21_shift_further) {
                     -1.0,  1.0, -1.0,
                     -1.0,  1.0, -3.0};
 
-  s21_parser("my_cube.obj", &model);
+  s21_parser("tests/tests_object/my_cube.obj", &model);
   s21_shift(&model, -2, Z);
 
     for(size_t i = 3; i < (model.total_vertices + 1) * 3; i++) {

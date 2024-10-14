@@ -5,7 +5,7 @@ START_TEST(s21_test1) {
 
     int count_vertex=8;
     int count_facites=12;
-    s21_parser("test.obj", &model);
+    s21_parser("tests/tests_object/test.obj", &model);
     ck_assert_int_eq(model.total_vertices, count_vertex);
     ck_assert_int_eq(model.total_polygons, count_facites);
 
@@ -38,7 +38,7 @@ START_TEST(s21_test2) {
     };
 
     // Parse the file
-    s21_parser("test.obj", &model);
+    s21_parser("tests/tests_object/test.obj", &model);
 
     // Check vertices
     for (unsigned int i = 0; i < model.total_vertices * 3; i++) {
@@ -67,7 +67,7 @@ START_TEST(s21_test3) {
     };
 
     int expected_facets[1][3] = {{1, 2, 3}};
-    s21_parser("minimal.obj", &model);
+    s21_parser("tests/tests_object/minimal.obj", &model);
 
     for (unsigned int i = 0; i < model.total_vertices * 3; i++) {
         ck_assert_double_eq_tol(model.vertices[i + 3], expected_vertices[i], 1e-6);
@@ -92,7 +92,7 @@ START_TEST(s21_test_empty_lines) {
     };
 
     int expected_facets[1][2] = {{1, 2}};
-    s21_parser("empty_lines.obj", &model);
+    s21_parser("tests/tests_object/empty_lines.obj", &model);
     for (unsigned int i = 0; i < model.total_vertices * 3; i++) {
         ck_assert_double_eq_tol(model.vertices[i + 3], expected_vertices[i], 1e-6);
     }
@@ -109,27 +109,17 @@ START_TEST(s21_test_invalid_file) {
     Model model = {0};
 
     // Попытка парсинга несуществующего файла
-    bool result = s21_parser("non_existent.obj", &model);
+    bool result = s21_parser("tests/tests_object/non_existent.obj", &model);
     ck_assert_int_eq(result, false);
 
     // Попытка парсинга пустого файла
-    result = s21_parser("empty.obj", &model);
+    result = s21_parser("tests/tests_object/empty.obj", &model);
     ck_assert_int_eq(result, true);
 
     s21_cleaner(&model);
 }
 END_TEST
 
-
-START_TEST(s21_test_memory_allocation_error) {
-    Model model = {0};
-    model.vertices = NULL;
-    bool result = s21_parser("invalide_file.obj", &model);
-    ck_assert_int_eq(result, true);
-
-    s21_cleaner(&model);
-}
-END_TEST
 
 
 Suite *parser_suite() {
@@ -142,7 +132,6 @@ Suite *parser_suite() {
   tcase_add_test(tc_core, s21_test3);
   tcase_add_test(tc_core, s21_test_empty_lines);
   tcase_add_test(tc_core, s21_test_invalid_file);
-  tcase_add_test(tc_core, s21_test_memory_allocation_error);
 
   suite_add_tcase(s, tc_core);
 

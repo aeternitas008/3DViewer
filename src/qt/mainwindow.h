@@ -1,9 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-// #include <QMainWindow>
+#include <QMainWindow>
+#include <QSettings>
 #include <QtWidgets>
-
 #include "QtGifImage/gifimage/qgifimage.h"
 
 QT_BEGIN_NAMESPACE
@@ -18,11 +18,15 @@ class MainWindow : public QMainWindow {
  public:
   MainWindow(QWidget *parent = nullptr);
   ~MainWindow();
+  void saveSettings();
+  void loadSettings();
 
- private:
-  Ui::MainWindow *ui;
-  QTimer gifTimer;
-  QGifImage *gifImage;
+
+private:
+    Ui::MainWindow *ui;
+    QSettings *settings;
+    QTimer gifTimer;
+    QGifImage *gifImage;
 
  signals:
   void shot(const QString &);
@@ -75,4 +79,8 @@ class MainWindow : public QMainWindow {
   void on_lineEditPointSize_valueChanged(int arg1);
 };
 
+<<<<<<< HEAD
 #endif  // MAINWINDOW_H
+=======
+#endif // MAINWINDOW_H
+>>>>>>> 841384c993c3b2e4771f7e05d7492eaba1fbd672

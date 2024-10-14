@@ -5,8 +5,8 @@
 #include <locale.h>
 #include <string.h>
 
-#include "../src/parser.h"
-#include "../src/affine_transformations.h"
+#include "../qt/parser.h"
+#include "../qt/affine_transformations.h"
 
 
 Suite *parser_suite ();
