@@ -1040,35 +1040,6 @@
          </widget>
         </widget>
        </item>
-       <item>
-        <widget class="QPushButton" name="applyButton">
-         <property name="font">
-          <font>
-           <family>Arial</family>
-           <pointsize>14</pointsize>
-          </font>
-         </property>
-         <property name="locale">
-          <locale language="English" country="UnitedStates"/>
-         </property>
-         <property name="text">
-          <string> Apply</string>
-         </property>
-         <property name="icon">
-          <iconset theme="appointment-new">
-           <normaloff>.</normaloff>.</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>12</width>
-           <height>12</height>
-          </size>
-         </property>
-         <property name="shortcut">
-          <string/>
-         </property>
-        </widget>
-       </item>
       </layout>
      </widget>
     </widget>
