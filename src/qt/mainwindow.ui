@@ -52,7 +52,7 @@
      <number>-1</number>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <property name="tabSpacing">
      <number>4</number>
@@ -667,6 +667,9 @@
        </item>
        <item>
         <widget class="QLabel" name="lineLabel">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
          <property name="font">
           <font>
            <family>Arial</family>

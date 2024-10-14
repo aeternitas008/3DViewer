@@ -29,14 +29,90 @@ MainWindow::~MainWindow()
 
 void MainWindow::saveSettings()
 {
-    settings->value("")
+    settings->setValue("projection_type", ui->glWidget->property.projection_type);
+
+    settings->setValue("line_type", ui->glWidget->property.line_type);
+
+    settings->setValue("line_color_name", ui->comboBoxLineColor->currentText());
+    settings->setValue("line_color_r", ui->glWidget->property.line_color[0]);
+    settings->setValue("line_color_g", ui->glWidget->property.line_color[1]);
+    settings->setValue("line_color_b", ui->glWidget->property.line_color[2]);
+
+    settings->setValue("line_width", ui->glWidget->property.line_width);
+
+    settings->setValue("point_type", ui->glWidget->property.point_type);
+
+    settings->setValue("point_color_name", ui->comboBoxPointColor->currentText());
+    settings->setValue("point_color_r", ui->glWidget->property.point_color[0]);
+    settings->setValue("point_color_g", ui->glWidget->property.point_color[1]);
+    settings->setValue("point_color_b", ui->glWidget->property.point_color[2]);
+
+    settings->setValue("point_size", ui->glWidget->property.line_width);
+
+    settings->setValue("back_color_name", ui->comboBoxBackColor->currentText());
+    settings->setValue("back_color_r", ui->glWidget->property.back_color[0]);
+    settings->setValue("back_color_g", ui->glWidget->property.back_color[1]);
+    settings->setValue("back_color_b", ui->glWidget->property.back_color[2]);
+
 }
 
 void MainWindow::loadSettings() 
 {
 
+    ui->glWidget->property.line_type = settings->value("projection_type", 0).toInt();
+    if (ui->glWidget->property.line_type == 0) {
+        ui->radioTypeCentral->setChecked(true); 
+    } else {
+        ui->radioTypeParallel->setChecked(true); 
+    }
+
+    ui->glWidget->property.line_type = settings->value("line_type", 0xFFFF).toInt();
+    if (ui->glWidget->property.line_type == 0x000F) {
+        ui->radioLineDashed->setChecked(true);
+    } else {
+        ui->radioLineSolid->setChecked(true); 
+    }
+    QString colorName = settings->value("line_color_name", "желтый").toString(); 
+    int index = ui->comboBoxLineColor->findText(colorName);
+    if (index != -1) {
+        ui->comboBoxLineColor->setCurrentIndex(index);
+    }
+    ui->glWidget->property.line_color[0] = settings->value("line_color_r", 0.9).toFloat(); 
+    ui->glWidget->property.line_color[1] = settings->value("line_color_g", 0.7).toFloat(); 
+    ui->glWidget->property.line_color[2] = settings->value("line_color_b", 0.2).toFloat();
+    
+    ui->glWidget->property.line_width=settings->value("line_width", 1.0).toFloat();
+    ui->lineEditLineWidth->setValue(ui->glWidget->property.line_width);
+
+    ui->glWidget->property.point_type=settings->value("point_type", 0).toInt();
+    ui->comboBoxPointType->setCurrentIndex(ui->glWidget->property.point_type);
+
+    QString colorName2 = settings->value("point_color_name", "белый").toString(); 
+    int index2 = ui->comboBoxPointColor->findText(colorName2);
+    if (index2 != -1) {
+        ui->comboBoxPointColor->setCurrentIndex(index2);
+    }
+    ui->glWidget->property.point_color[0] = settings->value("point_color_r", 0.9).toFloat(); 
+    ui->glWidget->property.point_color[1] = settings->value("point_color_g", 0.7).toFloat(); 
+    ui->glWidget->property.point_color[2] = settings->value("point_color_b", 0.2).toFloat();
+
+    ui->glWidget->property.point_size=settings->value("point_size", 0).toFloat();
+    ui->lineEditPointSize->setValue(ui->glWidget->property.point_size);
+
+    QString colorName3 = settings->value("back_color_name", "черный").toString(); 
+    int index3 = ui->comboBoxBackColor->findText(colorName3);
+    if (index3 != -1) {
+        ui->comboBoxBackColor->setCurrentIndex(index3);
+    }
+    ui->glWidget->property.back_color[0] = settings->value("back_color_r", 0.9).toFloat(); 
+    ui->glWidget->property.back_color[1] = settings->value("back_color_g", 0.7).toFloat(); 
+    ui->glWidget->property.back_color[2] = settings->value("back_color_b", 0.2).toFloat();
+    
+
+    ui->glWidget->update();
 
 }
+
  // кнопка Open File
 void MainWindow::on_openButton_clicked()
 {   
