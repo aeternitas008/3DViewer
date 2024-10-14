@@ -59,8 +59,8 @@ void MainWindow::saveSettings()
 void MainWindow::loadSettings() 
 {
 
-    ui->glWidget->property.line_type = settings->value("projection_type", 0).toInt();
-    if (ui->glWidget->property.line_type == 0) {
+    ui->glWidget->property.projection_type = settings->value("projection_type", 0).toInt();
+    if (ui->glWidget->property.projection_type == 0) {
         ui->radioTypeCentral->setChecked(true); 
     } else {
         ui->radioTypeParallel->setChecked(true); 

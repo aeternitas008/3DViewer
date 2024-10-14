@@ -79,8 +79,4 @@ private:
   void on_lineEditPointSize_valueChanged(int arg1);
 };
 
-<<<<<<< HEAD
 #endif  // MAINWINDOW_H
-=======
-#endif // MAINWINDOW_H
->>>>>>> 841384c993c3b2e4771f7e05d7492eaba1fbd672
