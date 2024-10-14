@@ -1,10 +1,9 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QFileDialog>
-#include <QRadioButton>
 #include <QMessageBox>
 
-#include <unistd.h>
+// #include <unistd.h>
 #include <parser.h>
 
 MainWindow::MainWindow(QWidget *parent)
@@ -107,10 +106,8 @@ void MainWindow::loadSettings()
     ui->glWidget->property.back_color[0] = settings->value("back_color_r", 0).toFloat(); 
     ui->glWidget->property.back_color[1] = settings->value("back_color_g", 0).toFloat(); 
     ui->glWidget->property.back_color[2] = settings->value("back_color_b", 0).toFloat();
-    
 
     ui->glWidget->update();
-
 }
 
  // кнопка Open File

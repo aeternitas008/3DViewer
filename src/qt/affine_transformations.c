@@ -1,5 +1,17 @@
 #include "affine_transformations.h"
 
+/**
+ * @file affine_transformations.c
+ * @brief This file contains functions and classes for performing affine transformations in 2D/3D space.
+ *
+ * The affine transformations include translation, rotation, scaling, and shearing operations 
+ * that can be applied to points, vectors, and objects. The functions are designed to work with 
+ * matrices and provide utilities for combining multiple transformations into a single operation.
+ *
+ * @author Your Name
+ * @date 2024-10-14
+ */
+
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * ФУНКЦИЯ ПЕРЕМЕЩЕНИЯ МОДЕЛИ
  * -----------------------------------------------------------

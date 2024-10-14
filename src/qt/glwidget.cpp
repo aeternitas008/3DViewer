@@ -38,7 +38,9 @@ void GLWidget::paintGL()
     // Применяем повороты, используя xRot и yRot
     // glRotatef(xRot, 1.0f, 0.0f, 0.0f);
     // glRotatef(yRot, 0.0f, 1.0f, 0.0f);
-    
+    glClearColor(property.back_color[0], property.back_color[1], property.back_color[2], 0);
+    //задам цвет и очищаем экран в этот цвет
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     if(model.vertices)
     {
     // ----- выставляем камеру -----
@@ -60,9 +62,6 @@ void GLWidget::paintGL()
 
     // ----- задам цвет и очищаем экран в этот цвет -----
 
-        //задам цвет и очищаем экран в этот цвет
-        glClearColor(property.back_color[0], property.back_color[1], property.back_color[2], 0);
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         // загружаем координаты точек в вершинный буфер
         glVertexPointer(3, GL_DOUBLE, 0, model.vertices);
