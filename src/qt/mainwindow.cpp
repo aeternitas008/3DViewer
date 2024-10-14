@@ -104,9 +104,9 @@ void MainWindow::loadSettings()
     if (index3 != -1) {
         ui->comboBoxBackColor->setCurrentIndex(index3);
     }
-    ui->glWidget->property.back_color[0] = settings->value("back_color_r", 0.9).toFloat(); 
-    ui->glWidget->property.back_color[1] = settings->value("back_color_g", 0.7).toFloat(); 
-    ui->glWidget->property.back_color[2] = settings->value("back_color_b", 0.2).toFloat();
+    ui->glWidget->property.back_color[0] = settings->value("back_color_r", 0).toFloat(); 
+    ui->glWidget->property.back_color[1] = settings->value("back_color_g", 0).toFloat(); 
+    ui->glWidget->property.back_color[2] = settings->value("back_color_b", 0).toFloat();
     
 
     ui->glWidget->update();
